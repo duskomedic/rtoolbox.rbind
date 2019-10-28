@@ -1,9 +1,9 @@
 ---
-title: data challenge with R
+title: R Toolbox
 ---
-# data challenge with R
+# R Toolbox
 
-#### [Tatjana Kecojevic,](https://tanjakec.github.io) [SisterAnalyst](https://sisteranalyst.org)
+#### [Tatjana Kecojevic, ](https://www.linkedin.com/in/tatjana-kecojevic-803704143/) [Dusko Medic, ](https://www.linkedin.com/in/duskomedic/) [SisterAnalyst](https://sisteranalyst.org)
 
 ![Red variant](/images/datachallenge.png?width=40pc)
 
