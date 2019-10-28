@@ -16,7 +16,7 @@ defaultContentLanguageInSubdir= true
   disableNextPrev = false
 
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
-  themeVariant = "pink"
+  themeVariant = "blue"
 
 [params.logo]
 url = "logo.jpg"
