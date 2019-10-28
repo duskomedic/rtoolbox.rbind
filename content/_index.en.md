@@ -1,41 +1,35 @@
 ---
-title: Learn Theme for Hugo
+title: data challenge with R
 ---
+# data challenge with R
 
-# Hugo learn theme
+#### [Tatjana Kecojevic,](https://tanjakec.github.io) [SisterAnalyst](https://sisteranalyst.org)
 
-[Hugo-theme-learn](http://github.com/matcornic/hugo-theme-learn) is a theme for [Hugo](https://gohugo.io/), a fast and modern static website engine written in Go. Where Hugo is often used for blogs, this multilingual-ready theme is **fully designed for documentation**.
+![Red variant](/images/datachallenge.png?width=40pc)
 
-This theme is a partial porting of the [Learn theme](http://learn.getgrav.org/) of [Grav](https://getgrav.org/), a modern flat-file CMS written in PHP.
+> "The greatest value of a picture is when it forces us to notice what we never expected to see... 
+Let us take boring flat data and bring it to life through visualization."
 
-{{% notice tip %}}Learn theme works with a _page tree structure_ to organize content : All contents are pages, which belong to other pages. [read more about this]({{%relref "cont/pages/_index.md"%}}) 
-{{% /notice %}}
+> [John Tukey](https://en.wikipedia.org/wiki/John_Tukey)
 
-## Main features
+![Red variant](/images/john_tukey.jpg?width=35pc)
 
-* [Automatic Search]({{%relref "basics/configuration/_index.md#activate-search" %}})
-* [Multilingual mode]({{%relref "cont/i18n/_index.md" %}})
-* **Unlimited menu levels**
-* **Automatic next/prev buttons to navigate through menu entries**
-* [Image resizing, shadow...]({{%relref "cont/markdown.en.md#images" %}})
-* [Attachments files]({{%relref "shortcodes/attachments.en.md" %}})
-* [List child pages]({{%relref "shortcodes/children/_index.md" %}})
-* [Mermaid diagram]({{%relref "shortcodes/mermaid.en.md" %}}) (flowchart, sequence, gantt)
-* [Customizable look and feel and themes variants]({{%relref "basics/style-customization/_index.md"%}})
-* [Buttons]({{%relref "shortcodes/button.en.md" %}}), [Tip/Note/Info/Warning boxes]({{%relref "shortcodes/notice.en.md" %}}), [Expand]({{%relref "shortcodes/expand.en.md" %}})
+> **Open data** is data in digital format that is made available to everyone. To access it without the need for negotiation or obstruction at any time is a fundamental feature of the democratisation of digital data. In order for this to happen it requires public authorities to make data available to everyone, in particular those with the necessary skills and knowledge to reveal and interpret the story within complex details. A greater understanding of data empowers citizens to make more informed decisions in processes that directly affect their lives.
 
-![Screenshot](https://github.com/matcornic/hugo-theme-learn/raw/master/images/screenshot.png?width=40pc&classes=shadow)
+![Red variant](/images/ML.jpg?width=40pc)
 
-## Contribute to this documentation
-Feel free to update this content, just click the **Edit this page** link displayed on top right of each page, and pullrequest it
+> **R** together with **RStudio** is the best data science tool! It is open source and free software that is available to anyone with a desire to discover, learn, explore, experience, expand and share the algorithms of their data science journey.  
 
-{{% notice info %}}
-Your modification will be deployed automatically when merged.
-{{% /notice %}}
+##### To book your place go here [👉📩](https://undpserbia.typeform.com/to/MSQ8So)
 
-## Documentation website
-This current documentation has been statically generated with Hugo with a simple command : `hugo -t hugo-theme-learn` -- source code is [available here at GitHub](https://github.com/matcornic/hugo-theme-learn)
+This workshop is a part of **The Autumn Data School program** organised as a part of the [Open Data - Open Opportunities](https://www.rs.undp.org/content/serbia/en/home/projects/opendata.html) project.
 
-{{% notice note %}}
-Automatically published and hosted thanks to [Netlify](https://www.netlify.com/). Read more about [Automated HUGO deployments with Netlify](https://www.netlify.com/blog/2015/07/30/hosting-hugo-on-netlifyinsanely-fast-deploys/)
-{{% /notice %}}
+##### You can download the Autumn Data School program from [here 👇](https://www.rs.undp.org/content/dam/serbia/undp_rs_Program%20Radionice_Open%20Data-1.pdf)
+
+#### In partnership with
+
+[![Red variant](/images/UNDP_SR.png?width=7.5pc)](http://www.rs.undp.org)
+
+-----------------------------
+© 2019 Tatjana Kecojevic
+

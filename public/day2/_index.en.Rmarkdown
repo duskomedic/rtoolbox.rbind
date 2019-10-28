@@ -1,0 +1,210 @@
+---
+date: "2016-04-09T16:50:16+02:00"
+title: Data Visualisation
+output: 
+  learnr::tutorial
+weight: 2
+---
+
+Most of you, if not all, would be familiar with creating the graphs in Excel. Software such as Excel has a predefined set of menu options for plotting the data that is the focus of the end result: "pretty graph". Those types of menus assume data to be in a format ready for plotting, which when you get raw data is hardly the case. You are probably going to have to organse and wrangle your data to make it ready for effective visualisation. 
+
+### Grammar of Graphics
+
+The [grammer of graphics](http://vita.had.co.nz/papers/layered-grammar.html) enables a structured way of creating a plot by adding the components as layers, making it look effective and attractive. 
+
+It enables you to specify building blocks of a plot and to combine them to create the graphical display that you want. There are 8 building blocks:
+
+- data
+
+- aesthetic mapping
+
+- geometric object
+
+- statistical transformations
+
+- scales
+
+- coordinate system
+
+- position adjustments
+
+- faceting
+
+Imagine talking about baking a cake and adding a cherry on the top. 🎂🍒 This philosophy has been built into the [`ggplot`](https://ggplot2.tidyverse.org/reference/) package by [Hadle Wickham](http://hadley.nz) for creating elegant and complex plots in R.
+
+
+#### ggplot2
+
+Learning how to use the `ggplot2` package can be challenging, but the results are highly rewarding and just like R itself, it becomes easier the more you use it.
+
+The best way to master it is by practising. So let us create a first `ggplot`. 😃
+What we need to do is the following:
+
+1. Wrangle the data in the format suitable for visualisation.
+2. "Initialise" a plot with `ggplot()`
+3. Add layers with `geom_` functions
+
+```{r, echo = TRUE, fig.height = 3, fig.width = 8, fig.align = 'center'}
+# load the packages
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(gapminder))
+suppressPackageStartupMessages(library(ggplot2))
+
+# wrangle the data (Can you remember what this code do?)
+gapminder_pipe <- gapminder %>%
+  filter(continent == "Europe" & year ==  2007) %>%
+  mutate(pop_e6 = pop / 1000000)
+
+# plot the data
+ggplot(gapminder_pipe, aes(x = pop_e6, y = lifeExp)) +
+  geom_point(col ="red")
+```
+
+{{% notice tip %}}
+🤓💡 **Tip**: You can use the following code template to make graphs with **ggplot2**:
+{{% /notice %}}
+
+```
+ggplot(data = <DATA>, (mapping = aes(<MAPPINGS>)) + <GEOM_FUNCTION>()
+```
+
+##### <span style="color:red">ggplot()</span> gallery
+Run the following code to see what graphs it will produce.
+
+```{r, echo = TRUE, eval = FALSE, warnings=FALSE, message=FALSE}
+ggplot(data = gapminder, mapping = aes(x = lifeExp), binwidth = 10) +
+  geom_histogram()
+#
+ggplot(data = gapminder, mapping = aes(x = lifeExp)) +
+  geom_density()
+#
+ggplot(data = gapminder, mapping = aes(x = continent, color = continent)) +
+  geom_bar()
+#
+ggplot(data = gapminder, mapping = aes(x = continent, fill = continent)) +
+  geom_bar()
+```
+
+##### 🗣👥 Confer with your neighbours: 
+Does the life expectancy depend upon the population size?
+
+`y = b_0 + b_1 x + e`
+
+Run this code in your console to fit the model `pop` vs `lifeExp`.
+
+Pay attention to spelling, capitalization, and parentheses!
+```{r, echo = TRUE, eval=FALSE, warning= FALSE}
+m1 <- lm(gapminder_pipe$lifeExp ~ gapminder_pipe$pop_e6)
+summary(m1)
+```
+
+**Can you answer the question using the output of the fitted model?**
+```{r, echo = TRUE, warning= FALSE}
+m1 <- lm(gapminder_pipe$lifeExp ~ gapminder_pipe$pop_e6)
+summary(m1)
+```
+
+##### 👉 Practice ⏰💻: Use gapminder data.
+
+Does the life expectancy depend upon the GDP per capita?
+
+1) Have a glance at the data. (tip: `sample_n(df, n)`)
+
+2) Produce a scatter plot: what does it tell you?
+
+3) Fit a regression model: is there a relationship? How strong is it?
+Is the relationship linear? What conclusion(s) can you draw?
+
+4) What are the other questions you could ask; could you provide the answers to them?
+
+##### 😃🙌 Solution: code Q1; sample
+```{r, echo = TRUE, warning= FALSE}
+sample_n(gapminder, 30)
+```
+
+##### 😃🙌 Solution: code Q2; Plot the data;
+```{r, echo = TRUE, warning= FALSE, fig.height = 4, fig.width = 8, fig.align = 'center'}
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
+    geom_point(alpha = 0.2, shape = 21, fill = "blue", colour="black", size = 5) +
+  geom_smooth(method = "lm", se = F, col = "maroon3") +
+  geom_smooth(method = "loess", se = F, col = "limegreen") 
+```
+
+##### 😃🙌 Solution: code Q3; simple regression model
+```{r, echo = TRUE, warning= FALSE}
+my.model <- lm(gapminder_pipe$lifeExp ~ gapminder_pipe$gdpPercap)
+summary(my.model)
+```
+
+#### Adding layers to your <span style="color:red">`ggplot()`</span>
+
+```{r, echo = FALSE, warnings=FALSE, message=FALSE, fig.height = 6, fig.width = 8, fig.align = 'center'}
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp, col = "red")) +
+      geom_point(alpha = 0.2, shape = 21, fill = "blue", colour="black", size = 5) +
+  geom_smooth(method = "lm", se = F, col = "maroon3") +
+  geom_smooth(method = "loess", se = F, col = "limegreen") +
+  labs (title= "Life Exp. vs. Population Size", 
+        x = "population", y = "Life Exp.") +
+  theme(legend.position = "none", 
+        panel.border = element_rect(fill = NA, 
+                                    colour = "black",
+                                    size = .75),
+        plot.title=element_text(hjust=0.5)) +
+  geom_text(x = 80000, y = 125, label = "regression line", col = "maroon3") +
+  geom_text(x = 90000, y = 75, label = "smooth line", col = "limegreen")
+
+```
+#### 💪 There is a challenge: 
+
+- `dplyr`'s `group_by()` function enables you to group your data. It allows you to create a separate df that splits the original df by a variable.
+
+- `boxplot()` function produces boxplot(s) of the given (grouped) values.
+
+Knowing about `group_by()` and `boxplot()` function, coud you compute the median life expectancy for year 2007 by continent and visualise your result?
+
+##### 😃🙌 Solution: code
+
+Let us look at the median life expectancy for each continent
+```{r, echo = TRUE}
+gapminder %>%
+    group_by(continent) %>%
+    summarise(lifeExp = median(lifeExp))
+```
+
+**We are lucky that we live in Serbia, ie. Europe!!!** 😅
+
+##### 😃🙌 Solution: graph 
+
+```{r, echo = FALSE, warnings=FALSE, message=FALSE, fig.height = 6, fig.width = 8, fig.align = 'center'}
+# visualise the information
+library("ggplot2")
+ggplot(gapminder, aes(x = continent, y = lifeExp)) +
+  geom_boxplot(outlier.colour = "hotpink") +
+  geom_jitter(position = position_jitter(width = 0.1, height = 0), alpha = .2) +
+  labs (title= "Life Exp. vs. Continent", 
+        x = "Continent", y = "Life Exp.") +
+  theme(legend.position = "none", 
+        panel.border = element_rect(fill = NA, 
+                                    colour = "black",
+                                    size = .75),
+        plot.title=element_text(hjust=0.5))
+```
+
+##### useful links: 
+
+[tidyverse, visualization, and manipulation basics](https://www.rstudio.com/resources/webinars/tidyverse-visualization-and-manipulation-basics/)
+
+[Introduction to R graphics with ggplot2](http://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html#introduction)
+
+[`gglopt` cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
+
+[from Data to Viz](https://www.data-to-viz.com/)
+
+[An example from Financial Times](http://johnburnmurdoch.github.io/slides/r-ggplot/#/)
+
+[BBC Visual and Data Journalism cookbook for R graphics](https://bbc.github.io/rcookbook/)
+
+<http://johnburnmurdoch.github.io/slides/r-ggplot/#/>
+
+-----------------------------
+© 2019 Tatjana Kecojevic
