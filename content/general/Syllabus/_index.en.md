@@ -4,7 +4,7 @@ title: Indicative Syllabus
 weight: 3
 ---
 
-### Day 1
+### Module 1
 **RStudio IDE; R language; Data classification and summary statistics; Introduction to Visualization Principles**
 
 In this module you will set up the working environment and pass the first big hurdle of importing data and you will learn how to do it in the proper way with a command in R. You will learn how to use RStudio IDE for R from its installation to RStudio customisation and files navigation. You will learn good habits and practice of workflow in an R project. Once you get comfortable with the RStudio working environment you will move on to mastering the key features of R language and you will be introduced to fundamental principles behind effective data visualisation. 
@@ -19,7 +19,7 @@ In this module you will set up the working environment and pass the first big hu
 * Descriptive summary statistics
 * Basic principles of effective data visualisation
 
-### Day 2
+### Module 2
 
 **Data Wrangling and Visualising Data**
 
@@ -34,7 +34,7 @@ In this module you will learn some of the fundamental techniques for data explor
 * about the philosophy that guides ggplot2: grammatical elements (layers) and aesthetic mappings.
 * visualising data with maps
 
-### Day 3
+### Module 3
 
 **Automated Reporting and Introduction to Shiny**
 
