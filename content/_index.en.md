@@ -20,15 +20,8 @@ Let us take boring flat data and bring it to life through visualization."
 
 > **R** together with **RStudio** is the best data science tool! It is open source and free software that is available to anyone with a desire to discover, learn, explore, experience, expand and share the algorithms of their data science journey.  
 
-##### To book your place go here [👉📩](https://undpserbia.typeform.com/to/MSQ8So)
+##### To book your place go here [👉📩](https://sisteranalyst.org)
 
-This workshop is a part of **The Autumn Data School program** organised as a part of the [Open Data - Open Opportunities](https://www.rs.undp.org/content/serbia/en/home/projects/opendata.html) project.
-
-##### You can download the Autumn Data School program from [here 👇](https://www.rs.undp.org/content/dam/serbia/undp_rs_Program%20Radionice_Open%20Data-1.pdf)
-
-#### In partnership with
-
-[![Red variant](/images/UNDP_SR.png?width=7.5pc)](http://www.rs.undp.org)
 
 -----------------------------
 © 2019 Tatjana Kecojevic
