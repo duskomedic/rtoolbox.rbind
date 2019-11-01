@@ -10,7 +10,7 @@ weight: 3
 
 "A well-designed and maintained website can be extremely helpful for other people to know you, and you do not need to wait for suitable chances at conferences or other occasions to introduce yourself in person to other people. On the other hand, a website is also highly useful for yourself to keep track of what you have done and thought. Sometimes you may go back to a certain old post of yours to relearn the tricks or methods you once mastered in the past but have forgotten." [Yihui Xie](https://yihui.name/en/)[blogdown: Creating Websites with R Markdown](https://bookdown.org/yihui/blogdown/)
 
-[our podcast](https://anchor.fm/tatjana-kecojevic/episodes/test-e8h1qr)  
+ 
 
 In this section you will learn how to create static website using [HUGO](https://gohugo.io) and [R Markdown](https://bookdown.org/yihui/rmarkdown/)
 
