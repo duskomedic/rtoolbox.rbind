@@ -29,7 +29,7 @@ home = ["HTML"]
 [Languages.en]
 title = "Rtoolbox"
 weight = 1
-languageName = "English"
+languageName = "BSHC"
 
 [[Languages.en.menu.shortcuts]]
 name = "<i class='fab fa-fw fa-github'></i>GitHub"

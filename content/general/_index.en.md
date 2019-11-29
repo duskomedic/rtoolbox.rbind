@@ -5,19 +5,18 @@ title: About the course
 weight: 1
 ---
 
-About the Course
+O kursu
 
-##### This course is designed to give you an appreciation of R programming as a tool for data exploration. It focuses on packages that will help you do exploratory data analysis, visualisation and communication in a dynamic and reproducible manner.
+##### Kurs je osmišljen tako da vam približi programiranje u R-u, alatu za istraživanje podataka. Kurs je podeljen u nekoliko paketa koji će vam pomoći da analizirate podatke, grafički ih predstavite (vizuelizujete) i komunicirate ih na reproduktibilan (ponovljiv) i dinamičan način.
 
 
-#### If you would like to:
+#### Ukoliko želite da:
 
-* Discover how to find and access data and prepare it for exploration and visualistion
-* Learn to explore, visualize, and analyse data in a dynamic and reproducible manner
-* Gain experience in data wrangling, exploratory data analysis and data visualisation, and effective communication of results
-* Work on case studies inspired by real problems and based on **open data**
+* Saznate kako da pronađete i pristupite podacima, te, da ih spremite za obradu i vizuelizaciju,
+* Naučite kako da istražite, vizuelizujete i analizirate podatke na reproduktibilan (ponovljiv) i dinamičan način,
+* •	Radite na studiji slučaja inspirisanoj na stvarnim problemima i zasnovanim na **otvorenim podacima**.
 
-#### then this course is for you! 😀
+#### Onda je ovaj kurs za vas! 😀
 
 ![Red variant](/general/images/data_image.jpg?width=40pc)
 

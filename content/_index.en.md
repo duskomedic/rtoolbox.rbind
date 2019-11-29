@@ -7,20 +7,19 @@ title: R Toolbox
 
 ![Red variant](/images/Rtoolbox.jpg?width=40pc)
 
-> "The greatest value of a picture is when it forces us to notice what we never expected to see... 
-Let us take boring flat data and bring it to life through visualization."
+> "Najveća vrednost slike je kada nas prisili da primetimo ono što nikad nismo očekivali da vidimo ... Uzmimo dosadne nepregledne podatke i oživimo ih vizualizacijom."
 
 > [John Tukey](https://en.wikipedia.org/wiki/John_Tukey)
 
 ![Red variant](/images/john_tukey.jpg?width=35pc)
 
-> **Open data** is data in digital format that is made available to everyone. To access it without the need for negotiation or obstruction at any time is a fundamental feature of the democratisation of digital data. In order for this to happen it requires public authorities to make data available to everyone, in particular those with the necessary skills and knowledge to reveal and interpret the story within complex details. A greater understanding of data empowers citizens to make more informed decisions in processes that directly affect their lives.
+> **Otvoreni podaci** su podaci u digitalnom formatu predstavljeni tako da budu dostupni svima. Njima se pristupa bez ikakvog posredovanja ili eventualne opstrukcije u bilo koje doba, a upravo to čini demokratizaciju u digitalnom dobu. Da bi se ova demokratizacija ostvarila neophodno je da javne službe omoguće podatke dostupnim svima, posebno onima koji imaju neophodna iskustva i znanja da kompleksne detalje iz podataka tumače i interpretiraju u priče. Veće razumevanje podataka osnažuje građane da donose odluke na informacijama koje su bitne za procese koji direktno utiču na njihov život.
 
 ![Red variant](/images/ML.jpg?width=40pc)
 
-> **R** together with **RStudio** is the best data science tool! It is open source and free software that is available to anyone with a desire to discover, learn, explore, experience, expand and share the algorithms of their data science journey.  
+> **R** zajedno sa **RStudiom**, najbolji je alat za nauku o podacima! To je otvoren izvor i besplatan softver koji je dostupan svima koji žele da otkriju, nauče, istraže, iskuse, prošire i razmene algoritme svog istraživanja podataka.  
 
-##### To book your place go here [👉📩](https://sisteranalyst.org)
+##### Ukoliko želite da rezervišete svoje mesto, posetite našu internet stranicu [👉📩](https://sisteranalyst.org)
 
 
 -----------------------------
