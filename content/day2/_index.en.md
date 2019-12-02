@@ -1,25 +1,25 @@
 ---
 chapter: true
 pre: <b>3. </b>
-title: Module 2
+title: Modul 2
 weight: 3
 ---
 
-### Module 2
+### Modul 2
 
 
-## Data Wrangling and Visualising Data
+## Organizacija i vizuelizacija podataka
 
-##### In this module you will learn some of the fundamental techniques for data exploration and transformation through the use of the dplyr package. This tidy verse package helps make your exploration intuitive to write and easy to read. You will learn dplyr’s key verbs for data manipulation that will help you uncover and shape the information within the data that is easy to turn into informative plots. Through the use of grammar of graphics plotting concepts implemented in the ggplot2 package, you will be able create meaningful exploratory plots. You will develop understanding about the way in which you should be able to think about necessary data transformations and summaries that can lead to an informative visualisation. You will learn how to create static maps and interactive maps with geolocated data by using the most popular packages in the R GIS community: simple features and leaflet.
+##### U ovom modelu naučićete neke od osnovnih tehnika za istraživanje i transformaciju podataka korišćenjem dplyr paketa. Ovaj paket pomoći će vam da vaše istraživanje bude intuitivno za pisanje i lako za čitanje. Naučićete ključne komande iz ovog paketa koji će vam pomoću u upravljanju sa podacima koji će vam pomoći da otkrijete i oblikujete informacije unutar podataka tako da ih lako pretvorite u informativne parcele. Korišćenjem gramatike grafičkih koncepata za crtanje ggplot2 paketa, moći ćete kreirati smislene istraživačke priče. Razvićete razumevanje o načinu rezonovanja za uspešnu vizuelizaciju podataka. Naučićete da napravite statičke i interaktivne mape sa geo-pozicioniranim podacima upotrebom najpopularnijih paketa R jezika u GIS zajednici.
 
-#### What you will learn:
+#### Šta ćete naučiti:
 
-* dplyr’s key data manipulation verbs: select, mutate, filter, arrange and summarise/summarize
-* to aggregate data by groups
-* to chain data manipulation operations using the pipe operator
-* to specify ggplot2 building blocks and combine them to create graphical display
-* about the philosophy that guides ggplot2: grammatical elements (layers) and aesthetic mappings.
-* visualising data with maps
+* Da upravljate dplyr paketom: da selektujete, menjate, sabirate, uređujete i filtrirate podatke,
+* Da spojite podatke po grupama,
+* Da izvedete lančane operacije upravljanja podacima upotrebom operatora „pipe“,
+* Da odredite funkcionalne blokove i kombinujete ih za grafički prikaz paketom ggplot2,
+* Filozofiju upotrebe paketa ggplot2: njegove gramatičke elemente (lejere) i estetsko mapiranje,
+* Vizuelizujete podatke sa mapama.
 
 -----------------------------
 © 2019 Tatjana Kecojevic
