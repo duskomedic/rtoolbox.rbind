@@ -14,54 +14,54 @@ Ovaj kurs donosi vam pregled ključnih koncepata za sprovođenje efikasnog nauč
 
 Kurs počinje sa upoznavanjem osnovnih konceptima **R** jezika: osnovnom upotrebom **R** konzole u integrisanom razvojnom okruženju [**RStudio**](https://www.rstudio.com) IDE, postavljanjem i uvozom podataka, njihovom čuvanju i uopšteno o radu u okruženju R projekta. Nakon toga, upoznaće vas sa osnovnim konceptima statističke analize za koju se može smatrati da je kompleksna, ali na način da vama bude pristupačnija objašnjavajući je kroz grafikone i vizuelizaciju podataka. Formalnu apstraktnu prirodu statistike demistifikovaćemo vizualizacijom njene primene, zbog čega smo fokus usmerili na izradu odgovarajuće vizuelizacije datih problema analize podataka. Na kraju kursa, nakon što polaznici shvate svoje podatke koje analiziraju, oni će upotrebiti R na interaktivan i reproduktibilan (ponovljiv) način koji će sažeti priču o podacima, i naravno, ih predstaviti kroz kreiranje [RMarkdown](https://rmarkdown.rstudio.com/) dokumenata i  [Shiny](https://shiny.rstudio.com) web aplikacija. . Kurs će se završiti kreiranjem internet stranica koje će te moći koristiti na vašim portalima ili blogovima, a koje će vam prestaviti vaše priče uz pomoć paketa [HUGO](https://gohugo.io/) i [blogdown](https://bookdown.org/yihui/blogdown/).
 
-Version control has become an essential tool for keeping track when working on DS projects, as well as collaborating. **RStudio** supports working with **Git**, an open source distributed version control system, which is easy to use when combined with **GitHub**, a web-based **Git** repository hosting service. We will introduce you to **GitHub** and you’ll become acquainted with good practice when incorporating the use of **Git** into your **R** project workflow. 
+Kontrola izdanja (version control) postao je nezamenjiv alat za čuvanje vaših verzija istraživačkih projekata, ali i alat koji vam omogućuje saradnju sa drugima. Sam **RStudio** podržava rad sa **Git-om**, otvorenim izvorom za sistem kontrole vaših izdanja, pogotovo u kombinaciji sa **GitHub-om**, internet uslugom za čuvanje vaših **Git** repozitorija. U nastavku upoznaćemo vas sa **GitHub-om** i sa dobrom praksom da uključite upotrebu **Git-a** u svoj **R** projekat. 
 
-There is a demand for open and transparent data sources by governments and civic groups as a means to improve the lives of citizens. Together we will investigate the importance of open source data and we will identify where open source data can be readily found accross the Internet. You will work on case studies inspired by real problems and based on **open data**. 
+Svakodnevno, potražnja za otvorenim i transparentim izvorima podataka raste, za njih su jednako zainteresovani kako vlade tako i građani kako bi poboljšali svoje životne uslove. Zajedno ćemo istražiti važnost otvorenog koda i identifikovaćemo gde se podaci otvorenog koda mogu lako naći na internetu. Radićete na studijama slučajeva koji su inspirasani stvarnim problemima i na onima koji su nam dostupni putem **otvorenih podataka**. 
 
-## Objectives:
+## Ciljevi:
 
--	To learn how to access and prepare data for the analysis 
+-	Da naučite kako pristupiti i pripremiti podatke za analizu. 
 
--	To introduce the basic principles behind effective data visualisation
+-	Da upoznate osnovne principe efektivne vizuelizacije podataka.
 
--	To learn essential explanatory techniques for summarising data
+-	Da naučite osnovne tehnike za sumiranje podataka.
 
--	To produce explanatory data visualisations providing insight into what could be found within the data
+-	Da vizuelizujete podatke tako da vam ona pomogne u pronalaženju onoga što je značajno za objašnjenje podataka.
 
--	To utilise R’s library of tools to visualise geospatial problems
+-	Da upotrebljavate R biblioteke alata da vizuelizujete geoprostorne probleme.
 
--	To design reproducible reports by automating the reporting process
+-	Da dizajnirate ponovljiva izveštavanja automatizovanjem procesa izveštavanja.
 
--	To share the results of analysis as interactive, eye-catching web apps that are friendly to non-programmers.
+-	Da delite rezultate analize kao interaktivne, privlačne veb aplikacije koje su prijateljski ne-programerima.
 
-- To be familiar with R/RStudio’s data handling facilities that will expand the range of data analysis problems that can be effectively analysed.
+- Da se upoznate sa mogućnostima R/R studija za obradu podataka koje će vam proširiti područje problema analize podataka koje će uspešno moći analizirati.
 
 
-## How the course works
+## Kako je organizovan kurs
 
-The material is structured within 3 daily modules. Each module is a three and a half hour long session split into 2½ hours hands-on interactive student/teacher workshops with the last hour reserved for questions and discussions.
+Kurs je organizovan u tri dnevna modula. Svaki modul traje ukupno po tri i po sata, a podeljen je na dva i po sata interaktivne radionice i na poslednji sat koji je rezervisan za pitanja i diskusiju.
 
-The course will be taught by [Tatjana Kecojevic](https://www.linkedin.com/in/tatjana-kecojevic-803704143/) and [Dusko Medic](https://www.linkedin.com/in/duskomedic/) and will cover various related topics through appropriate case studies, presentations and readings. The conceptual models come to life when practice becomes reality during the hands-on taught sessions, through the application of **R**. Students are then expected to use their own time to practice and hone acquired data handling expertise acquired during the taught sessions.
+Kurs vode [Tatjana Kecojevic](https://www.linkedin.com/in/tatjana-kecojevic-803704143/) i [Dusko Medic](https://www.linkedin.com/in/duskomedic/) koji će pokriti različite teme kroz odgovarajuće studije slučaja, prezentacije i čitanja. Konceptualni modeli zaživeće kroz praktičnu primenu **R-a**, a od polaznika se očekuje da nastave da vežbaju i ponavljaju znanja koja su usvojila na kursu.
 
-Students are expected to participate fully in all of these delivery modes, but in particular are expected to have attempted any pre-set work and come fully prepared to discuss any problems encountered and debate the ideas and any issues raised. 
+Od polaznika se očekuje da prođu sve delove kursa bez izuzetka, a posebno da pokušaju da reše bilo koji unapred predstavljen zadatak i da budu spremni da razgovaraju sa problemima sa kojim se susreću i da raspravljaju o idejama i bilo kojim postavljenim pitanjima. 
 
-{{% notice tip %}}We recommend you complete each of the following before the end of each module:
+{{% notice tip %}}Na kraju svakog modula, preporučujemo da uradite sledeće:
 
-* Reading and hand-outs/exercises
-* Participation in the discussions
-* Exercises covering concepts from tutorials and/or reading 
+* Pročitate preporučenu literaturu i prođete kroz postavljene zadatke,
+* Učestvujete u diskusiji,
+* Dodatno uvežbavate naučeno iz preporučenih tutorijala i izvora.
 {{% /notice %}}
 
 
-## Who can enrol
+## Za koga je ovaj kurs
 
-This course is designed for anyone who needs to communicate information to someone using data. It will benefit anyone who has the curiosity and desire to enter the realm of data exploration. We will seek to make sense of the world of data and learn effective and attractive ways to visually analyse and communicate related information. With the knowledge gained on this course, you will be ready to undertake your very first explanatory data analysis.
+Ovaj kurs namenjen je svima koji nameravaju da komuniciraju koristeći podatke. Biće od koristi svima koji su zainteresovani i imaju želju da uđu u svet analize podatka. Trudićemo se da shvatite ovaj svet i da vas naučimo da efikasno i na atraktivan način vizuelizujete svoje analize i uspešno ih komunicirate. Sa znanjem stečenim na ovom kursu, bićete spremni da otpočnete svoju prvu analizu podataka.
 
-**Data Science** is not simply fashionable jargon, but rather a discipline with a set of tools that empower data enriched living, so whatever industry you’re in, this is relevant to you!
+**Nauka o podacima** nije samo reč koja je u trendu, već disciplina koja sadrži alate koji osnažuju svakodnevni život raznim podacima, tako da bez obzira iz kog sektora ili industrije dolazite, kurs će vam biti relevantan!
 
-Prior experience is not required.
+Za uspešno pohađanje kursa, prethodno iskustvo nije neophodno.
 
-The course will be delivered in English and Serbian!
+Kurs će biti održavan na BHSC i engleskom jeziku!
 
 
 -----------------------------
