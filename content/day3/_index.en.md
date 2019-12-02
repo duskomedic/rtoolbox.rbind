@@ -1,27 +1,27 @@
 ---
 chapter: true
 pre: <b>4. </b>
-title: Module 3
+title: Modul 3
 weight: 4
 ---
 
-### Module 3
+### Modul 3
 
-## Automated Reporting and Introduction to Shiny
+## Automatizovano izveštavanje i uvod u Shiny
 
-##### In this module you will learn how to turn your analyses into high quality documents and presentations with R Markdown. You will be designing reproducible reports by automating the reporting process and learning how to take a modern approach to telling your data story. With the knowledge from this lesson you will be able to create reports straight from your R code allowing you to document your analysis and its results as an HTML, pdf, slideshow or Microsoft Word document. After you gain fundamental knowledge of markdown and knitr, you will learn to create interactive web-graphics using Shiny R package. You will end the course by learning to design a static website that will enable you to post your data science story telling to a wider audience.
+##### U ovom modelu naučićete kako da pretvorite svoje analize u visokokvalitetne dokumente i prezentacije pomoću paketa R Markdown-a. Dizajniraćete ponovljive izveštaje automatizacijom procesa izveštavanja, učeći kako da koristite moderan pristup kazivanju priča sa podacima. Sa znanjem iz ovog modula, pomoću R koda kreiraćete izveštaje i dokumentovati ih kao HTML, pdf ili Microsoft vord dokumente. Na kraju, naučićete i da kreirate interaktivnu veb-grafiku upotrebom Shiny R paketa. Završićete kurs tako što ćete naučiti da dizajnirate statički veb sajt koji će vam omogućiti da objavite svoje priče široj publici.
 
 
-#### What you will learn:
+#### Šta ćete naučiti:
 
-*	Authoring R Markdown Reports
-*	Embedding R Code
-*	knitr to compile dynamic R code
-*	LaTex to incorporate mathematical expressions
-*	create dynamic graphics using Shiny‘s reactive features
-* build and deploy Shiny app
-*	Building a website using HUGO and Blogdown
-*	Deploying the web project using [GitHub](https://github.com/) and [Netlify](https://www.netlify.com/)
+*	Da kreirate R Markdown izveštaje,
+*	Embedujete R kod,
+*	Paket knitr da kompajlirate dinamički R kod,
+*	LaTex da koristite matematičke izraze,
+*	Kreirate dinamičku grafiku upotrebom Shiny reaktivne karakteristike,
+* Da izradite i korisitite Shiny aplikaciju,
+*	Izradite veb stranicu upotrebom paketa HUGO i Blogdown
+*	Postavite vaše veb projekte upotrebom [GitHub-a](https://github.com/) i [Netlify-a](https://www.netlify.com/)
 
 -----------------------------
 © 2019 Tatjana Kecojevic
