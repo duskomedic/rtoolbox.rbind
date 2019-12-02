@@ -1,42 +1,42 @@
 ---
 date: "2016-04-09T16:50:16+02:00"
-title: Install R/RStudio
+title: Instalacija R/Rstudija
 menuTitle: "Install R"
 weight: 2
 ---
 
-## Install R
+## Instalacija R-a
 
-To begin our journey to data science in R we need to install and make sure we can run it.
+Da otpočeli svoj rad na podacima sa jezikom R potrebno je da ga instalirate i pokrenete.
 
-We will start by installing R first and then RStudio. The analogy we can use here is that R is an airplane and R Studio is its airport.
+Za početak potrebno je prvo da instaliramo R jezik a zatim i R studio. Za analogiju možemo R predstaviti kao avio, a R studio kao aerodrom.
 
 * R homepage - <http://www.r-project.org>
 * CRAN Mirrors - <http://cran.r-project.org>
 
 ![Red variant](/day1/installR/images/CRAN.png?width=40pc)
 
-Run the installation
+Pokrenite instalaciju!
 
 ![Red variant](/day1/installR/images/InstallR.png?width=40pc)
 
 
-Your R Counsole should look something like this:
+Vaša R konzola treba da izgleda kao na slici dole:
 
 ![Red variant](/day1/installR/images/RConsole.png?width=30pc)
 
-## Install RStudio
+## Instalacija R Studija
 
-RStudio is available in open source and commercial editions and runs on the desktop (Windows, Mac, and Linux).
+RStudio je dostupan u dve verzije, kao otvoreni i besplatni izvor i kao komercijalno izdanje i može da se pokretne sa vašeg desktopa bez obzira da li radite u operativnom sistemu Windows, Mac ili Linux.
 
 RStudio Desktop - <http://www.rstudio.com>
 
 ![Red variant](/day1/installR/images/RStudioIDE.png?width=50pc)
 
-RStudio is an integrated development environment (IDE) for R. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and work-space management. You can check its features by visiting [RSTudio website](https://www.rstudio.com/products/rstudio/features/).
+RStudio je integrisano razvojno okruženje (IDE) za R. On uključuje konzolu, editor sintakse jezika i podržava izvršavanje R koda, ali i alata za crtanje, istoriju projekta, ispravljanje grešaka i upravljanje okruženjem. Više o R studiju možete naći na veb stranici [RSTudio website](https://www.rstudio.com/products/rstudio/features/).
 
 {{% notice note %}}
-We recomend you check regularly for R/Rstudio updates.
+Preporučujemo vam da redovno osvežavate nove verzije R ili R studija.
 {{% /notice %}}
 
 -----------------------------
