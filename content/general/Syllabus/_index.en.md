@@ -1,56 +1,56 @@
 ---
 date: "2016-04-09T16:50:16+02:00"
-title: Indicative Syllabus
+title: Indikativan nastavni program
 weight: 3
 ---
 
-### Module 1
-**RStudio IDE; R language; Data classification and summary statistics; Introduction to Visualization Principles**
+### Modul 1
+**Integrisano razvojno okruženje R studija (RStudio IDE); R jezik; Klasifikacija podataka i zbirna statistika; Uvod u principe vizuelizacije**
 
-In this module you will set up the working environment and pass the first big hurdle of importing data and you will learn how to do it in the proper way with a command in R. You will learn how to use RStudio IDE for R from its installation to RStudio customisation and files navigation. You will learn good habits and practice of workflow in an R project. Once you get comfortable with the RStudio working environment you will move on to mastering the key features of R language and you will be introduced to fundamental principles behind effective data visualisation. 
+U ovom modulu postavićete radno okruženje i prečićete kroz prvu veliku stvar za analizu, uvoz podataka, koji će te uraditi na pravilan način pomoću komandi u R-u. Naučićete kako da koristite integrisano razvojno okruženje R studija, instaliraćete ga i naučiti da ga koristite. Naučićete dobre prakse i kroz vežbu naučićete da radite R projekte. Kada postavite R radno okruženje, R studio, savladaćete najvažnije principe R jezika i upoznaćete se sa osnovnim principima vizuelizacije podataka. 
 
-**What you will learn:**
+**Šta ćete naučiti:**
 
-* Basic use of R/RStudio console
-* Good habits for workflow
-* Inputting and importing different data types
-* R environment: record keeping
-* Data classification
-* Descriptive summary statistics
-* Basic principles of effective data visualisation
+* Osnovnu upotrebu R i konzole R studija,
+* Dobre prakse za rad u konzoli,
+* Postavljanje i uvoz različitih vrsta podataka,
+* R okruženje: čuvanje podataka,
+* Klasifikaciju podataka,
+* Deskriptivnu statistiku,
+* Osnovne principe efikasne vizuelizacije podataka.
 
-### Module 2
+### Modul 2
 
-**Data Wrangling and Visualising Data**
+**Organizacija i vizuelizacija podataka**
 
-In this module you will learn some of the fundamental techniques for data exploration and transformation through the use of the dplyr package. This tidy verse package helps make your exploration intuitive to write and easy to read. You will learn dplyr’s key verbs for data manipulation that will help you uncover and shape the information within the data that is easy to turn into informative plots. Through the use of grammar of graphics plotting concepts implemented in the ggplot2 package, you will be able create meaningful exploratory plots. You will develop understanding about the way in which you should be able to think about necessary data transformations and summaries that can lead to an informative visualisation. You will learn how to create static maps and interactive maps with geolocated data by using the most popular packages in the R GIS community: simple features and leaflet.
+U ovom modelu naučićete neke od osnovnih tehnika za istraživanje i transformaciju podataka korišćenjem dplyr paketa. Ovaj paket pomoći će vam da vaše istraživanje bude intuitivno za pisanje i lako za čitanje. Naučićete ključne komande iz ovog paketa koji će vam pomoću u upravljanju sa podacima koji će vam pomoći da otkrijete i oblikujete informacije unutar podataka tako da ih lako pretvorite u informativne parcele. Korišćenjem gramatike grafičkih koncepata za crtanje ggplot2 paketa, moći ćete kreirati smislene istraživačke priče. Razvićete razumevanje o načinu rezonovanja za uspešnu vizuelizaciju podataka. Naučićete da napravite statičke i interaktivne mape sa geo-pozicioniranim podacima upotrebom najpopularnijih paketa R jezika u GIS zajednici.
 
-**What you will learn:**
+**Šta ćete naučiti:**
 
-* dplyr’s key data manipulation verbs: select, mutate, filter, arrange and summarise/summarize
-* to aggregate data by groups
-* to chain data manipulation operations using the pipe operator
-* to specify ggplot2 building blocks and combine them to create graphical display
-* about the philosophy that guides ggplot2: grammatical elements (layers) and aesthetic mappings.
-* visualising data with maps
+* Da upravljate dplyr paketom: da selektujete, menjate, sabirate, uređujete i filtrirate podatke,
+* Da spojite podatke po grupama,
+* Da izvedete lančane operacije upravljanja podacima upotrebom operatora „pipe“,
+* Da odredite funkcionalne blokove i kombinujete ih za grafički prikaz paketom ggplot2,
+* Filozofiju upotrebe paketa ggplot2: njegove gramatičke elemente (lejere) i estetsko mapiranje,
+* Vizuelizujete podatke sa mapama.
 
-### Module 3
+### Modul 3
 
-**Automated Reporting and Introduction to Shiny**
+**Automatizovano izveštavanje i uvod u Shiny**
 
-In this module you will learn how to turn your analyses into high quality documents and presentations with R Markdown. You will be designing reproducible reports by automating the reporting process, learning how to take a modern approach to telling your data story. With the knowledge from this lesson you will be able to create reports straight from your R code allowing you to document your analysis and its results as an HTML, pdf, slideshow or Microsoft Word document. After you gain fundamental knowledge of markdown and knitr, you will learn to create interactive web-graphics using Shiny R package. You will end the course by learning to design a static website that will enable you to post your data science story telling to a wider audience.
+U ovom modelu naučićete kako da pretvorite svoje analize u visokokvalitetne dokumente i prezentacije pomoću paketa R Markdown-a. Dizajniraćete ponovljive izveštaje automatizacijom procesa izveštavanja, učeći kako da koristite moderan pristup kazivanju priča sa podacima. Sa znanjem iz ovog modula, pomoću R koda kreiraćete izveštaje i dokumentovati ih kao HTML, pdf ili Microsoft vord dokumente. Na kraju, naučićete i da kreirate interaktivnu veb-grafiku upotrebom Shiny R paketa. Završićete kurs tako što ćete naučiti da dizajnirate statički veb sajt koji će vam omogućiti da objavite svoje priče široj publici.
 
 
-**What you will learn:**
+**Šta ćete naučiti:**
 
-*	Authoring R Markdown Reports
-*	Embedding R Code
-*	knitr to compile dynamic R code
-*	LaTex to incorporate mathematical expressions
-*	create dynamic graphics using Shiny‘s reactive features
-* build and deploy Shiny app
-*	Building a website using HUGO and Blogdown
-*	Deploying the web project using [GitHub](https://github.com/) and [Netlify](https://www.netlify.com/)
+*	Da kreirate R Markdown izveštaje,
+*	Embedujete R kod,
+*	Paket knitr da kompajlirate dinamički R kod,
+*	LaTex da koristite matematičke izraze,
+*	Kreirate dinamičku grafiku upotrebom Shiny-a,
+* Da izradite i koristite Shiny aplikaciju,
+*	Izradite veb stranicu upotrebom paketa HUGO i Blogdown,
+*	Postavite vaše veb projekte upotrebom [GitHub](https://github.com/) i [Netlify](https://www.netlify.com/)
 
 
 -----------------------------
