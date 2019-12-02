@@ -1,31 +1,31 @@
 ---
 date: "2016-04-09T16:50:16+02:00"
-title: What is R?
+title: Šta je R?
 weight: 1
 ---
 
-## Before there was R, there was S! 🤠
+## Pre nego što je nastao R, bio je S! 🤠
 
-**R** is a dialect of **S** language that was developed in 1976 by *Rick Becker* and *John Chambers* at the  Bell Laboratories.
+**R** je dijalekat **S** jezika koji su razvili *Rick Becker* i *John Chambers* u Bell Laboratories 1976. godine.
 
-*Rick Becker* gave an excellent keynote talk *"Forty Years of S"* at UseR!2016 conference:   
-[Rick Becker @ UseR!2016](http://blog.revolutionanalytics.com/2016/07/rick-becker-s-talk.html) where he talked about development of **S** language that gives explanations for many characteristics of **R** as we know it, including "<-" assignment operator.
+*Rick Becker* Rick Becker dao je izvrsno uvodno predavanje *"Forty Years of S"* na konferenciji UseR!2016:   
+[Rick Becker @ UseR!2016](http://blog.revolutionanalytics.com/2016/07/rick-becker-s-talk.html) na kojoj je govorio o razvoju **S** jezika koji je oblikovao mnoge karakteristike **R** jezika, koji, kao što znao je uključio “<-” operator.
 
-1993 Bell Labs gave StatSci (later Insightful Corp.) an exclusive license to develop and sell the **S** language. Insightful sold its implementation of the **S** language under the product name **S-PLUS**.
+1993. Bell Labs dao je StatSci (kasnije Insightful Corp.) ekskluzivnu licencu za razvoj i prodaju **S** jezika. Insightful je prodao svoju implementaciju jezika **S** pod imenom proizvoda **S-PLUS**.
 
-You can read more about the [history of S, R, and S-PLUS](https://www.whoishostingthis.com/resources/s-plus/)
+Možete ovde više pročitati o istoriji [jezika S, R, i S-PLUS](https://www.whoishostingthis.com/resources/s-plus/)
 
-## Then, R was born 😇🎶
+## Potom, R je rođen 😇🎶
 
-In the early nineties at the University of Auckland in the Department of Statistics **R** was created by *Ross Ihaka* and *Robert Gentleman*.
+Ranih devedesetih na Univerzitetu Okland, njegovom Odseku za statistiku **R** stvorili su *Ross Ihaka* i *Robert Gentleman*.
 
-They used [GNU General Public License](http://www.gnu.org/licenses/gpl-2.0.html) to make R open source free software. 
+Oni koriste [GNU General Public License](http://www.gnu.org/licenses/gpl-2.0.html) i proglašavaju R kao otvoren i besplatan softver. 
 
-**R**oss Ihaka and **R**obert Gentleman. <span style="color:orangered">**R**</span>*: A language for data analysis and graphics.* Journal of Computational and Graphical Statistics, 5(3):299–314, 1996
+**R**oss Ihaka i **R**obert Gentleman. <span style="color:orangered">**R**</span>*: A language for data analysis and graphics.* Journal of Computational and Graphical Statistics, 5(3):299–314, 1996
 
-Currently **R** is developed by the **R Development Core Team**, of which *John Chambers* is a member.
+Trenutno **R** razvija **R Development Core Team**, u kojem je *John Chambers* član.
 
-To start using R you need to install it! 😃
+Da počnete da koristite R potrebno je samo da ga instalirate! 😃
 
 
 -----------------------------
