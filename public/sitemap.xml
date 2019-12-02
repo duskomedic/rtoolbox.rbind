@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/day2/datawrangling/</loc>
-    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+    <loc>/general/whatlearn/</loc>
+    <lastmod>2019-11-29T16:50:16+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/general/whatlearn/</loc>
+    <loc>/day2/datawrangling/</loc>
     <lastmod>2016-04-09T16:50:16+02:00</lastmod>
   </url>
   
@@ -37,12 +37,12 @@
   </url>
   
   <url>
-    <loc>/general/instructor/</loc>
+    <loc>/day3/shiny/</loc>
     <lastmod>2016-04-09T16:50:16+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/day3/shiny/</loc>
+    <loc>/general/instructor/</loc>
     <lastmod>2016-04-09T16:50:16+02:00</lastmod>
   </url>
   
