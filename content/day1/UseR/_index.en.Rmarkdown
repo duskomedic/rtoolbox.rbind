@@ -24,22 +24,21 @@ Trebata zapamtiti sledeće činjenice:
 
 - U R-u velika i mala slova se razlikuju i u njemu se funkcije izvršavaju direktno; 
 - Komande se upisuju sa desne strane oznake `>`
-- Commands are separate statements which could be put the in a same line if separated by a semi-colon `;`
-- Code statements can be commented by using a `#` tag. You can comment in continuation of the command line or in a separate line.
+- Komande su pojedinačni iskazi koji mogu stajati u jednoj liniji ako su odvojeni tačka zarezom `;`
+- Same komande i izjave mogu se komentarisati upotrebom `#` taga. Komentari mogu stajati iza izjava i u jednoj liniji ili u više linija ali je potrebno da stoji `#` tag u svakoj novoj liniji.
 
 {{% notice tip %}}
-💡 The best way to learn is by doing. Therefore, I would like you <span style="color:red">not to copy paste the commands showing in the black boxes</span>, but to <span style="color:red">type it in your R console</span>. It would be even better to type it as an R script, so that you can keep a history of it and return to it if you wish to do so.
+💡 Najbolji način učenja je učenje kroz rad. Zbog toga, preporučujemo vam da komande unosite kucanjem sami a ne da ih kopirate i umećete naredbama copy i paste. Pored toga bilo bi dobro i da u okviru svog projekta otvorite i pojedinačan R script fajl i da u njemu unosite komande koje posle možete snimiti i kasnije ih koristiti da se podsetite na naučene naredbe.
 {{% /notice %}}
 
-## Let's start using R! 
+## Krenimo sa upotrebom R-a! 
 
-- *Turn on your computer (if you haven't already)* 
-- *Open RStudio*
-- *Create a project for your work. On the very right side of the window is a small blue R, and a drop-down menu. Select `New project`, then `New directory`, navigate to the desktop, and name the project `My_First_R`. This will create a folder with this name on the desktop. This will be your workspace for this project.* 😇
+- *Otvorite RStudio*
+- *Kreirajte novi projekat u kojem ćete raditi. Na desnoj strani prozora nalazi se mala plava komanda koja sadrži drop-down meni. U njemu možete selektovati Novi projekat, zatim Novi direktorijum koji ćete zadati na primer da bude na vašem desktopu, i daćete ime projektu Moj_prvi_R. Ovako ćete kreirati folder sa ovim imenom na vašem desktopu. Ovo će biti vaše okruženje vašeg novog projekta.* 😇
 
-## Setting up your working directory
+## Postavljanje radnog direktorijuma
 
-If you want to read or write files on your computer from and to a specific location you will need to set a working directory in R. To set the working directory in R to a specific folder on your computer you will use the following:
+Ukoliko želite da čitate i snimate fajlove na svom kompujteru na specifičnoj za to predviđenoj lokaciji (koju sami odabirate) neophodno je da postaviti svoj radni direktorij u R-u. Da bi postavili svoj radni direktorij koji se nalazi u specifičnom folderu na vašem računaru vi ćete uraditi sledeće:
 
 ``` r
 # On a pc, you would set working directory like this
@@ -49,10 +48,10 @@ setwd("C:/Documents/MyR_Project")
 setwd("~/documents/MyR_Project")
 ```
 {{% notice warning %}}
-🤓💡: Make sure you fully adopt the correct syntax in terms of slashes and quotation marks.
+🤓💡: Obavezno usvojite ispravnu sintaksu u pogledu crta i navodnika.
 {{% /notice %}}
 
-Note that the current working directory is displayed by RStudio within the title region of the Console. You can also setup your working directory by:
+Napomena: Trenutni radni direktorijum prikazan vam je na vrhu panela za konzolu. Postaviti radni direktorijum možete takođe postaviti i preko main menija R studija. Za to je potrebno da pronađete meni Session, zatim Set Working Directory pa na kraju Choose Directory:
 
 - selecting the options available from RStudio's main menu 
 
@@ -60,53 +59,53 @@ Use the **Tools | Change Working Dir...** menu (**Session | Set Working Director
 
 ![Red variant](/day1/UseR/images/SetWD.png?width=50pc)
 
-- selecting the option from within the Files pane
+- Radni direktorij možete promeniti i opcijom iz panela za fajlove, desno dole
 
-Use the **More | Set As Working Directory** menu
+Upotrebite **More | Set As Working Directory** meni
 
 ![Red variant](/day1/UseR/images/SetWD1.png?width=20pc)
 
-However, you should always start a fresh project (**File | New Project...**) that would automatically set up your working directory without having to point to it in your script file. You should read [Project-oriented workflow 💻🔥](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/) article by [Jenny Bryan](https://jennybryan.org/) to convince yourself that this would be a good habit you should adopt. 
+Međutim, najbolje je da svaki vaš novi projekat započinjete tako što ćete to uraditi preko File menija pa zatim izabrati opciju New Project (**File | New Project...**) Tako ćete automatski postaviti svoj radni direktorijum bez dodatne potrebre da dodatno definišete gde se nalazi vaš script fajl. Više informacija o postavljanju radnog okruženja možete pročitati u članku [Project-oriented workflow 💻🔥](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/) autora [Jenny Bryan](https://jennybryan.org/) kako biste se uverili da je započinjanje svakog novog vašeg projekta na način da to raditi preko File menija je dobra navika koju trebate da usvojite. 
 
-## R Packages
+## R paketi
 
-*"In R, the fundamental unit of shareable code is the package."* [Hadley Wickham, *R packages*](http://r-pkgs.had.co.nz/intro.html)
+*"Osnovna jedinica R koda je paket."* [Hadley Wickham, *R packages*](http://r-pkgs.had.co.nz/intro.html)
 
-R packages are collections of functions code, data sets, documentation and tests developed by the community, that are mostly made available on the <span style="color:red">C</span>omprehensive <span style="color:red">R</span> <span style="color:red">A</span>rchive <span style="color:red">N</span>etwork, or <span style="color:red">CRAN</span>, the public clearing house for R packages. These packages are developed by experts in their fields and currently the CRAN package repository features over 14,000 of them. Many of the analyses that they offer are not even available in any of the standard data analysis software packages, which is one of the reasons that R is so successful.  
+R paketi su kolekcije funkcija koda, setova podataka, dokumentacije i testova koje razvija zajednica, u najvećom broju slučajava oni su dostupni preko <span style="color:red">C</span>omprehensive <span style="color:red">R</span> <span style="color:red">A</span>rchive <span style="color:red">N</span>etwork, or <span style="color:red">CRAN</span>, mreže koja se brine za standarde R paketa. Ove pakete razvijaju raznorazni eksperti iz račitih naučnih oblasti i trenutno njihov broj je preko 14000. Mnoge od analiza koje oni nude nisu dostupni niti u jednom standardnom setu softverskih paketa, a to oni su i razlog uspešnosti R-a.  
 
-When you run R you will authomatically upload the [`package:base`](https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf), which is the system library, i.e. the package where all standard functions are defined. The rest of the so called *base packages* contain the basic statistical routines. Assuming that you are connected to the internet, you can install a package using `install.packages()`. From the RStudio menu you can do it by sellecting **Tools | Install Packages...** and typing the name of the desired package in the dialogue window.
+Kada startujete R automatski vi pozivate [`package:base`](https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf), koji je sistemska biblioteka, tj. paket u kojem su sve standarde funkcije definisane. Ostali paketi koji se zovu *base packages* sadrže osnovne statističke rutine. Pretpostavljajući da ste povezani na internet, pakete možete lako instalirati upotrebom `install.packages()` komande. To možete uraditi i preko glavnog menija tako što ćete selektovati meni Tools na glavnom meniju Rstudija, zatim opciju Install Packages **Tools | Install Packages...** kad to uradite potrebno je i da unesete ime željenog paketa u dijalog boks da bi on bio instaliran.
 
 ![Red variant](/day1/UseR/images/InstallPckg.png?width=20pc)
 
-Once installed, the package will appear in the list of available packages in your **Packages pane**. To use it you have to load it to the system’s search path by simply typing the name of the package as an argument of the `library()` function, or by checking the box next to its name from the **Packages pane**.
+Jednom kada instalirate neki paket, on će biti vidljiv u listi instaliranih paketa koja se nalazi panelu za pakete **Packages pane** u donjem desnom panelu R studija. Svaki paket ako hoćete da koristite u svom projektu potrebno je da ga pozovete u samom projektu, to jednostavno radite tako što unesete ime paketa u `library()` funkciju, ili to možete uraditi tako što čekirate kvadratić koji se nalazi neposredno uz ime paketa a koji se nalazi u tabulatoru Packages **Packages pane**.
 
 ![Red variant](/day1/UseR/images/Packages.png?width=20pc)
 
 {{% notice note %}}
-💡: Note that you can call the dialog window to install a package from **Packages pane**! Have you spotted the *Install* icon yet?
+💡: Napomena: Imajte na umu da instalaciju paketa možete uraditi i iz  **Packages pane**! Da li ste primetili da u okviru ovog taba postoji komanda *Install* koja se nalazi gore levo u tom tabu?
 {{% /notice %}}
 
-## Calculate in R
+## Računajte u R-u
 
-To begin with, we can use R as a calculator. 😁
+Da počnete upotrebu R-a možda je dobro da vidite kako on radi kao kalkulator. 😁
 
-In your console type in `2 + 2`. Note that you don’t have to type the equals sign and that the answer has [1] in front. The [1] indicates that there is only one number in the answer. If the answer contains more than one number it uses numbering like this to indicate where in the ‘group’ of numbers each one is.
+U vašoj konzoli ukucajte `2 + 2`i pritisnite enter. Primetite da nije potrebno da kucate znak jednako i da vaš odgovor počinje jedinicom [1]. Jedinica [1] ukazuje da je u odgovoru jedan broj. Ukoliko, na primer, odgovor sadrži više brojeva, brojevima kao ova jedinica biće iskazana svaka grupa brojeva koji su odgovori.
 
-You see?! R is like a big calculator! 😲 
+Vidite?! R je jedan veliki kalkulator! 😲 
 
-#### Arithmetic and Logical Operators
+#### Aritmetičke i logičke operacije
 
-R’s binary and logical operators will look very familiar to those who have some experience with programming.
+R-ovi binarni i logički operatori izgledaće veoma slično onome što ste veće iskusili ako ste radili bilo kakvo prethodno programiranje.
 
-#####  Arithmetic Operators 
+#####  Aritmetički operatori 
 
 ![Red variant](/day1/UseR/images/ArithmeticOp.png?width=20pc)
 
-#####  Logical Operators 
+#####  Logički operatori 
 
 ![Red variant](/day1/UseR/images/LogicalOp.png?width=20pc)
 
-Try doing other math operations, like subtraction, multiplication, division, or square root and power operations. For example, try the following:
+Probajte sada da uradite i druge matematičke operacije u R-u, naprimer sabriranje, množenje, deljenje, stepenovanje, i druge. Na primer, probajte sledeće:
 
 ```
 2 + 5
@@ -117,80 +116,80 @@ Try doing other math operations, like subtraction, multiplication, division, or 
 9^(1/2) * 4
 ```
 
-#### Reproducibility: Save your scripts
+#### Reproduktabilnost (ponovljivost): Sačuvajte vaš skript
 
-The code you type and want to be executed can be saved in scripts and R Markdown files. Scripts ending with .R file extension and R Markdown files, which mixes both R code and Markdown code, end with .Rmd.
+Kod koji upravo kucate i koji želite da izračunate može biti snimljen u R skript ili R Markdown fajlu. Te fajlove možete u okviru svog projekta otvoriti tako sto selektujete File, pa zatim New File opcije iz menija. R skript fajl ima nastavak .R dok R Markdown fajl koji kombinuje R kode i Markdown code u jednom fajlu završava nastavkom .Rmd.
 
 {{% notice note %}}
-🤓💡: The code that you write just for quick exploration can be written in the console. Code we want to reuse and show off later should be saved as a script.
+🤓💡: Kod koji pišete samo da bi brzo nešto proverili ili istražili može se pisati u konzoli. Ali kada želimo da kod koji pišemo ponovo upotrebimo neophodno ga je sačuvati kao skript fajl.
 {{% /notice %}}
 
-To create a new script go through the menu **File | New File | R Script** or through the green plus button on the top left.
+Da biste napravili novi skript fajl potrebno je da potražite meni File, a zatim New File i R skript  **File | New File | R Script** ili možete to isto uraditi preko male ikonice koja se nalazi u gornjem levu uglu R studija na kojoj se nalazi zeleni krstić.
 
 ![Red variant](/day1/UseR/images/NewScript.png?width=15pc)
 
-Any code we type in here can be run and executed in the console. Hitting the **Run** button at the top of the script window will run the line of code on which the cursor is sitting.
+Kod koji kucati u R skript fajlu može se pokrenuti i izvršiti u konzoli. Komandom **Run** koju možete pokrenuti pomoću ikonice koja se nalazi u desnom gornjem delu vašeg R skripta pokrenuće se linija koda na kojoj vaš kursor stoji.
 
-To run multiple lines of code, highlight them and click **Run**.
+Ako želite da pokrenete više linija vašeg koda treba da ih selektujete i da onda startujete **Run** komandu.
 
 ![Red variant](/day1/UseR/images/RunScript.png?width=30pc)
 
 {{% notice tip %}}
-💡: Get into a habit of saving your scripts after you create them. Try to save them before running your code in case you write code that makes R crash which sometimes happens. 😣 &@#$!?#%
+💡:Naviknite se da odmah snimite vaš skript svaki put kada ga kreirate. Takođe, snimajte ga i nakon što želite da startujete vaš kod zbog slučajeva da vam podaci ne nestanu kada se eventualno R sruši ili se nešto slično ne dogodi. 😣 &@#$!?#%
 {{% /notice %}}
 
 <https://www.rstudio.com/products/rstudio/features/>
 
 
-#### R Objects
+#### R objekti
 
-R provides a number of specialised data structures we will refer to as objects. To refer to an <span style="color:red">object</span> we use a symbol. You can assign any object using the assignment operator <span style="color:red"><-</span>, which is a composite made up from ‘less than’ and ‘minus’, with no space between them! Thus, we can create scalar constants, which we refer to as variables, and perform mathematical operations over them.
+R vam obezbeđuje da vaše podatke referišite kao objekte. Da biste ih referisali kao objekte treba da koristite simbol dodele <span style="color:red"><-</span>, koji se sastoji od znaka „manje od“ i znaka „minusa“, bez slobodnog mesta između njih. Tako stvaramo skalarne konstante, koje nazivamo varijablama, i na kojima kasnije možemo primenjivati matematičke operacije.
 
 ```
 x <- 5
 y <- 6
 ```
 
-You can use objects in calculation in exactly the same way as you have already seen numbers being used earlier:
+Ove objekte možete koristiti u računanju na isti način na koji ste već računali brojeve ranije:
 
 ```
 x + y
 ```
 
-and you can store the results of the calculation done with the objects in another object:
+u varijabli možete i sačuvati rezultat računa koji ste uradili tako šo ćete napraviti novi objekat koji će to uraditi:
 ```
 z <- x * y
 z
 ```
 
 {{% notice warning %}}
-🤓💡 BUT, remember!!! <span style="color:red">Operator **<-** is a composite made up from ‘less than’ and ‘minus’, with **no space between them**!!!!</span> 
+🤓💡 ZAPAMTITE!!! <span style="color:red">Operator **<-** sastavljen je od znaka „manje od“ i minusa, ali **bez razmaka između njih**!!!!</span> 
 {{% /notice %}}
 
-Try to type the following 
+Pokušajte da kucate sledeće komande  
 ```
 x< -5
 y< -6
 ```
 
-and see what happens.
+i vidite šta će se desiti.
 
-After you’ve created some objects in R you can get a list of them using `ls()` function:
+Nakon što ste u R-u kreirali neke objekte, možete ih izlistati upotrebom funkcije `ls()`:
 ```
 ls()
 ```
 
-RStudio provides a very comfortable working environment and enables you to monitor your list of objects in the **Environment** pane window in the top right corner. 
+R studio vam obezbeđuje vrlo komotno radno okruženje u kojem možete pratiti listu kreiraih objekata u panelu **Environment** (okruženje) koji se nalazi u gornjem desnom uglu R studija. 
 
 ![Red variant](/day1/UseR/images/Environment_Panel.png?width=20pc)
 
-#### Built-In Functions
+#### Ugrađene funkcije
 
-R is not like other conventional statistical packages like SAS, Minitab, SPSS, to name a few. It is more of a programming language designed for conducting data analyses. It comes with a vast number of ready-made blocks of code that will enable you to manipulate data, perform intricate mathematical calculations with data, carry out an array of statistical analysis ranging from simple to complex to extremely complex and it will facilitate the creation of fantastic graphs. These pre-made blocks of code are known as <span style="color:red">**functions**</span>.
+R nije poput konvencionalnih statističkih paketa poput SAS-a, Minitab-a, SPSS-a, da spomenemo samo neke. On je više programski jezik dizajniran za sprovođenje analize podataka. Dolazi sa velikim brojem već gotovih blokova koda koji vam omogućuju upotrebu podataka, matematičkih računa na podacima, da izvedete niz statističkih analiza od najednostavnijih do složenih, ali i onih ekstremno složenih, ali i da kreirate fantastične grafikone. Ove prethodno već napravljene blokove koda nazivamo <span style="color:red">**funkcijama**</span>.
 
-R has all the standard mathematical functions that you might ever need: `sin`, `cos`, `tan`, `asin`, `atan`, `log`, `log10`, `exp`, `abs`, `sqrt`, `factorial`… To use them, all you need to do is to type the function and put the name of the object (argument) you would like to use the function for in brackets.
+Pored toga R poseduje i set standardnih matematičkih funkcije koje možda nikada nećete upotrebljavati: `sin`, `cos`, `tan`, `asin`, `atan`, `log`, `log10`, `exp`, `abs`, `sqrt`, `factorial`… Da bi ih koristili, sve što treba da kucate je kucate tip funkcije i da u nju za objekat (argument) stavite bilo šta što želite da izračunate, to radite tako što to staviti u zagradi odmah iza funkcije.
 
-You should try a few 😃
+Probajte neke od njih 😃
 
 ```
 sqrt(144)
@@ -206,7 +205,7 @@ exp(x)
 log(y, 2)
 ```
 
-You can use expression as argument of a function:
+Neki određeni izraz može biti argument funkcije:
 
 ```
 z <- x * y
@@ -214,7 +213,7 @@ trunc(x^2 + z / y)
 log((100 * x - y^2) / z)
 ```
 
-You can have nested functions and you can use functions in creating new objects:
+Takođe, možete ugnjezditi funkcije unutar drugih funkcija:
 
 ```
 round(exp(x), 2)
@@ -223,14 +222,14 @@ p
 ```
 
 {{% notice info %}}
-🤓💡 <span style="color:red">To obtain a description of a function</span> you need to type a question mark, <span style="color:red">**?**</span>, in front of the name of the function. You might find this particularly useful when you start applying more complicated functions, as help will often provide you not only with the detailed description of the function’s input/output arguments, but practical illustrative examples on how the function can be used and applied. You should try to ask R for help for `lm()` function (can you tell what it is used for?)
+🤓💡 <span style="color:red">Da biste saznali nešto više o funkciji koju želite da koristite, neophodno je da ukucate znak upitnika <span style="color:red">**?**</span>, ispred imena funkcije koja vas zanima. Ovo možete posebno naći za korisno kada budete koristili komplikovanije funkcije. Help (pomoć) vam dati ne samo detaljan opis funkcije i njene strukture, uvoznih i izvezenih argumenata, već i praktične primere upotrebe te funkcije. Probajte da zatražite od R-a pomoć za funkciju `lm()` da vidite čemu ona služi.
 {{% /notice %}}
 
-#### Vectors
+#### Vektori
 
-When analysing data you are more likely to be working with lots of numbers/variables. It would be much more convenient to keep all of those numbers/variables as an object. Variables can be of a different type: logical, integer, double, string are some examples. <span style="color:red">Variables with one or more values of the same type are **vectors**</span>. Hence, <span style="color:red">a variable with a single value</span> (known to us as a <span style="color:red">**scalar**</span>) is a vector of length 1. We can assign to vectors in many different ways:
+Kada analizirate podatke radićete sa velikim brojem varijabli i brojeva. Upravo zbog toga treba da ih čuvate u objektima da bi sve to sačuvali. Varijable mogu biti različitog tipa: logički, prirodni brojevi (integer), realni brojevi (double), string (tekst) su samo neke od njih. <span style="color:red">Varijable sa jednom ili više vrednosti istog tipa nazivaju se **vektori**</span>. Takođe, <span style="color:red">varijabla sa jednom vrednosti (poznata kao <span style="color:red">**scalar**</span>) isto je vektor ali dužine 1. Dodavanje vrednosti vektorima može se raditi na različite načine:
 
-* generated by R using the colon symbol (`:`) as a sequence generated operator or by using built in function `rep()` for replicating the given number for a given number of times.
+* Vrednosti možete dodavati upotrebom simbola dvotačka (`:`) koja će vam generisati vrednosti od do ili ih možete graditi pomoću funkcije `rep()` da biste ponovili određenu vrednost ili broj određen broj puta.
 
 ```{r}
 x <- 1:10
@@ -242,21 +241,21 @@ x <- rep(1,10)
 x
 ```
 
-* generated by the user by using <span style="color:red">concatenation function **c**</span> that allows you to enter one number at a time
+* Vektor možete generisati upotrebom funkcije spajanja c koja omogućava unos vrednosti u vektor na način kako je to prikazano dole
 
 ```{r}
 x <- c(2, 6, 4, 2, 3, 7, 1, 5, 9, 8)
 x
 ```
 
-* created as a sequence of numbers. For example to generate a sequence of numbers from 1 to 10, with increments of 0.2 type
+* Možete kreirati vektor definisanjem opseg brojeva i priraštaja (inkriment). Na primer, u slučaju koji je prikazan dole opseg je od 1 do 10, a priraštaj 0.2
 
 ```{r}
 seq(1,10,0.2)
 ```
 
 {{% notice note %}}
-💡: R can easily perform arithmetic with vectors as it does with scalars. Thus, just as we can use those operators over the scalars we can use them when dealing with the vectors and/or a combination of both.
+💡: R vrlo lako vrši aritmetičke operacije na vektorima, jednako brzo kao i kad radi sa skalarima. Matematičke operacije na vektorima rade isto kao što smo već videli, kada smo radili sa skalarima.
 {{% /notice %}}
 
 ```{r}
@@ -276,9 +275,9 @@ p <- 2.5
 z*p
 ```
 
-##### Accessing Vector’s Elements
+##### Pristupanje elementima Vektora
 
-To access a specific element of a vector you would <span style="color:red">use index inside a single square bracket **[]** operator</span>. The following shows how to obtain a vector member. The vector index is 1-based, thus use the index position 4 to access the fourth element.
+Da biste pristupili određenom elementu vektora, potrebno je da za <span style="color:red">upotrebite indeks vektora i to tako što ga unosite u uglaste zagrade **[]**</span>. Sledeći primer pokazuje kako se to radi. Indeks vektora baziran je na jedinici, tj. prvi član u vektoru ima indeks 1, tako da ako tražite četvrtu poziciju koristite indeks 4 da biste pristupili ovom elementu.
 
 ```{r}
 x <- c(9, 3, 7, 2, 9, 2, 1, 5, 4, 6)
@@ -287,7 +286,7 @@ x[4]
 ```
 
 {{% notice note %}}
-💡: In R you can evaluate functions over the entire vectors which helps to avoid looping.
+💡: U R-u možete proceniti funkcije na celom vektoru, što vam pomaže s obzirom da ne treba da koristite za taj posao lupove (looping).
 {{% /notice %}}
 
 
@@ -302,10 +301,10 @@ cumsum(y)
 ```
 
 {{% notice note %}}
-💡: Note that  <span style="color:red">missing values in R</span> are represented by the symbol  <span style="color:red">**NA** (not available)</span> or <span style="color:red">**NaN** (not a number)</span> for undefined mathematical operations.
+💡: Napomena:  <span style="color:red">Nedostajuće vrednosti u R-u</span> predstavljene su simbolom  <span style="color:red">**NA** (nije dostupno)</span> ili <span style="color:red">**NaN** (nije broj)</span> za nedefinsane matematičke operacije.
 {{% /notice %}}
 
-Here, NA would be shown if an index is out-of-range. 
+Ako je indeks van dometa prikazuje se NA, kao na slici dole. 
 
 ```{r}
 z <- c(5, 8, 2)
@@ -313,7 +312,7 @@ z[10]
 ```
 
 
-You can also obtain a desirable selection of the elements of a vector by **specifying a query within the index brackets `[]`**:
+Možete dobiti željeni izbor elemenata vektora **tako što ćete navesti upit u uglastim zagradama `[]`**:
 
 ```{r}
 y <- c(9, 3, 7, 2, 9, 2, 1, 5, 4, 6)
@@ -322,9 +321,9 @@ y[y > 10]
 y[y != 2]
 ```
 
-#### Matrices
+#### Matrice
 
-<span style="color:red">When data is arranged in two dimensions</span> rather than one we have <span style="color:red">**matrices**</span>. In R function `matrix()` creates matrices:
+<span style="color:red">Kada su podaci raspoređeni u dve dimenzije, a ne u jednoj, imamo <span style="color:red">**matrice**</span>. U R-u matrice se kreiraju uz pomoć funkcije `matrix()`:
 
 ```{r}
 ma1 <- matrix(c(1, 0, -20, 0, 1, -15, 1, -1, 0),
@@ -334,9 +333,9 @@ ma1
 dim(ma1)
 ```
 
-The individual numbers in a matrix are called the elements of the matrix. Each element is uniquely defined by its particular row number and column number. To determine the dimensions of a matrix use function `dim()`.
+Pojedinačni broj u matrici naziva se element matrice. Svaki element matrice jedinstveno je definisan brojem kolone i brojem reda u kojoj se nalazi. Dimenziju matrice možete proveriti funkcijom `dim()`.
 
-An element at the `i`-th row, `j`-th column of a matrix can be accessed by indexing inside square bracket operator `[i, j]`. The entire `i`-th row or entire `j`-th column of a matrix can be extracted as shown in the code below.
+Elementu matrice  `i`-tog reda, `j` kolone pristupate indeksom koji unosite u uglaste zagradu `[i, j]`. Čitav `i` red ili `j` kolonu možete izdvojiti iz matrice na način prikazan u kodu dole.
 
 ```{r}
 ma1 <- matrix(c(4, 10, 130, 0, 8, -7, 9, 11, -2, 7, -5, 4),
@@ -347,32 +346,32 @@ ma1[1, ]
 ma1[ , 4]
 ```
 
-Standard scalar algebra, which deals with operations on single numbers, has a set of well established rules for handling manipulations involving addition, subtraction, multiplication and division. In a broadly similar fashion, a set of rules has been developed to enable us to manipulate matrices. However, introducing those rules is beyond the scope of this course, but they are nicely covered on the [www.statisticshowto.com](http://www.statisticshowto.com/matrices-and-matrix-algebra/) website.
+Standardna skalarna algebra, koja se bavi operacijama na pojedinačnim brojevima, ima skup dobro utvrđenih pravila za upravljanje koje uključuju dodavanje, oduzimanje, množenje i deljenje. Na sličan način razvijen je skup pravila koja nam omogućavaju da upravljamo matricama. Međutim, uvođenje ovih pravila je izvan obima ovog kursa, ali su dobro pokrivena na veb lokaciji  [www.statisticshowto.com](http://www.statisticshowto.com/matrices-and-matrix-algebra/).
 
 
-## YOUR TURN 👇
+## Zadaci 👇
 
-Practise by doing the following set of exercises:
+Vežbajte tako što ćete proći kroz sledeći niz zadataka:
 
-1) Create vectors called `x1` and `x2`, where vector `x1` consists of numbers: `1, 4, 7, 9, 11, 12, 13, 15` and `18` and vector `x2` of numbers: `1, 1, 1, 2, 2, 2, 3, 3, 3`.
+1) 1.	Kreirajte vektore `x1` i `x2`. Vektor `x1` je sastavljen od sledećih brojeva: `1, 4, 7, 9, 11, 12, 13, 15` i `18`, a vektor `x2` od brojeva: `1, 1, 1, 2, 2, 2, 3, 3, 3`.
 
-2) Subtract `x2` from `x1`.
+2) Oduzmite vektor `x2` od vektora `x1`.
 
-3) Create a new vector called `x3` by combining vectors `x1` and `x2`. 
+3) Kreirajte novi vektor `x3` tako što da sadrži i članove vektora `x1` i `x2`. 
 
-4) Calculate mean and variance of `x3`.
+4) Izračunajte srednju vrednost i varijansu vektora `x3`.
  
-5) Calculate medians for the three vectors.
+5) Izračunajte medijanu sva tri vektora.
 
-6) Create a matrix called `m1` with the following elements:
+6) Kreirajte matricu `m1` koja ima sledeće elemente:
 `matrix(c(1, 5, 9, 2, 6, 10, 3, 7, 11, 4, 8, 12), nrow = 4, 
 ncol = 3, byrow = TRUE)`
 
-7) Use a subscript to find the `2`-nd number in vector `x1` and `x2` and element in the `2`-nd raw and `3`-rd column in matrix `m1`.
+7) Napravite kod koji će pronaći `2`-broj u vektorima `x1` i `x2` a potom element `2`-om redu i `3`-oj koloni u matrici `m1`.
 
-8) Add the `5`-th number in vector `x1` to the element in matrix `m1` which is in `1`-st raw and `1`-st column.
+8) Dodajte `5`-i broj u vektoru `x1` elementu iz matrice `m1` koji je u `1`-om redu i `1`-oj koloni.
 
-9) Calculate the mean of all numbers in `x3` that are less than 13.
+9) Izračunajte srednju vrednost svih brojeva vektora `x3` koji su manji od 13.
 
 
 -----------------------------
