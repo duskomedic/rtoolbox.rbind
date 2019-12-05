@@ -1,29 +1,29 @@
 ---
 date: "2016-04-09T16:50:16+02:00"
-title: How to use R?
+title: Kako koristiti R?
 output: 
   learnr::tutorial
 weight: 5
 ---
 
-The RStudio window has multiple panes. [RStudio IDE Cheet Sheet](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf):
+R studio prozor ima više panela (potprozora). [RStudio IDE Cheet Sheet](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf):
 
 ![Red variant](/day1/UseR/images/RStudio1.png?width=40pc)
 
-**Top Left -** <span style="color:blue">Code Editor</span>:  for creating scripts to run in pieces or as a whole (like this document!);  
+**Gornji levo  -** <span style="color:blue">Editor koda</span>: u njemu pišete kod koji hoćete da pokrenete u delovima ili kao celina;  
 
-**Bottom Left -** <span style="color:blue">R Console</span>:  you can type R commands and see output;
+**Donji levo -** <span style="color:blue">R konzola</span>: ovde možete takođe pisati R komande i videti šta dobijate;
 
-**Top Right -** <span style="color:blue">Environment</span>: lists the objects that you create, such as data sets;
+**Gornji desno -** <span style="color:blue">Okruženje</span>: ovde se nalazi lista objekata koje stvarate, poput setova podataka;
 
-**Bottom Right -** <span style="color:blue">Help</span>: find out information about functions and packages. This same pane will have tabs for *showing plots* that you make, *view apps* and documents, show *files* in the folder, and *packages* used.
+**Donji desno -** <span style="color:blue">Pomoć</span>: ovde se možete informisati o funkcijama ili paketima. U istom panelu postoji i tab u kojem ćete *prikazivati grafikone* koje budete pravili, *videti aplikacije* i dokumenta koje razvijate, prikazati *fajlove i foldere* vašeg projekta, i *pakete* koje koristite.
 
-R is a scripting language, which means that it is just like writing an essay, or a math proof. We write a script to do specific tasks, that we can run again and again, or give to someone else to run. 
+R je skriptni jezik, što znači da sliči strukturi vašeg teksta ili eseja, ili matematički dokaz. Pišemo skript koji treba da uradi specifičan zadatak, a koji možemo stalno ponavljati, ili ga dati nekom drugom da ga može on sam koristiti. 
 
-You should take note of the following facts:
+Trebata zapamtiti sledeće činjenice:
 
-- R is case-sensitive language which executes instructions directly; 
-- Commands are entered at prompt `>`
+- U R-u velika i mala slova se razlikuju i u njemu se funkcije izvršavaju direktno; 
+- Komande se upisuju sa desne strane oznake `>`
 - Commands are separate statements which could be put the in a same line if separated by a semi-colon `;`
 - Code statements can be commented by using a `#` tag. You can comment in continuation of the command line or in a separate line.
 

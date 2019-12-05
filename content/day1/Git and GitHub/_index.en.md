@@ -1,42 +1,43 @@
 ---
 date: "2016-04-09T16:50:16+02:00"
-title: Git and GitHub
+title: Git i GitHub
 weight: 3
 ---
 
-## Why do we need it and what is it? 🤔
+## Zašto ih trebamo i o čemu je reč? 🤔
 
-Working on a DS project would create a large number of files that you want to keep control over and give some structure to. Often your work could benefit from collaboration with others so you need to make it available for reading or edits, as a project unfolds. You could manage those issues by implementing the free and open source version control system Git into your project workflow. It is a tool that tracks changes to your files and enables you to share those changes with others. Those Git configured sets of files are called the repositories or repos and are organised in a highly structured way. 
+Kada radite na projektima obrade podataka kreiraćete velik broj dokumenata koje bi voleli da možete da menjate i da ih uredite u određenu strukturu. Takođe, vaš rad može biti dodatno doterivan i razvijan od strane drugih koji su zainteresovani za njega, da bi im to omogućili neophodno je da im on bude negde dostupan na uvid. Ovaj posao možete prepustiti besplatnom i otvorenom podrškom sistema za kontrolu verzija vašeg rada (version control system) integracijom Git-a u vaš projekat. Git je alat koji prati sve vaše verzije rada, promene u njemu, ali i omoguću je vam da delite ove promene svim zainteresovanim. Ove Git konfigurisane verzije vašeg rada nalaze se u setovima koje nazivamo repozitoriji ili repos, a oni su organizovani na visoko strukturisan način. 
 
-To provide a home for your Git-based data analytical projects on the internet you can use the hosting site GitHub for statistical and data scientific work flows. It would help you manage the varied accumulation of files as your project develops starting with a data file, through the creation of figures, reports, and of course your ultimate pride and joy, the source code file.
+Da bi obezbedili mesto na internetu gde će te postavljati vaš rad i projekte neohpodno je da ga „hostujete“ (postavite) na veb stranici GitHub. Ta stranica će akumulirati sva vaša dokumenta i fajlove koje razvijate.
 
-## Setting Git up
+## Setovanje Git-a
 
-If you’ve never used Git or GitHub before, start by installing Git and creating a GitHub account. Then, link the two together.
+Ukoliko niste do sada koristili Git ili GitHub, počnite sa njihovom instalacijom i otvaranjem naloga na GitHub-u. Zatim ih povežite.
 
-1) You need to install Git from [git-scm](https://git-scm.com/downloads)
-Note: It will automatically detect your operating system and give you a link to download.
+1)	Otvorite nalog na GitHub-u i zapamtite vašu korisnički nalog i lozinku.
 
-2) Tell Git your name and email address. These are used to label each commit so that when you start collaborating with others, it’s clear who made each change. 
+2) Zatim, instalirajte Git sa [git-scm-a](https://git-scm.com/downloads). Napomena: Git-scm će automatski otkriti vaš operativni sistem i ponuditi vam odgovarajuću verziju za preuzimanje.
 
-### On a Mac
+3) Recite Git-u svoje ime i email adresu. Tako ćete povezati svoj Git sa GitHub-om što će vam omogućiti da počnete saradnju sa drugima, biće jasno svima koje promene ste napravili. 
 
-The first step is to check if Git is already installed on your computer. (Note: Git should be installed automatically on Macs.).
+### Instalacija Git-a na Mac-u
 
-Open the terminal and type
+Pre nego što napraviti prvi korak proverite da eventualno već nemate instaliran Git na vašem računaru (Napomena: Git bi trebalo da je već instaliran na Mac-ovima).
+
+Otvorite vaš terminal i ukucajte
 
 ```
 git --version
 ```
-You should get something like this
+Trebao bi dobijete nešto poput ovoga dole
 
 ```
 git version 2.18.0
 ```
 
-In case you have an older version or you don’t have it installed then just go to the website: [git-scm.com](https://git-scm.com).
+U slučaju da imate stariju verziju od trenutno dostupne ili nemate git instaliran otidite na veb stranicu: [git-scm.com](https://git-scm.com).
 
-Once you have the latest Git version on your Mac set up your identity by typing the following commands in your terminal:
+Kada instalirate poslednju verziju Git-a na svom Mac-u identifikujte se kucajući sledeće komande u svoj terminal:
 
 ```
 git config --global user.email "your@email.com"
@@ -44,17 +45,17 @@ git config --global user.name "your name"
 ```
 
 
-### On a PC 
+### Instalacija Git-a na PC-u
 
-Run CMD to obtain command prompt window in which you should type the following command to check if Git already exists on your computer:
+Pokrenite CMD program tako što ćete kucati CMD u prozoru za pretragu (search). Tako ćete otvoriti command prompt prozor u kojem trebate da ukucate sledeću naredbu, prvo da proverite da li Git već postoji na vašem računaru:
 
 ```
 git --version
 ```
 
-If Git is not recognised, that means that it needs to be installed from <https://gitforwindows.org>. Download the needed file and run the installation by selecting all the defaults. Close the command window to allow for the change in your system to go through and reopen it. Once again type the above command.
+Ukoliko Git nije prepoznat, to znači da treba da ga instalirate sa sledeće stranice <https://gitforwindows.org>. Skinite sa sajta neophodan file i startujte instalaciju tako što ćete odabrati osnovnu (default) instalaciju. Zatvorite svoj command prompt prozor da omogućite promenu na vašem sistemu i otvorite ga ponovo. Kada to uradite ponovite prethodno gore navedenu komandu, da proverite da li ste ispravno instalirali Git i koja mu je verzija.
 
-Now, after Git has been added to your system you should set it up by providing your email address and your name:
+Pošto ste ispravno instalirali Git potrebno je da registrujete svoju email adresu i vaše ime:
 
 ```
 git config --global user.email "your@email.com"
@@ -62,33 +63,30 @@ git config --global user.name "your name"
 ```
 
 
-In the shell, run:
-
-
 <http://rstudio-pubs-static.s3.amazonaws.com/272737_7d6178a0e50043528d9ba636fdde209e.html>
 
-## Let RStudio talk to GitHub 🤓
+## Povežite vaš Rstudio da komunicira sa GitHub-om 🤓
 
-RStudio has integrated facilities that make the use of Git simpler. You will have to go through this set-up once or once per computer.
+RStudio sadrži integrisane mogućnosti da vam obezbedi lakšu upotrebu Git-a. Treba da jednom prođete kroz ovo setovanje.
 
-Once you have enabled comunication between RStudio and GitHub on your computer for new or existing R projects, you will:
+Kada otvarate u Rstudiju novi projekat, da biste omogućili komunikaciju između RStudija i GitHub-a, potrebno je da uradite sledeće:
 
-- Dedicate a directory (a.k.a “folder”) to it.
-- Make it an RStudio Project.
-- Make it a Git repository.
+- Odredite direktorij (ili folder) na vašem računaru na kom će se projekat nalaziti.
+- Otvorite novi projekat u RStudiju.
+- Otvorite novi Git repozitorijum.
 
 {{% notice note %}}
-You might find it difficult and frustrating to use Git at first, but as with many other tools you'll find it easier the more you practise. Practice makes perfect!  
+Možda će vam biti teško da pravilno koristite Git is početka, ali kao i sa drugim alatima koje budete koristili biće vam mnogo lakše kako budete više vežbali. Vežbom do savršenstva!  
 {{% /notice %}}
 
-We will go and learn how to use GitHub in RStudio by exploring the material available at [RStuio's website](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN). 
+Kako da povežete GitHub sa RStudijom možete više naći u materijalu koji je dostupan na sledećoj internet stranici [RStudio's website](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN). 
 
-First we will start by setting up SSH keys that will allow you to securely communicate with websites without a password. To do this follow the instructions from the [`Git and GitHub`](http://r-pkgs.had.co.nz/git.html) section in  in [Hadle's](http://hadley.nz) book [R Packages](http://r-pkgs.had.co.nz).
+Prvo ćemo setovati SSH ključ koji će nam omogućiti sigurnu komunikaciju sa GitHub veb stranicom za koju nam neće trebati svaki put lozinka. Da bi ovo uradili sledite instrukcije [`Git and GitHub`](http://r-pkgs.had.co.nz/git.html) sekcije [Hadle's](http://hadley.nz) knjige [R Packages](http://r-pkgs.had.co.nz).
 
-You can read about how to use GitHub further by exploring [`Chapter 9: Connect to GitHub`](https://happygitwithr.com/push-pull-github.html) chapter in [Jenny's](https://jennybryan.org) book [Happy Git and GitHub for the useR](https://happygitwithr.com/index.html).
+Više o detaljima upotrebe GitHub-a i njegovo dalje istraživanje možete naći u [`Chapter 9: Connect to GitHub`](https://happygitwithr.com/push-pull-github.html) poglavlju [Jenny's](https://jennybryan.org) knjige [Happy Git and GitHub for the useR](https://happygitwithr.com/index.html).
 
 {{% notice tip %}}
-You might find it useful bookmarking the link for [GitHub Cheet Sheet](https://education.github.com/git-cheat-sheet-education.pdf)!
+Možda će vamj biti od koristi da bookmarkujete sledeći link [GitHub Cheet Sheet](https://education.github.com/git-cheat-sheet-education.pdf)!
 {{% /notice %}}
 
 -----------------------------

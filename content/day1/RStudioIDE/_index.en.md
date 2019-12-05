@@ -4,21 +4,20 @@ title: RStudio IDE
 weight: 4
 ---
 
-## RStudio's layout 
+## Izgled RStudija 
 
-When you open RStudio for the first time it will be split into three sections. Each section has its own tab with shortcuts for the relevant options available from the main RStudio menu. 
+Kada otvorite RStudio prvi put on će biti podeljen u tri sekcije. Svaka sekcija ima svoje tabove sa prečicama koje vam nude relevatne opcije koje se nalaze i u glavnom meniju RStudija.
 
 ![Red variant](/day1/RStudioIDE/images/RStudioWindow.png?width=40pc)
 
-- The tall <span style="color:red">**red section**</span>  on the left is the <span style="color:red">Console</span> and that’s where you can type in R code to execute.
-This code is also called commands or functions.
+- Visoki <span style="color:red">**crveni deo**</span> sa leve strane je Konzola i tu unosite R kod koji treba da se izvrši. Ovaj kod se naziva i komanda ili funkcija.
 
-- In the <span style="color:#00B2EE">**top right section**</span>, there’s the <span style="color:#00B2EE">Environment</span> tab where you can see the data you are currently working on. At first this section is empty because you have not loaded any data yet.
+- U <span style="color:#00B2EE">**gornjem desnom delu**</span>, nalazi se sekcija u kojoj se nalazi tab Environment (Okruženje) u kojem se vide podaci sa kojim trenutno radite. Kada nemate nikakvih podataka, kao što je slučaj na slici, ne vidi se ništa s obzirom da niste učitali još nikakve podatke.
 
-- In the <span style="color:#FF00FF">**bottom right section**</span> there are tabs to flip through the <span style="color:#FF00FF">Files</span> and folder structure of your computer (like in Finder or Explorer), <span style="color:#FF00FF">Help</span> information etc.
+- U <span style="color:#FF00FF">**donjem desnom delu**</span> ili sekciji nalaze se tabovi koji vam pokazuju fajlove i folder, tj. strukturu vašeg projekta, zatim, pomoćne informacije itd.
 
 {{% notice tip %}}
-🤓💡: You might find it useful bookmarking the link for [RStudio IDE Cheet Sheet](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf)!
+🤓💡: Možda je dobro da zabeližite (bookmarujete) stranicu [RStudio IDE Cheet Sheet](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf)!
 {{% /notice %}}
 
 
