@@ -9,23 +9,23 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>Import Data to R :: Rtoolbox</title>
+    <title>Uvoz podataka u R :: Rtoolbox</title>
 
     
-    <link href="/css/nucleus.css?1575817628" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1575817628" rel="stylesheet">
-    <link href="/css/hybrid.css?1575817628" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1575817628" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1575817628" rel="stylesheet">
-    <link href="/css/auto-complete.css?1575817628" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1575817628" rel="stylesheet">
-    <link href="/css/theme.css?1575817628" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1575817628" rel="stylesheet">
+    <link href="/css/nucleus.css?1576009827" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1576009827" rel="stylesheet">
+    <link href="/css/hybrid.css?1576009827" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1576009827" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1576009827" rel="stylesheet">
+    <link href="/css/auto-complete.css?1576009827" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1576009827" rel="stylesheet">
+    <link href="/css/theme.css?1576009827" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1576009827" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1575817628" rel="stylesheet">
+      <link href="/css/theme-blue.css?1576009827" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1575817628"></script>
+    <script src="/js/jquery-3.3.1.min.js?1576009827"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1575817628"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1575817628"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1576009827"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1576009827"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1575817628"></script>
+<script type="text/javascript" src="/js/search.js?1576009827"></script>
 
     
   </div>
@@ -381,13 +381,13 @@
  
   
     
-    <li data-nav-id="/day1/datatypes/" title="Data Types" class="dd-item 
+    <li data-nav-id="/day1/datatypes/" title="Tipovi podataka" class="dd-item 
         
         
         
         ">
       <a href="/day1/datatypes/">
-          Data Types
+          Tipovi podataka
           
             <i class="fas fa-check read-icon"></i>
           
@@ -407,13 +407,13 @@
  
   
     
-    <li data-nav-id="/day1/importexport/" title="Import Data to R" class="dd-item 
+    <li data-nav-id="/day1/importexport/" title="Uvoz podataka u R" class="dd-item 
         parent
         active
         
         ">
       <a href="/day1/importexport/">
-          Import Data to R
+          Uvoz podataka u R
           
             <i class="fas fa-check read-icon"></i>
           
@@ -836,7 +836,7 @@
             
           
           
-            <a href='/'>R Toolbox</a> > <a href='/day1/'>Modul 1</a> > Import Data to R
+            <a href='/'>R Toolbox</a> > <a href='/day1/'>Modul 1</a> > Uvoz podataka u R
           
          
           
@@ -853,13 +853,13 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#the-r-base">the R base</a></li>
-        <li><a href="#importing-excel-files-with-readxl">Importing Excel files with readxl</a></li>
-        <li><a href="#importing-data-using-jsonlite">Importing data using jsonlite</a></li>
-        <li><a href="#other-data-formats">Other data formats</a></li>
+        <li><a href="#r-baza">R baza</a></li>
+        <li><a href="#uvoz-excel-fajlova-sa-readxl">Uvoz excel fajlova sa readxl</a></li>
+        <li><a href="#uvoz-podataka-upotrebom-jsonlite">Uvoz podataka upotrebom jsonlite</a></li>
+        <li><a href="#drugi-formati-podataka">Drugi formati podataka</a></li>
       </ul>
     </li>
-    <li><a href="#your-turn-">YOUR TURN 👇</a></li>
+    <li><a href="#zadaci-">ZADACI 👇</a></li>
   </ul>
 </nav>
     </div>
@@ -877,7 +877,7 @@
           
             <h1>
               
-              Import Data to R
+              Uvoz podataka u R
             </h1>
           
 
@@ -886,10 +886,10 @@
 
 
 
-	<p>It’s the first big hurdle to dealing with data in R.</p>
-<p>You are most likely to have looked at, organised and examined your data files in Excel.</p>
-<p>Opening data in R is fairly simply, but organising it for analysis might take some thought and consideration. You'll guess that it is possible to use the <strong>File | Import Dataset</strong> menu option in RStudio to import your data (to learn more see <a href="https://support.rstudio.com/hc/en-us/articles/218611977-Importing-Data-with-RStudio">Importing Data with RStudio</a>), however we’re going to do it the proper way with a command.</p>
-<p>R can import all types of data:</p>
+	<p>Prva je velika stvar u upravljanju podacima u R-u.</p>
+<p>Najverovatnije je da imate iskustvo u pregledanju, organizovanju i istraživanju vaših podataka u Excel-u.</p>
+<p>Otvaranje podataka u R-u prilično je jednostavno, ali njihovo organizovanje za analizu potrebno je da se oni prethodno i promisle. Pretpostavljate da pomoću komandi iz glavnog menija <strong>File | Import Dataset</strong> u R studiju možete uvesti vaše podatke (za više pogledajte <a href="https://support.rstudio.com/hc/en-us/articles/218611977-Importing-Data-with-RStudio">Importing Data with RStudio</a>), međutim mi ćemo to uraditi na pravi način upotrebom komande.</p>
+<p>U R možete uvesti sledeće tipove podataka:</p>
 <ul>
 <li>(Tab, Blank space) Delimited Text</li>
 <li>CSV files</li>
@@ -900,17 +900,17 @@
 <li>MiniTab</li>
 <li>SPSS&hellip;</li>
 </ul>
-<p>In this section we will show you how to access most commonly used data types. Once you start playing with the data and wrangling it in the way it suits you for your analytical manipulations you might find it interesting to explore the options for writing data. Here, we are not going to show you how to do it, but rather focus on basic <code>read</code> data functionality in R.</p>
-<h3 id="the-r-base">the R base</h3>
-<p>The simplest data form is a <a href="https://en.wikipedia.org/wiki/Text_file">text file</a>. Text files can be read by any computer operating system and by almost all different kind of statistical programs. Saving data as a text file makes your data highly accessible. If you have a text data file you wish to use, you can easily import it with <strong>the R base</strong> functions <code>read.table()</code></p>
-<p>This reads a file in table format and creates a data frame from it</p>
+<p>U ovom poglavlju pokazaćemo vam kako da pristupite uobičajene tipove podataka. Jednom kada počnete da se igrate sa podacima i menjati ih na način koji vam odgovara za vašu analizu, biće vam zanimljivo istražiti kako možete podatke sami pisati. Ovde, međutim, nećemo vam pokazati kako to da uradite, već ćemo se fokusirati na osnovnu funkcionalnost funkcije <code>read</code> u R-u.</p>
+<h3 id="r-baza">R baza</h3>
+<p>Najednostavnija forma podataka je <a href="https://en.wikipedia.org/wiki/Text_file">text file</a>. Text fajl može da pročita bilo koji operativni sistem kao i velik broj različitih statističkih programa. Čuvanje vaših podataka u tekst fajlu čini vaše podatke lako dostupnim svima. Ukoliko imate tekst fajl sa podacima koje želite da koristite, možete ih jednostavno uvesti sa funkcijom <strong>R Baze (R base)</strong> <code>read.table()</code></p>
+<p>Sledeća naredba čita fajl u tabelarnom formatu i kreira data okvir</p>
 <pre><code># Read tabular data into R
 df_txt &lt;- read.table(file_name.txt, header = FALSE)
-</code></pre><p>There are many packages that let R import all types of data, and we will start by focusing on <code>CSV</code> files as they are the most frequent type.</p>
-<p>Comma separated files are the most common way to save spreadsheets that don’t require a licenced, usually not free program to open. Importing <code>CSV</code> is part of base R and you can use <code>read.csv()</code> function to do so.</p>
+</code></pre><p>Postoji mnogo paketa koji vam omogućuju uvoz podataka u R, a mi ćemo početi od <code>CSV</code> fajlova s obzirom da su oni najčešći.</p>
+<p>Zarezom odvojeni fajlovi najčešći je način snimanja podatake u tabelama, jer oni nisu zaštićeni niti traže licencirane programe za njihovo otvaranje. Uvoz <code>CSV</code> fajla je deo baze R i možete to uraditi pomoću funkcije <code>read.csv()</code>.</p>
 <h5 id="readcsv"><code>read.csv()</code></h5>
-<p>Let us go to <a href="https://data.gov.rs/">https://data.gov.rs/</a> Serbian open data portal. In particular, let us try to access <a href="https://data.gov.rs/sr/datasets/kvalitet-vazduha-2017/">Kvalitet vazduha 2017: pm2.5_2017.csv</a> and import this data to R.</p>
-<p>We are not going to download it onto our local computers, but rather we will import it to R directly from the web using the link provided.</p>
+<p>Pogledajmo sad internet stranicu <a href="https://data.gov.rs/">https://data.gov.rs/</a> otvorenih podataka Srbije. Posebno, obratićemo pažnju na fajl <a href="https://data.gov.rs/sr/datasets/kvalitet-vazduha-2017/">Kvalitet vazduha 2017: pm2.5_2017.csv</a> i njega ćemo uvesti u R.</p>
+<p>Ovaj fajl neće snimiti na naše računare, već ćemo ih uvesti u R direktno sa interneta koristeći dati link.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">df_csv <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">read.csv</span>(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">http://data.sepa.gov.rs/dataset/ca463c44-fbfa-4de9-9a75-790995bf2830/resource/62983880-6fcd-4c65-b57c-fd4de5c367c8/download/pm2.5_2017.csv&#34;</span>, stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)
 <span style="color:#a6e22e">head</span>(df_csv, <span style="color:#ae81ff">10</span>)
 </code></pre></div><pre><code>##        Datum Nis_IZJZ.Nis
@@ -924,56 +924,56 @@ df_txt &lt;- read.table(file_name.txt, header = FALSE)
 ## 8   8.1.2017     67.86667
 ## 9   9.1.2017     41.41667
 ## 10 10.1.2017     55.75417
-</code></pre><p>The other way is to download it and to save it to your working directory.</p>
-<p>Let us download <a href="https://data.gov.rs/sr/datasets/r/f425e6a5-95ae-4e2b-ab73-1d0b293b4522">&ldquo;Kvalitet vazduha 2017-SO2: 2017-SO2.csv&rdquo;</a>
-Make sure you save the file into your R-Project working directory before you ask R to execute the following</p>
+</code></pre><p>Na drugi način možete uvesti ove podatke tako što ćete ih snimiti u svoj radni direktorijum.</p>
+<p>Preuzmimo sad fajl <a href="https://data.gov.rs/sr/datasets/r/f425e6a5-95ae-4e2b-ab73-1d0b293b4522">&ldquo;Kvalitet vazduha 2017-SO2: 2017-SO2.csv&rdquo;</a>
+i snimimo ga u naš radni direktorijum našeg R projekta pre nego što počnemo da ga koristimo</p>
 <pre><code>df_csv &lt;- read.csv(&quot;2017-so2.csv&quot;, stringsAsFactors = FALSE, fileEncoding = &quot;latin1&quot;)
 </code></pre>
-<div class="notices info" ><p>Run the above code again, but remove <code>stringsAsFactors</code> argument from the <code>read.csv</code> function or set it to TRUE. Can you tell the difference between now and before? Why do you think we had to use <code>fileEncoding</code> argument?</p>
+<div class="notices info" ><p>Ponovo pokrenite kode prikazan gore, ali ovog puta bez argumenta <code>stringsAsFactors</code>, tako što ćemo ga ukloniti ili mu staviti znak jednakosti sa TRUE. Možete li nam reći kakva je razlika pre i posle? Šta mislite zašto koristimo argument  <code>fileEncoding</code>?</p>
 </div>
 
-<p>What do you think about this dataset? 🤔</p>
-<h4 id="using-readrreadcsv">Using readr::read_csv()</h4>
-<p><code>readr</code> is a package that reads rectangular data more quickly than <strong>base R</strong> <code>read.cdv()</code>. Another difference from the <code>read.csv()</code> function is that it assumes characters are strings and not factors by default.</p>
-<p>Just so you can see how easy it is to use other packages for importing data into R, the code below illustrates the use of read_csv().</p>
+<p>Kako vam se čine ovaj set podataka koji ste uvezli? 🤔</p>
+<h4 id="upotreba-readrreadcsv">Upotreba readr::read_csv()</h4>
+<p><code>readr</code> je paket koji čita pravougaone podatke znatno brže od <strong>baze R</strong> <code>read.cdv()</code>. Pored toga ovaj paket i njegova <code>read.csv()</code> funkcija pretpostavlja karaktere kao stringove, a ne kao faktore.</p>
+<p>Da biste videli kako je lako koristiti druge pakete za uvoz podataka u R, ilustrovaćemo to upotrebom read.csv() funkcije.</p>
 <pre><code>## If you don't have readr installed yet, uncomment and run the line below
 # install.packages(&quot;readr&quot;)
 library(readr)
 df_csv &lt;- read_csv(&quot;air_quality_by_station.csv&quot;)
 df_csv
 </code></pre>
-<div class="notices note" ><p>Check the <code>readr::read_delim()</code> function for more efficient delimited data file reading.</p>
+<div class="notices note" ><p>Proverite <code>readr::read_delim()</code> funkciju za efikasnije ograđivanje podataka iz fajlova.</p>
 </div>
 
-<h3 id="importing-excel-files-with-readxl">Importing Excel files with <code>readxl</code></h3>
-<p>Importing Excel data files is not straightforward as it might contain multiple sheets. We will focus on using the <code>readxl</code> package as it is the most efficient so far.</p>
+<h3 id="uvoz-excel-fajlova-sa-readxl">Uvoz excel fajlova sa <code>readxl</code></h3>
+<p>Uvoz podataka iz Excel fajlova nije tako jednostavno, s obzirom da ti fajlovi mogu sadržavati više šitova. Fokusiraćemo se na upotrebu <code>readxl</code> paketa s obzirom da se on do sada pokazao kao najefikasniji za taj posao.</p>
 
-<div class="notices warning" ><p>To access the data from an Excel sheet you can’t just copy and paste the URL for the file. You have to download the file first.</p>
+<div class="notices warning" ><p>Da biste pristupili podacima iz Excel shita možete jednostavno samo kopitari i umetnuti URL fajla. Međutim taj fajl trebate prethodno snimiti.</p>
 </div>
 
-<p>Let us download an Excel data file from <a href="https://data.gov.rs/">data.gov.rs</a> about traffic accidents <a href="https://data.gov.rs/sr/datasets/r/134b2867-8a35-4f00-ac48-1610dca177ec">Подаци о саобраћајним незгодама до 31.08.2019. године за територију свих ПОЛИЦИЈСКИХ УПРАВА и ОПШТИНА</a>.</p>
-<p>If you are unable to open the file in Excel to examine how many sheets the file has, try to read the file in R accessing the first one by specifying it in the <code>read_excel()</code> function as required. As previously, make sure you save the file into your R-Project working directory before you ask R to execute the following:</p>
+<p>Sada ćemo snimiti podatke iz Excel fajla sa stranice otvorenih podataka <a href="https://data.gov.rs/">data.gov.rs</a> podatke o saobraćajnim nesrećama <a href="https://data.gov.rs/sr/datasets/r/134b2867-8a35-4f00-ac48-1610dca177ec">Подаци о саобраћајним незгодама до 31.08.2019. године за територију свих ПОЛИЦИЈСКИХ УПРАВА и ОПШТИНА</a>.</p>
+<p>Ukoliko ne možete da otvorite fajl u Excelu da vidite koliko šitova taj fajl ima, pokušajte pročitati fajl iz R-a tako što ćete pristupiti prvom šitu funkcijom <code>read_excel()</code>. Pre toga, uverite se da ste snimili taj fajl u radni direktorijum vašeg R projekta, i to pre nego što ga pokušate izvršiti sledeći prikazan kod:</p>
 <pre><code>## If you don't have readxl installed yet, uncomment the line below and run it 
 #install.packages(&quot;readxl&quot;)
 library(readxl)
 df_xl &lt;- read_excel(&quot;nez-opendata-20199-20190925.xlsx&quot;, sheet = 1)
-</code></pre><p>What do you think?</p>
+</code></pre><p>Šta mislite?</p>
 
-<div class="notices warning" ><p>People like to make their Excel spreadsheets look &lsquo;pretty&rsquo; with &lsquo;fancy&rsquo; formatting, which could create difficulty when reading them in R.</p>
+<div class="notices warning" ><p>Ljudi uobičajeno ulepšavaju i formatiraju svoje excel fajlove, a to može prouzrokovati probleme u njihov uvoz u R.</p>
 </div>
 
-<p>Explore the arguments of the <code>read_excel()</code> function, such as the <code>skip</code> argument through which you can specify a minimum number of rows to skip before reading anything.</p>
-<h3 id="importing-data-using-jsonlite">Importing data using <code>jsonlite</code></h3>
-<p>When accessing JSON file in R using the <code>jsonlite</code> package you need to point to the file by providing the local path if the file is downloaded or by the URL from where it could be accessed.</p>
+<p>Istražite argumente funkcije <code>read_excel()</code>, poput <code>skip</code> argumenta sa kojim možete da specifikujete minimalni broj redova koje ne želite da učitate iz fajla.</p>
+<h3 id="uvoz-podataka-upotrebom-jsonlite">Uvoz podataka upotrebom <code>jsonlite</code></h3>
+<p>Ukoliko želite da uvezete JSON fajl u R upotrebljavaćete <code>jsonlite</code> paket. Potrebno je da ukažete na fajl tako što ćete ovoj funkciji obezbediti lokalnu putanju do njega, ukoliko se on već nalazi na vašem računaru ili jednostavno samo URL ukoliko želite da uveze sa interneta.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">## If you don&#39;t have readxl installed yet, uncomment the line below and run it </span>
 <span style="color:#75715e">#install.packages(&#34;jsonlite&#34;)</span>
 <span style="color:#a6e22e">library</span>(jsonlite)
 my_url <span style="color:#f92672">&lt;-</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">https://data.gov.rs/sr/datasets/r/41c2fe91-4ea1-4a64-b33c-183665ea6ab3&#34;</span>
 polen <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fromJSON</span>(my_url)
-</code></pre></div><p>Check the structure of the <code>polen</code>! 😰</p>
+</code></pre></div><p>Pogledajte sad strukturu <code>polen-a</code>! 😰</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">str</span>(polen)
 </code></pre></div><pre><code>## List of 4
-##  $ count   : int 26132
+##  $ count   : int 26419
 ##  $ next    : chr &quot;http://polen.sepa.gov.rs/api/opendata/pollens/?page=2&quot;
 ##  $ previous: NULL
 ##  $ results :'data.frame':	500 obs. of  4 variables:
@@ -1083,18 +1083,18 @@ polen <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fromJ
 ##   .. .. [list output truncated]
 </code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">names</span>(polen)
 </code></pre></div><pre><code>## [1] &quot;count&quot;    &quot;next&quot;     &quot;previous&quot; &quot;results&quot;
-</code></pre><p>Note that the <code>polen$results</code> is a data frame with a list <code>concentrations</code> inside as its element.</p>
-<p>Ouch! 😳 JSON files are not very neat 😱 They are more than often nested, chained -&gt; you’ve got it: Very Messy! 😫 So, we will leave it there. 😬 If you do need to learn more about reading JSON files in R you can explore the functionality of the <code>jsonlite</code> package further by reading <a href="https://cran.r-project.org/web/packages/jsonlite/vignettes/json-aaquickstart.html">Getting started with JSON and jsonlite</a>. Blog post <a href="https://blog.exploratory.io/working-with-json-data-in-very-simple-way-ad7ebcc0bb89">Working with JSON data in very simple way</a> by <a href="https://blog.exploratory.io/@kanaugust">Kan Nishida</a> provides a great example of how this data format can be used in R.</p>
-<h3 id="other-data-formats">Other data formats</h3>
-<p>To speed up the reading process of txt, csv data files you can use the <code>data.table::fread()</code> function. You should only pass to the function the name of the data file you want to import, and <code>fread()</code> will try to work out the appropriate data structure. Check out this blog post <a href="https://www.r-bloggers.com/getting-data-from-an-online-source/">Getting Data From An Online Source</a> for some more ideas.</p>
-<p>You can use R with appropriate packages to access other data formats. The <code>haven</code> package provides functions for importing SAS, SPSS and Stata file formats or you can use the <code>foreign</code> package for MiniTab portable worksheet data files. Try to look through the help section of the packages you've been introduced to and discover other options.</p>
-<h2 id="your-turn-">YOUR TURN 👇</h2>
+</code></pre><p>Napomena: komanda <code>polen$results</code> je okvir podataka koji sadrži listu <code>koncentracija (concentrations)</code> kao svoj element.</p>
+<p>Ouch! 😳 JSON fajlovi nisu baš uredni 😱 Oni su često ugnježđeni, povezani -&gt; shvatili ste: Vrlo neuredno! 😫 Dakle, ostavićemo ih takvim. 😬 IAko vam je potrebno da saznate više o čitanju JSON fajlova u R-u možete dodatno istražiti funckionalnost paketa <code>jsonlite</code> ili pronađite na stranici <a href="https://cran.r-project.org/web/packages/jsonlite/vignettes/json-aaquickstart.html">Getting started with JSON and jsonlite</a>. Blog <a href="https://blog.exploratory.io/working-with-json-data-in-very-simple-way-ad7ebcc0bb89">Working with JSON data in very simple way</a> autora <a href="https://blog.exploratory.io/@kanaugust">Kan Nishida</a> u njemu ćete naći odlične primere kako možete koristiti ove podatke u R-u.</p>
+<h3 id="drugi-formati-podataka">Drugi formati podataka</h3>
+<p>Da biste ubrzali procesa čitanja txt, csv fajlova možete koristiti <code>data.table::fread()</code> funkciju. Potrebno je da ovoj funkciju samo obezbedite ime fajla u kom se nalaze podaci koje želite da uvezete, a <code>fread()</code> će pokušati da vam uveze odgovarajuću njihovu strukturu. Pogledajte ovaj blog <a href="https://www.r-bloggers.com/getting-data-from-an-online-source/">Getting Data From An Online Source</a> da vidite još neke ideje za uvoz podataka.</p>
+<p>R zajedno sa odgovarajućim paketima možete koristiti i za uvoz drugih formata podataka. Paket <code>haven</code> omogućuje vam funkcije za uvoz SAS, SPSS i Stata fajlova ili možete upotrebljavati <code>foreign</code> paket za MiniTab fajlova. Pregledajte help sekciju paketa sa kojim želite da se upoznate ali i da otkrijete koje sve druge opcije on poseduje.</p>
+<h2 id="zadaci-">ZADACI 👇</h2>
 <ol>
 <li>
-<p>See if you can find data from <a href="https://data.gov.rs/">https://data.gov.rs/</a> about a topic you’re interested in.</p>
+<p>Pregledajte stranicu otvorenih podataka <a href="https://data.gov.rs/">https://data.gov.rs/</a> i pronađite temu koja vas zanima.</p>
 </li>
 <li>
-<p>Have a look at this data set: <a href="https://data.gov.rs/sr/datasets/podatsi-o-saobratshajnim-nezgodama-po-politsijskim-upravama-i-opshtinama/">saobracaj</a>. Think about the questions you can answer based on this data.</p>
+<p>Pogledajte setove podataka na ovoj stranici koja se nalazi u odeljku:  <a href="https://data.gov.rs/sr/datasets/podatsi-o-saobratshajnim-nezgodama-po-politsijskim-upravama-i-opshtinama/">saobracaj</a>. Razmislite koje pitanja možete postaviti na osnovu tih podataka.</p>
 </li>
 </ol>
 <hr>
@@ -1546,7 +1546,7 @@ polen <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fromJ
 	 
 	 
 		
-			<a class="nav nav-prev" href="/day1/datatypes/" title="Data Types"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/day1/datatypes/" title="Tipovi podataka"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/day1/principlesvisualisation/" title="Introduction to Visualisation Principles" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -1559,19 +1559,19 @@ polen <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fromJ
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1575817628"></script>
-    <script src="/js/perfect-scrollbar.min.js?1575817628"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1575817628"></script>
-    <script src="/js/jquery.sticky.js?1575817628"></script>
-    <script src="/js/featherlight.min.js?1575817628"></script>
-    <script src="/js/highlight.pack.js?1575817628"></script>
+    <script src="/js/clipboard.min.js?1576009827"></script>
+    <script src="/js/perfect-scrollbar.min.js?1576009827"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1576009827"></script>
+    <script src="/js/jquery.sticky.js?1576009827"></script>
+    <script src="/js/featherlight.min.js?1576009827"></script>
+    <script src="/js/highlight.pack.js?1576009827"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1575817628"></script>
-    <script src="/js/learn.js?1575817628"></script>
-    <script src="/js/hugo-learn.js?1575817628"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1576009827"></script>
+    <script src="/js/learn.js?1576009827"></script>
+    <script src="/js/hugo-learn.js?1576009827"></script>
 
-    <link href="/mermaid/mermaid.css?1575817628" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1575817628"></script>
+    <link href="/mermaid/mermaid.css?1576009827" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1576009827"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
