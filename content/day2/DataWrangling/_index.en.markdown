@@ -1,31 +1,31 @@
 ---
 date: "2016-04-09T16:50:16+02:00"
-title: Data Wrangling
+title: Upravljanje podacima
 output: 
   learnr::tutorial
 weight: 1
 ---
 
-### How do we do it? 🤔
+### Kako to radimo? 🤔
 
 ![Red variant](/day2/DataWrangling/images/Program_HW.png?width=40pc)
 
-This diagram is taken from the [R for Data Science](https://r4ds.had.co.nz/) book by [Garrett Grolemund](https://twitter.com/statgarrett
-) and [Hadley Wickham](https://twitter.com/hadleywickham), which it is a great resource for learning R. There is a whole community built around it and you could join it and start learning together: [R4DS online learning community](https://www.rfordatasci.com/).
+Ovaj dijagram preuzet je iz knjige [R for Data Science](https://r4ds.had.co.nz/) autora [Garrett Grolemund](https://twitter.com/statgarrett
+) i [Hadley Wickham](https://twitter.com/hadleywickham), inače odličnog izvora za učenje R-a. Takođe, bitno je da znate i da postoji velika zajednica okupljena oko R-a, i ne bi bilo loše da im se pridružite na: [R4DS online learning community](https://www.rfordatasci.com/).
 
-### Dataset
+### Skupovi podataka
 
-To learn and practise how to organise data we will use a `gapminder` data set available from the `gapminder` package in R. This dataset is put into R by [Jennifer Bryan](https://jennybryan.org/) from a tank of data sets available from [Gapminder](https://www.gapminder.org).
+Da biste naučili kako da organizujete podatke koristićemo alat `gapminder` skup podataka koji nam je omogućen preko gapminder paketa u R-u. Ovaj skup podataka u R je postavila [Jennifer Bryan](https://jennybryan.org/) iz rezervaoara skupova podataka koji su nam dati zahvaljujući [Gapminder-u](https://www.gapminder.org).
 
-[Gapminder](https://www.gapminder.org) is an independent Swedish foundation that helps to promote sustainable global development by collecting and analysing relevant data and by developing and designing  teaching/learning tools. [Gapminder](https://en.wikipedia.org/wiki/Gapminder_Foundation) was founded in Sweden by [Hans Rosling](https://en.wikipedia.org/wiki/Hans_Rosling) who was a mastermind for distinctive and insightful storytelling about global development using visual animation.
+[Gapminder](https://www.gapminder.org) je nezavisna Švedska fondacija koja pomaže svetski održivi razvoj tako što sakuplja i analizira relevantne podatke ali i razvojem i kreiranjem raznog materijala za učenje. [Gapminder](https://en.wikipedia.org/wiki/Gapminder_Foundation) je osnovao u Švedskoj [Hans Rosling](https://en.wikipedia.org/wiki/Hans_Rosling) koji je rukovodio objavljivanju sveobuhvatne i pronicljive priče o globalnom razvoju upotrebom vizuelnih animacija.
 
-You can see Hans in action in this [BBC documentary](https://www.bbc.co.uk/programmes/p02q33dg) [The joy of Stats](https://www.youtube.com/watch?v=cdf0k545yDA) available on [YouTube](https://www.youtube.com).
+Hansa u akciji možete videti u [BBC dokumentarcu](https://www.bbc.co.uk/programmes/p02q33dg) [The joy of Stats](https://www.youtube.com/watch?v=cdf0k545yDA) koji je dostupan na kanalu [YouTube](https://www.youtube.com).
 
-##### Gapminder Data
+##### Gapminder podaci
 
-For each of 142 countries, the package provides values for life expectancy, GDP per capita, and population, every five years, from 1952 to 2007.
+Za svaku od 142 svetske države, u ovom paketu date su vrednosti očekivanih godina starenja, Bruto domaći proizvod (BDP ili GDP) po glavi stanovnika, broj stanovnika svakih pet godina počevši od 1952. godine do 2007. godine.
 
-Before you can take a look at this data set first run the folowing code
+Pre nego što počnete da pregledate ove podatke, pokrenite sledeći kod
 
 ```
 # install necessary packages:
@@ -53,18 +53,18 @@ head(gapminder::gapminder)
 ```
 
 {{% notice note %}}
-💡Note that there are 6 columns, each of which we call a variable.
+💡Zapazite da ovde imamo 6 kolona, svaku od njih možemo nazivati varijablom.
 {{% /notice %}}
 
-**Description**: Excerpt of the Gapminder data on life expectancy, GDP per capita, and population by country.
+**Opis**: Izvod podataka Gapminder-a koji sadrže informacije o očekivanoj godini života, BDP po glavi stanovnika i broj stanovnika po državi.
 
-The main data frame gapminder has **1704 rows** and **6 variables**:
-- **country**: factor with 142 levels
-- **continent**: factor with 5 levels
-- **year**: ranges from 1952 to 2007 in increments of 5 years
-- **lifeExp**: life expectancy at birth, in years
-- **pop**: population
-- **gdpPercap**: GDP per capita
+Glavni okvir podataka u gapminder-u ima **1704 reda** i **6 varijabli**:
+- **država**: faktor ima 142 nivoa
+- **kontinent**: faktor sa 5 nivoa
+- **godina**: rasponi od 1952. do 2007. godine sa uvećanjem od 5 godina
+- **lifeExp**: životni vek po rođenju, u godinama
+- **pop**: broj stanovnika
+- **gdpPercap**: BDP po glavi stanovnika
 
 
 ```r
@@ -80,7 +80,7 @@ gapminder::gapminder[1:3,]
 ## 3 Afghanistan Asia       1962    32.0 10267083      853.
 ```
 
-1st look at the data using the following functions: <span style="color:red">`dim()`</span> & <span style="color:dim">`head()`</span>
+Prvo pogledajmo ove podatke upotrebom sledećih funkcija: <span style="color:red">`dim()`</span> & <span style="color:dim">`head()`</span>
 
 
 ```r
@@ -112,9 +112,9 @@ head(gapminder, n=10)
 ## 10 Afghanistan Asia       1997    41.8 22227415      635.
 ```
 
-Can you tell what each of the two functions does⁉️
+Možete nam reći šta svaka od ove dve funkcije radi⁉️
 
-Do we have the information about the structure of the data? 🤔 We can examine the structure using <span style="color:red">`str()`</span> function, but the **output could look messy** and hard to follow if the data set is big. 🤪
+Da li nam je data informacija o strukturi podataka? 🤔 Možemo istražiti strukturu upotrebom <span style="color:red">`str()`</span> funkcije, ali rezultat može izgledati neuredno i teško je ga pratiti ako je skup podataka velik. 🤪
 
 
 ```r
@@ -131,23 +131,23 @@ str(gapminder)
 ##  $ gdpPercap: num  779 821 853 836 740 ...
 ```
 
-#### The `dplyr` Package
+#### Paket `dplyr`
 
-The <span style="color:red">**`dplyr`**</span> provides a “grammar” (the verbs) for data manipulation and for operating on data frames in a tidy way. The key operator and the essential verbs are:
+Paket <span style="color:red">**`dplyr`**</span> nam donosi gramatiku (reči) za upravljanje i za operacije nad okvirom podataka na tidy način. Ključni operatori i nazaobilazne reči ovog paketa su:
 
-<span style="color:red">%>%</span>: the “pipe” operator used to connect multiple verb actions together into a pipeline.
+<span style="color:red">%>%</span>: operator “cevi” koristi se za povezivanje više glagolskih radnji u jedan cevodod.
 
-<span style="color:red">select()</span>: return a subset of the columns of a data frame.
+<span style="color:red">select()</span>: vraća podskup kolona traženog okvira podataka.
 
-<span style="color:red">mutate()</span>: add new variables/columns or transform existing variables.
+<span style="color:red">mutate()</span>: dodaje nove varijable/kolone ili transformiše postojeće varijable.
 
-<span style="color:red">filter()</span>: extract a subset of rows from a data frame based on logical conditions.
+<span style="color:red">filter()</span>: izdvaja podskup redova iz okvira podataka na osnovu logičkih uslova.
 
-<span style="color:red">arrange()</span>: reorder rows of a data frame according to single or multiple variables.
+<span style="color:red">arrange()</span>: reorganizacija redova okvira podataka prema jednoj ili više varijabli.
 
-<span style="color:red">summarise() / summarize()</span>: reduce each group to a single row by calculating aggregate measures.
+<span style="color:red">summarise() / summarize()</span>: smanjite svaku grupu u jedan red izračunavanjem zbirnih mera.
 
-We can have a look at the data and its structure by using the <span style="color:red">`glimpse()`</span> function from the `dplyr` package.
+Možemo da pogledamo podatke i njihovu strukturu pomoću funkcije <span style="color:red">`glimpse()`</span> iz `dplyr` paketa.
 
 
 ```r
@@ -167,50 +167,50 @@ glimpse(gapminder)
 ```
 
 {{% notice note %}}
-🤓💡: Notice how we can prevent display of the messages that appear when uploading the packages by using, in this case, `suppressPackageStartupMessages()`!
+🤓💡: Uočite da možemo da sprečimo prikazivanje poruka koje se pojavljuju prilikom aploadovanja paketa, upotrebom u ovom slučaju naredbe, `suppressPackageStartupMessages()`!
 {{% /notice %}}
 
-Now we have the `dplyr` package uploaded, let us learn its verbs. 😇
+Sada kada smo uploadovali `dplyr` paket, pogledajmo neke od glagola. 😇
 
-#### The pipeline operater: <span style="color:red">`%>%`</span>
+#### Operator cevi (pipeline operator): <span style="color:red">`%>%`</span>
 
-**Left Hand Side (LHS)**   <span style="color:red">`%>%`</span>    **Right Hand Side (RHS)**
+**Leva strana (LVS)**   <span style="color:red">`%>%`</span>    **Desna strana (DSS)**
 
 <span style="color:red">x %>% f(..., y)</span> 
 
 <span style="color:red">    f(x,y)</span>
 
-The "pipe" **passes the result of the *LHS as the 1st operator argument of the function on the RHS**.
+„Cevi“ **prosleđuju rezultat *LVS kao prvi argument operatora funkcije DSS**.
 
 <pre>
 <span style="color:red">3 %>% sum(4)</span>      <==>      <span style="color:red">  sum(3, 4)</span>
 </pre>
 
-<span style="color:red">`%>%`</span> is very practical for chaining together multiple <span style="color:red">`dplyr`</span> functions in a sequence of operations.
+<span style="color:red">`%>%`</span> je vrlo praktičan za vezivanje više <span style="color:red">`dplyr`</span> funkcija u niz operacija.
 
-#### Pick variables by their names: <span style="color:red">`select()`</span>,
+#### Izaberite promenjive prema njihovim imenima: <span style="color:red">`select()`</span>,
 
 <img src="images/select().png" width="450px" />
 
-- <span style="color:red">`starts_with("X")`</span> every name that starts with "X".
+- <span style="color:red">`starts_with("X")`</span> svako ime koje počinje sa "X".
 
-- <span style="color:red">`ends_with("X")`</span> every name that ends with "X".
+- <span style="color:red">`ends_with("X")`</span> svako ime koje završava sa "X".
 
-- <span style="color:red">`contains("X")`</span> every name that contains "X".
+- <span style="color:red">`contains("X")`</span> svako ime koje sadrži "X".
 
-- <span style="color:red">`matches("X")`</span> every name that matches "X", where "X" can be a regular expression.
+- <span style="color:red">`matches("X")`</span> svako ime koje se poklapa sa “X”, gde “X” može biti regularni izraz.
 
-- <span style="color:red">`num_range("x", 1:5)`</span>  the variables named x01, x02, x03, x04, x05.
+- <span style="color:red">`num_range("x", 1:5)`</span>  varijable imenovane x01, x02, x03, x04, x05.
 
-- <span style="color:red">`one_of(x)`</span> => every name that appears in x, which should be a character vector.
+- <span style="color:red">`one_of(x)`</span> => svako ime koje se pojavljuje u x, koji bi trebalo da bude vektor karaktera.
 
-##### 👉 Practice ⏰💻: Select your variables 
+##### 👉 Vežbajte ⏰💻: Selektujte vaše varijable
 
-1) that ends with letter `p`
+1) koje se završavaju sa slovom `p`
 
-2) starts with letter `co`. Try to do this selection using base R.  
+2) počinju sa slovima `co`. Pokušajte da izvršite ovaj zadatak koristići bazu R.  
 
-##### 😃🙌 Solutions:
+##### 😃🙌 Rešenje:
 
 
 ```r
@@ -237,21 +237,21 @@ head(gm_cc, n = 1)
 ## 1 Afghanistan Asia
 ```
 
-of course all of this could be done using **base R** for example:
+Naravno ovo možemo uraditi i upotrebom **base R**, na primer:
 
 
 ```r
 gm_cc <- gapminder[c("country", "continent")]
 ```
 
-but it's less intuitive and often requires more typing. 
+ali je ovaj način manje intuitivan i uobičajeno uključuje i više kucanja. 
 
-#### Create new variables of existing variables: <span style="color:red">`mutate()`</span>
+#### Kreirajte nove varijable od postojećih: <span style="color:red">`mutate()`</span>
 
 <img src="images/mutate().png" width="400px" />
 
-It would allow you to add to the data frame `df` a new column, `z`, which is the multiplication of the columns `x` and `y`: `mutate(df, z = x * y)`.
-If we would like to observe `lifeExp` measured in months we could create a new column `lifeExp_month`: 
+Omogućiće vam da dodate u okvir podataka `df` novu kolonu, `z`, koja će biti rezultat množenja kolona `x` and `y`: `mutate(df, z = x * y)`.
+Ukoliko želimo da posmatramo `lifeExp` dat u mesecima umesto u godinama, možemo napraviti novu kolonu `lifeExp_month`: 
 
 ```r
 gapminder2 <- mutate(gapminder, LifeExp_month = lifeExp * 12) 
@@ -266,36 +266,35 @@ head(gapminder2, n = 2)
 ## 2 Afghanistan Asia       1957    30.3 9240934      821.          364.
 ```
 
-#### Pick observations by their values: <span style="color:red">`filter()`</span>
+#### Izaberite opažanja prema njihovim vrednostima: <span style="color:red">`filter()`</span>
 <img src="images/filter().png" width="450px" />
 
-There is a set of logical operators in **R** that you can use inside `filter()`:
+Postoji skup logičkih operatora u **R-u** koje možete koristiti unutar `filter()`:
 
-- `x < y`: `TRUE` if `x` is less than `y`
-- `x <= y`: `TRUE` if `x` is less than or equal to `y`
-- `x == y`: `TRUE` if `x` equals `y`
-- `x != y`: `TRUE` if `x` does not equal `y`
-- `x >= y`: `TRUE` if `x` is greater than or equal to `y`
-- `x > y`: `TRUE` if `x` is greater than `y`
-- `x %in% c(a, b, c)`: `TRUE` if `x` is in the vector `c(a, b, c)`
-- `is.na(x)`:  Is `NA`
-- `!is.na(x)`: Is not `NA`
+- `x < y`: `TRUE` ukoliko `x` je manje od `y`
+- `x <= y`: `TRUE` ukoliko `x` je manje ili jednako sa `y`
+- `x == y`: `TRUE` ukoliko `x` je jednako sa `y`
+- `x != y`: `TRUE` ukoliko `x` nije jednako sa `y`
+- `x >= y`: `TRUE` ukoliko `x` je veće ili jednako sa `y`
+- `x > y`: `TRUE` ukoliko `x` je veće od `y`
+- `x %in% c(a, b, c)`: `TRUE` ukoliko `x` je vektor  `c(a, b, c)`
+- `is.na(x)`:  je `NA`
+- `!is.na(x)`: nije `NA`
 
-##### 👉 Practice ⏰💻: Filter your data
+##### 👉 Vežbajte ⏰💻: Filtrirajte vaše podatke
 
-Use `gapminder2` `df` to filter:
+Upotrebite `gapminder2` `df` da filtrirate:
 
-1) only European countries and save it as `gapmEU`
+1) samo evropske države i snimite ih kao `gapmEU`
 
-2) only European countries from 2000 onward and save it as `gapmEU21c`
+2) samo evropske države od 2000 pa nadalje i snimite ih kao `gapmEU21c`
 
-3) rows where the life expectancy is greater than 80
+3) redove u kojima je očekivani životni vek već od 80
 
-Don't forget to **use `==` instead of `=`**! and
-Don't forget the quotes **`""`**
+Ne zaboravite ta **koristite `==` umesto `=`**! i ne zaboravite da koristite znake navoda **`""`**
 
 
-##### 😃🙌 Solutions:
+##### 😃🙌 Rešenja:
 
 ```r
 gapmEU <- filter(gapminder2, continent == "Europe") 
@@ -329,24 +328,24 @@ head(gapmEU21c, 2)
 filter(gapminder2, lifeExp > 80)
 ```
 
-#### Reorder the rows: <span style="color:red">`arrange()`</span>
-is used to reorder rows of a **d**ata **f**rame (df) according to one of the variables/columns.
+#### Promenite redosled redova: <span style="color:red">`arrange()`</span>
+Ukoliko želite da promenite redosled redova data okvira, **d**ata **f**rame (df), prema jednoj od varijabli/kolona.
 
 <img src="images/arrange().png" width="300px" />
 
-- If you pass `arrange()` a character variable, **R** will rearrange the rows in alphabetical order according to values of the variable. 
+- Ukoliko prosledite funkciji `arrange()` slovnu varijablu, **R** će promeniti redove vrednosti u varijablama poređane po alfabetu. 
 
-- If you pass a factor variable, **R** will rearrange the rows according to the order of the levels in your factor (running `levels()` on the variable reveals this order).
+- Ukoliko, pak, prosledite faktorsku varijablu, **R** će promeniti redove po redu nivoa u vašem faktoru (kada se upotrebi funkcija `levels()` na varijabli taj redosled će se obrnuti).
 
-##### 👉 Practice ⏰💻: Arranging your data
-1) Arrange countries in `gapmEU21c` `df` by life expectancy in ascending and descending order.
+##### 👉 Vežbajte ⏰💻: ArUredite vaše podatke 
+1) Poređajte države u podacima `gapmEU21c` `df` po očekivanom životnom veku u rastuće i padajućem redu.
 
-2) Using `gapminder df`
-  - Find the records with the smallest population
+2) Upotrebom `gapminder df`
+  - Pronađite zapise sa najmanjom populacijom
   
-  - Find the records with the largest life expectancy.
+  - Pronađite zapise sa najvećim očekivanim životnim vekom.
 
-##### 😃🙌 Solution 1):
+##### 😃🙌 Rešenje 1):
 
 ```r
 gapmEU21c_h2l <- arrange(gapmEU21c, lifeExp)
@@ -374,7 +373,7 @@ head(gapmEU21c_l2h, 2)
 ## 2 Switzerland Europe     2007    81.7 7554661    37506.          980.
 ```
 
-##### 😃🙌 Solution 2):
+##### 😃🙌 Rešenje 2):
 
 ```r
 arrange(gapminder, pop)
@@ -419,15 +418,15 @@ arrange(gapminder, desc(lifeExp))
 ## # … with 1,694 more rows
 ```
 
-#### Collapse many values down to a single summary: <span style="color:red">`summarise()`</span>
+#### Sažmite više vrednosti u jednu sumu: <span style="color:red">`summarise()`</span>
 
 <img src="images/summarise().png" width="450px" />
 
-The syntax of summarise() is simple and consistent with the other verbs included in the `dplyr` package.
+Sintaksa summarise() jednostavna je i sastoji se od  više glagola koji su uključeni u `dplyr` paket.
 
-- uses the same syntax as `mutate()`, but the resulting dataset consists of a single row instead of an entire new column in the case of `mutate()`. 
+- koristi istu sintaksu kao i `mutate()`, ali se rezultat prikazaju u pojedinačnom redu, umesto u novoj koloni što je slučaj kod upotrebe `mutate()`. 
 
-- builds a new dataset that contains only the summarising statistics.
+- gradi novi skup podataka koji sadrži samo zbirne statistike.
 
 | Objective | Function                | Description                    |
 | --------- | ----------------------- | ------------------------------ |
@@ -442,13 +441,13 @@ The syntax of summarise() is simple and consistent with the other verbs included
 |           | `max(x)`                | Max of vector x                |
 |           | `abs(x)`                | Absolute value of a number x   | 
 
-##### 👉 Practice ⏰💻: Use `summarise()`:
+##### 👉 Vežbajte ⏰💻: Use `summarise()`:
 
-1) to print out a summary of gapminder containing two variables: max_lifeExp and max_gdpPercap.
+1) odštampajte sažetak podataka u tabeli gapminder koji se odnose na dve varijable: max_lifeExp and max_gdpPercap.
 
-2) to print out a summary of gapminder containing two variables: mean_lifeExp and mean_gdpPercap.
+2) odštampajte sažetak podataka gapminder koji sadrži dve varijable: mean_lifeExp and mean_gdpPercap.
 
-##### 😃🙌 Solution: Summarise your data
+##### 😃🙌 Sažetak vaših podataka 
 
 
 ```r
@@ -474,11 +473,11 @@ summarise(gapminder, mean_lifeExp = mean(lifeExp), mean_gdpPercap = mean(gdpPerc
 ## 1         59.5          7215.
 ```
 
-#### Subsetting: <span style="color:red">`group_by()`</span>
+#### Podgrupisanje: <span style="color:red">`group_by()`</span>
 
-dplyr's `group_by()` function enables you to group your data. It allows you to create a separate df that splits the original df by a variable.
+Funkcija dplyr's `group_by()` omogućuje vam da grupišete vaše podatke. Omogućuje vam da kreirate poseban df koji će odvojiti orginali df po varijablama.
 
-The function `summarise()` can be combined with `group_by()`.
+Funkcija `summarise()` može se kombinovati sa `group_by()`.
 
 | Objective | Function                | Description                               |
 | --------- | ----------------------- | ----------------------------------------- |
@@ -489,11 +488,11 @@ The function `summarise()` can be combined with `group_by()`.
 |           | n_distinct()	          | Count the number of distinct observations |
 
 
-##### 👉 Practice ⏰💻: Subset your data
+##### 👉 Vežbajte ⏰💻: SuGrupišite vaše podatke
 
-1) Identify how many countries are given in gapminder data for each continent.
+1) Identifikujte koliko je država dato u  gapminder-u za svaki kontinent.
 
-##### 😃🙌 Solution: 
+##### 😃🙌 SRešenje 
 
 
 ```r
@@ -513,15 +512,15 @@ gapminder %>%
 ## 5 Oceania                       2
 ```
 
-#### Let's `%>%` all up!
+#### Povežimo sa `%>%` sve gore!
 
-You can try to get into a habit of using a shortcut for the pipe operator 
+Naučite da koristite skraćenicu (shortcut) za pipe operator (operator cevi) 
 <img src="images/pipe_short_cut.png" width="450px" style="display: block; margin: auto;" />
 
-##### 🗣👥 Confer with your neighbours: 
-What relationship do you expect to see between population size (`pop`) and life expectancy (`lifeExp`)?
+##### 🗣👥 Pregovarajte sa komšijama: 
+Kakvu relaciju očekujete da nađete između broja stanovnika (`pop`) i očekivanog životnog veka (`lifeExp`)?
 
-**Look what this code produces**
+**Pogledajte šta će vam proizvesti sledeći kod**
 
 
 ```r
@@ -535,28 +534,28 @@ plot(gapminder_pipe$pop_e6, gapminder_pipe$lifeExp, cex = 0.5, col = "red")
 
 #### `tidyr`
 
-The `tidyr` can help you to create **tidy data**. Tidy data is data where:
+Paket `tidyr` može vam pomoći da kreirate uredne podatke **tidy data**. Uredni podaci su podaci u kojima:
 
-- Every **column** is a **variable**
-- Every **row** is an **observation**
-- Every **cell** is a **single value**
+- Svaka **kolona** je **varijabla**
+- Svaki **red** je **observacija**
+- Svaka **ćelija** je **pojedinačna vrednost**
 
 <img src="images/tidyr.png" width="450px" />
 
-The `tidyr` package embraces the **principles of tidy data** and provides the standard key functionalities to organise data values within a dataset.
+Paket `tidyr` package obuhvata principe uređenih podataka **principles of tidy data** i obezbeđuje vam standardne ključne funkcionalnosti da organizujete vrednosti podataka u setu podataka.
 
-[Hadley Wickham](http://hadley.nz/) the author of the `tidyr` package talks in his paper [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf) about the importance of data cleaning process and structuring datasets to facilitate data analysis.
+[Hadley Wickham](http://hadley.nz/) autor diskutuje o `tidyr` paketu u svom tekstu [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf) i važnosti procesa pročišćavanja podataka i njihovog strukturisanja za dalju analize.
 
-Real datasets, that you are most likely to download from <https://data.gov.rs/> or any other open source data platform, would often violate the three precepts of tidy data in all kinds of different ways:
+Pravi skupovi podataka iz kojih vam se budu svideli sa sajta <https://data.gov.rs/> ili bilo kojeg otvorenog izvora podataka na drugim platformama, često neće biti uređeni po principima uređenih podataka i te razlike mogu biti različite:
 
-- Variables would not have their names and column headers are values.
--	A number of variables are stored in one column
--	A single variable that is stored in several columns 
--	Same information stored multiple times as different variables
+- Varijable mogu da nemaju svoja imena a umesto zaglavalja kolona da imate vrednosti.
+-	Veći broj varijabli mogu biti sačuvani u jednoj koloni
+-	Pojedinačna varijabla može biti sačuvana u nekoliko kolona 
+-	Iste informacije su snimljene više puta kao različite varijable
  
-to name a few.
+samo da navedemo neke.
 
-To illustrate this, let us go back onto <https://data.gov.rs/> and access [Kvalitet Vazduha 2017](https://data.gov.rs/sr/datasets/kvalitet-vazduha-2017/). In particular, we want to access [2017-NO2.csv](http://data.sepa.gov.rs/dataset/ca463c44-fbfa-4de9-9a75-790995bf2830/resource/74516688-5fb5-47b2-becc-6b6e31a24d80/download/2017-no2.csv) data.
+Da bismo ovo ilustrovali otidite na portal <https://data.gov.rs/> i potražite [Kvalitet Vazduha 2017](https://data.gov.rs/sr/datasets/kvalitet-vazduha-2017/). Pre svega, uzećemo sledeće podatke [2017-NO2.csv](http://data.sepa.gov.rs/dataset/ca463c44-fbfa-4de9-9a75-790995bf2830/resource/74516688-5fb5-47b2-becc-6b6e31a24d80/download/2017-no2.csv).
 
 
 ```r
@@ -584,23 +583,23 @@ glimpse(no2)
 ## $ Ni..IZJZ.Ni...NO2       <dbl> 18.61, 22.87, 15.68, 21.97, 21.68, 12.11…
 ```
 
-It shows that this data set has `365` observations and `8` variables. Nonetheless, we need to consider what type of information we have here:
+Podaci nam govore da tabela ima `365` observacija i `8` varijabli. Bezobzira, treba da razmotrimo koje tipove infomacija mi ovde imamo:
 
-- `date` NO2 measurement taken: given in a single column -> ✅ tidy🙂
-- `places` where NO2 measurement was taken: given in several columns -> ❎ tidy🙁
-- `NO2` measurements: given in several columns -> ❎ tidy🙁
+- `date` NO2 vreme u kom su merenja izvršena: data su u jedinstvenoj koloni -> ✅ čisto (tidy) 
+- `places` mesta na kojima je NO2 meren: data su u nekoliko kolona -> ❎ čisto (tidy)🙁
+- `NO2` merenja: data su u nekoliko kolona -> ❎ čisto (tidy)🙁
 
-Hmmm… 🤔 This doesn’t look tidy at all 😳
+Hmmm… 🤔 Da li nam ovo izgleda čisto (tidy) 😳
 
-This data is about measurement level of NO2(µg/m3) in several different towns/places, which means that NO2 is our main response variable. The way in which this variable is given in this data is certainly not tidy. It defeats the key principles of tidy data: **Every column is a variable** and furthermore, **Every row is <span style="color:orangered">NOT</span> an observation**.
+Ovi podaci odnose se na merenje nivoa NO2(µg/m3) u nekoliko različitih gradova/mesta, što znači da je naša glavna odzivna varijabla NO2. Način na koji je ona prikazana u ovu podacima sigurno nije čist (tidy). Ne oslikavaju principe uređenih podataka: **svaka kolona je varijabla** je i dalje, **svaki red <span style="color:orangered">NIJE</span> opservacija**.
 
-It appears that this data has `8` variables, but we have realised that there are only `3`: `date`, `place` and `no2`. To tidy it, we need to **stack it** by turning columns into rows. We are happy with the variable `date` and it should remain as a single column, the other `7` columns we want to convert into two variables: `place` and `no2`.
+Ispostavlja se da ovi podaci sadrže 8 varijabli, a misli shvatili da ih je samo `3`: `date`, `place` i `no2`. Da bi ih uredili, neophodno je da ih složimo pretvarajući kolone u redove. Zadovoljni smo sa varijablom  `date` i ona treba da ostane u pojedinačnoj koloni, međutim drugih 7 kolona treba da prebacimo u dve varijable: `place` and `no2`.
 
-To make *wide format* data into *tall format* we have to turn columns into rows using `gather()` function.
+Da pretvorimo podatke širokog formata u visoki format neophodno je da pretvorimo kolone u redove upotrebom funkcije `gather()`.
 
 <img src="images/gather.png" width="450px" />
 
-We will create variable `place` in which we will hold the headers as given in the columns 2:8. The values inside those columns will be saved in the new variable `no2`.
+Kreiraćemo varijablu `place` u kojoj ćemo sakupiti sva zaglavlja data u kolonama 2:8. Vrednosti unutar tih kolona biće snimljene u novu varijablu `no2`.
 
 
 ```r
@@ -617,7 +616,7 @@ glimpse(new_no2)
 ## $ no2   <dbl> 22.89, 32.94, 14.86, 22.73, 20.89, 10.47, 9.58, 15.99, 14.…
 ```
 
-Let us see the names of the places
+Da vidimo imena mesta
 
 
 ```r
@@ -639,7 +638,7 @@ new_no2 %>%
 ## 7 Ni..IZJZ.Ni...NO2         365
 ```
 
-Those names look very messy. We could use function from [`stringr`](https://stringr.tidyverse.org) package `str_sub()`. To begin with let's remove <span style="color:orangered">.NO2</span> at the end of each name.
+Ta imena izgledaju vrlo neuredno. Mogli bismo koristiti funkciju iz [`stringr`](https://stringr.tidyverse.org) paketa `str_sub()`. Za početak uklonimo <span style="color:orangered">.NO2</span> na kraju svakog imena.
 
 
 ```r
@@ -678,10 +677,10 @@ new_no2 %>%
 ## 7 U.ice.                365
 ```
 
-It still doesn't look right. 😟 This could be a tedious job. 😥 It is no wonder why many data analysts grumble about time spent on the process of cleaning and preparing the data. It could be a very long and time consuming process, but the more you do it and more experience you gain the easier and less painful it gets.
+I dalje ne izgleda kako treba. 😟 Ovo bi mogao biti naporan posao. 😥 Nije čudo zašto se mnogi analitičari žale oko vremena utrošenog na proces čišćenja i pripreme podataka. To bi mogao biti veoma dug i dugotrajan proces, ali što više radite i više iskustva dobijate sve je lakše i manje bolno.
 
 
-Perhaps, you can try to explore other available packages in R that could help you with organising your data into your ideal format. To give you an idea we will show you how it could easily be done when using `forcats::fct_recode()` function.
+Možda, možete pokušati da istražite i druge pakete R koji će vam pomoći u organizaciji podataka da biste dobili idealan format. Pokazaćemo vam kako se to lako možete učiniti upotrebom funkcije `forcats::fct_recode()` function.
 
 
 ```r
@@ -710,34 +709,34 @@ glimpse(new_no2)
 ```
 
 {{% notice note %}}
-By now, you should have gained enough knowledge in using R to give you the necessary confidence to start exploring other functions of the [`tidyr`](https://tidyr.tidyverse.org/) package. You should not stop there, but go beyond and explore the whole of the [`tidyverse`](https://www.tidyverse.org/) opinionated collection of R packages for data science. 😇🎶
+Do sad ste trebali steći dovoljno znanja o upotrebi R-a da imate potrebno samopouzdanje da započnete sa istraživanjem ostalih funkcija paketa [`tidyr`](https://tidyr.tidyverse.org/) Ne treba se tu zaustaviti, već otići dalje i istražiti celu kolekciju [`tidyverse`](https://www.tidyverse.org/) R paketa. 😇🎶
 {{% /notice %}}
 
-To learn more about **tidy data in r** chgeck [Data Tidying](https://garrettgman.ithuthe b.io/tidying/) section from the famous [Data Science with R](https://garrettgman.github.io) by [Garrett Grolemund](https://resources.rstudio.com/authors/garrett-grolemund)
+Da biste saznali više o urednim podacima (tidy data) u R-u proverite glavu [Data Tidying](https://garrettgman.ithuthe b.io/tidying/) čuvene knjige [Data Science with R](https://garrettgman.github.io) autora [Garrett Grolemund](https://resources.rstudio.com/authors/garrett-grolemund)
 
 {{% notice tip %}}
-Have you tried learning data science by posting your questions and discussing it with other people within the R community? 👥💻📊📈🗣 [RStudio Community](https://community.rstudio.com)
+Da li ste pokušali učiniti nauku o podacima iz odgovora na pitanja i diskusiju sa drugima iz R zajednice? 👥💻📊📈🗣 [RStudio Community](https://community.rstudio.com)
 {{% /notice %}}
 
-## YOUR TURN 👇
+## ZADACI 👇
 
-Practise by doing the following set of exercises:
+Provežbajte sledeći set vežbi:
 
-1) Install and upload the `rattle` package and see what it does.
+1) Instalirajte i proverite da li je to poslednja verzija paketa `rattle` i pogledajte šta nam on donosi.
 
-2) Create a new R script file to explore `weatherAUS` dataset. 
+2) Kreirajte novi R script fajl da istražite set podataka `weatherAUS`. 
 
-  i) `select()` variable: `MinTemp`, `MaxTemp`, `Rainfall` and `Sunshine` by *pipping* the dataset into `dplyr::select() function.
+  i) `select()` varijable: `MinTemp`, `MaxTemp`, `Rainfall` i `Sunshine` *povezivanjem u cevi* set podataka u ``dplyr::select() funkciju.
   
-  ii) produce a *summary*  using `base::summary()` function of these numeric values.
+  ii) proizvedite *rezime*  upotrebom `base::summary()` funkcije ovih numeričkih vrednosti.
   
-  iii) within this selection filter only those observations where `Rainfall >= 1` and save the results into the computer's memory (ie. save the results as an object).
+  iii) u okviru ove selekcije filtrirajte samo one opservacije u kojima je `Rainfall >= 1` i snimite rezultate u memoriju kompjutera (tj. snimite rezultate u objektu).
   
-  iv) Try to think of how else you can use other `dplyr` verbs on this `weatherAUS` dataset. Write your question first, before embarking on typing the code.
+  iv) Promislite kako biste još mogli da upotrebljavate i druge `dplyr` glagole da istražite `weatherAUS` set podataka. Zapišite sebi pitanja na početku, pa onda krenite sa unosom koda.
   
-  v) Write a short report on what visualisation you think would be interesting to produce for this `weatherAUS` dataset and why?
+  v) Napišite kratak izveštaj koja bi vizuelizacija bila zanimljiva za set podataka `weatherAUS` i zašto?
 
-##### Useful Links
+##### Korisni linkovi
 
 [Data Wrangling cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
 
