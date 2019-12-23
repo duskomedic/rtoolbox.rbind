@@ -1,62 +1,62 @@
 ---
 date: "2016-04-09T16:50:16+02:00"
-title: Data Visualisation
+title: Vizuelizacija podataka
 output: 
   learnr::tutorial
 weight: 2
 ---
 
-Most of you, if not all, will be familiar with creating the graphs in Excel. Software such as Excel has a predefined set of menu options for plotting the data that is the focus of the end result: "pretty graph". Those types of menus assume data to be in a format ready for plotting, which when you get raw data is hardly the case. You are probably going to have to organise and wrangle your data to make it ready for effective visualisation. 
+Većina vas, ako ne svi, upoznati su sa kreiranjem grafikona u Excelu. Softver poput Excel-a ima predefinisan set opcija za iscrtavanje podataka. Ove opcije date u meniju pretpostavljaju da su podaci već pripremljeni za iscrtavanje, što u slučaju sirovih podataka nije slučaj. Biće neophodno da ovakve podatke morate organizovati i promeniti svoje podatke kako biste bili spremni za efikasnu vizulezaciju. 
 
-### Grammar of Graphics
+### Gramatika grafike
 
-The [grammar of graphics](http://vita.had.co.nz/papers/layered-grammar.html) enables a structured way of creating a plot by adding the components as layers, making it look effective and attractive. 
+Gramatika grafike [grammar of graphics](http://vita.had.co.nz/papers/layered-grammar.html) omogućava strukturirani način kreiranja grafikona dodavanjem komponenti kao slojeva, i čini grafikone efikasnijim i atraktivnijim. 
 
-It enables you to specify building blocks of a plot and to combine them to create the graphical display that you want. There are 8 building blocks:
+Ona vam omogućava da odredite blokove grafikona i da ih kombinujete kako biste stvorili prikaz koji želite. Postoji osam tipova ovih blokova:
 
-- data
+- podaci (data)
 
-- aesthetic mapping
+- estetsko mapiranje (aesthetic mapping)
 
-- geometric object
+- geometrijski objekti (geometric object)
 
-- statistical transformations
+- stastičke transformacije (statistical transformations)
 
-- scales
+- skale (scales)
 
-- coordinate system
+- koorinatni sistem (coordinate system)
 
-- position adjustments
+- podešavanje položaja (position adjustments)
 
-- faceting
+- oblaganje (faceting)
 
-Imagine talking about baking a cake and adding a cherry on the top. 🎂🍒 This philosophy has been built into the [`ggplot`](https://ggplot2.tidyverse.org/reference/) package by [Hadle Wickham](http://hadley.nz) for creating elegant and complex plots in R.
+Zamislite da razgovarate o pečenju torte i dodavanju višnje na njen vrh. 🎂🍒 TOva filozofija ugrađena je u [`ggplot`](https://ggplot2.tidyverse.org/reference/) paket koji je razvio [Hadle Wickham](http://hadley.nz) za kreiranje elegantnih i kompleksnih grafikona u R-u.
 
 
 #### ggplot2
 
-Learning how to use the `ggplot2` package can be challenging, but the results are highly rewarding and just like R itself, it becomes easier the more you use it.
+Učeči kako da koristite `ggplot2` paket može biti izazov, ali su rezultati veoma korisni i kao i u R-u, biće vam lakše da ga koristite što više to budete radili.
 
 {{% notice warning %}}
-Unlike base graphics, ggplot works with dataframes and not individual vectors.
+Za razliku od osnovne grafike ggplot radi sa okvirima podataka (dataframes), a ne sa pojedinačnim vektorima.
 {{% /notice %}}
 
-The best way to master it is by practising. So let us create a first `ggplot`. 😃
-What we need to do is the following:
+Najbolji način da usvojite znanje je da vežbate. Zato napravimo prvi `ggplot`. 😃
+Ono što trebamo da učinimo je sledeće:
 
-- i) Wrangle the data in the format suitable for visualisation.
+- i) Podatke rasporedite u format pogodan za vizuelizaciju.
 
-- ii) "Initialise" a plot with `ggplot()`:
+- ii) “Pokrenite” grafikon sa `ggplot()`:
   
 **ggplot(<span style="color:blue">dataframe</span>, aes(<span style="color:orangered">x = explanatory variable</span>, <span style="color:green">y = resposne variable</span>))**
 
-This will draw a blank ggplot, even though the x and y are specified. `ggplot` doesn’t assume the plot you meant to be drawn (a scatterplot). You only specify the data set and columns ie. variables to be used. Alos note that `aes( )` function is used to specify the x and y axes. 
+Ovom naredbom iscrtaće se prazan grafikon (ggplot), iako su zadani x i y `ggplot` još vam neće iscrtati grafikon, s obzirom da još niste specifikovali set podataka već samo varijable koje ćete koristiti. Primetite ovde da funkcija `aes( )` koristi se za specifikaciju x i y osa. 
   
-- iii) Add layers with `geom_` functions:
+- iii) Dodajte lejere sa funkcijom `geom_`:
 
 **geom_point()**
 
- We will add points using a **geom layer** called `geom_point`.
+ Tačke na grafikonu dodaćemo upotrebom **geom lajera** pozivom `geom_point`.
 
 
 ```r
@@ -78,7 +78,7 @@ ggplot(gapminder_pipe, aes(x = pop_e6, y = lifeExp)) +
 <img src="/day2/Visualisation/_index.en_files/figure-html/unnamed-chunk-1-1.png" width="768" style="display: block; margin: auto;" />
 
 {{% notice tip %}}
-🤓💡 **Tip**: You can use the following code template to make graphs with **ggplot2**:
+🤓💡 **Tip**: Za izradu grafova možete koristiti sledeći obrazac koda **ggplot2**:
 {{% /notice %}}
 
 ```
@@ -86,8 +86,8 @@ ggplot(data = <DATA>, (mapping = aes(<MAPPINGS>)) +
       <GEOM_FUNCTION>()
 ```
 
-##### <span style="color:red">ggplot()</span> gallery
-Run the following code to see what graphs it will produce.
+##### <span style="color:red">ggplot()</span> galerija
+Pokrenite sledeći kod da biste videli koje će grafove proizvesti.
 
 
 ```r
@@ -104,21 +104,21 @@ ggplot(data = gapminder, mapping = aes(x = continent, fill = continent)) +
   geom_bar()
 ```
 
-##### 🗣👥 Confer with your neighbours: 
-Does life expectancy depend upon the population size?
+##### 🗣👥 Pregovarajte sa komšijama: 
+Da li životni vek zavisi od broja stanovnika?
 
 `y = b_0 + b_1 x + e`
 
-Run this code in your console to fit the model `pop` vs `lifeExp`.
+Startujte ovaj kod u konzoli da biste uporedili `pop` sa `lifeExp`.
 
-Pay attention to spelling, capitalization, and parentheses!
+Obratite pažnju na reči, velika i mala slova, i na zagrade!
 
 ```r
 m1 <- lm(gapminder_pipe$lifeExp ~ gapminder_pipe$pop_e6)
 summary(m1)
 ```
 
-**Can you answer the question using the output of the fitted model?**
+**Možete li odgovoriti na pitanje koristeći izlaz napravljenog modela?**
 
 ```r
 m1 <- lm(gapminder_pipe$lifeExp ~ gapminder_pipe$pop_e6)
@@ -146,20 +146,19 @@ summary(m1)
 ## F-statistic: 0.1358 on 1 and 28 DF,  p-value: 0.7153
 ```
 
-##### 👉 Practice ⏰💻: Use gapminder data.
+##### 👉 Vežbajte ⏰💻: UsKoristite  gagapminder  podatke
 
-Does the life expectancy depend upon the GDP per capita?
+Da li životni vek zavisi od bruto nacionalnog dohotka po glavi stanovnika?
 
-1) Have a glance at the data. (tip: `sample_n(df, n)`)
+1) Bacite pogled na podatke. (tip: `sample_n(df, n)`)
 
-2) Produce a scatterplot: what does it tell you?
+2) Napravite tačkasti grafikon: šta vam on govori?
 
-3) Fit a regression model: is there a relationship? How strong is it?
-Is the relationship linear? What conclusion(s) can you draw?
+3) Napravite regresionu analizu: da li tu postoji relacija? Koliko je jaka? Da li je relacija linearna? Šta možemo zaključiti iz grafikona?
 
-4) What are the other questions you could ask; could you provide the answers to them?
+4) Koja se još pitanja otvaraju; možete li dati odgovor na njih?
 
-##### 😃🙌 Solution: code Q1; sample
+##### 😃🙌 SRešenje: kod Q1; primer
 
 ```r
 sample_n(gapminder, 30)
@@ -182,14 +181,14 @@ sample_n(gapminder, 30)
 ## # … with 20 more rows
 ```
 
-We will add layers onto this scatterplot: `liveExp` vs `gdpPercap`. We want to superimpose regression line of the best fit and non-parametric loess line that depict a possible relationship between the two variables. That means we will have:
+Dodaćemo lejere na ovaj tačkasti grafikon: uporedićemo: `liveExp` sa `gdpPercap`. Iscrtaćemo regresionu linuju koja će nam pomoći da vidimo relaciju ove dve varijable, ali i neparemtričku lusovu linuju (loess line) koja će prikazati moguću relaciju između ove dve varijable. Što znači da ćemo imati:
 
-- 1st layer: **scatterplot**
-- 2nd layer: **line of the best fit**
-- 3rd layer: **loess curve**
+- Prvi lejer: tačkasti grafikon **scatterplot**
+- Drugi lejer: regresionu liniju koja najpribližnije odgovara podacima **line of the best fit**
+- Treći lejer: lusovu krivu (**loess curve**)
 
 
-##### 😃🙌 Solution: code Q2; Plot the data;
+##### 😃🙌 SRešenje: kod Q2; Iscrtava podatke
 
 ```r
 ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
@@ -200,7 +199,7 @@ ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
 
 <img src="/day2/Visualisation/_index.en_files/figure-html/unnamed-chunk-6-1.png" width="768" style="display: block; margin: auto;" />
 
-##### 😃🙌 Solution: code Q3; simple regression model
+##### 😃🙌 Rešenje: kod Q3; jednostavni regresioni model
 
 ```r
 my.model <- lm(gapminder_pipe$lifeExp ~ gapminder_pipe$gdpPercap)
@@ -228,11 +227,11 @@ summary(my.model)
 ## F-statistic: 72.88 on 1 and 28 DF,  p-value: 2.795e-09
 ```
 
-### Playing with the aesthetic: adding more layers to your <span style="color:red">`ggplot()`</span>
+### Koristite estetsko mapiranje: dodajte još lejera na vaš <span style="color:red">`ggplot()`</span>
 
-Whenever possible you should strive to make your graph visually appealing and informative as discussed in the previous section *Principles of Visualisation*. 
+Kad god je to moguće treba da se trudite da vaš grafikon bude vizuelno privlačan i informativan, kao što je rečeno u prethodnom odeljku *Principi vizuelizacije*. 
 
-#### To change the title and axis labels use <span style="color:orangered">layer **labs**</span>
+#### Da biste promenili naziv grafikona ili oznake osa koristite <span style="color:orangered">lejer **labs**</span>
 
 **labs(<span style="color:blue">title =</span> <span style="color:orangered"> “your title”</span>, <span style="color:blue">subtitle =</span> <span style="color:orangered"> “your subtitle”</span>, <span style="color:blue">y =</span> <span style="color:orangered"> “y label”</span>, <span style="color:blue">x =</span> <span style="color:orangered"> “x label”</span>, <span style="color:blue">caption =</span> <span style="color:orangered"> “graph's caption”</span>)** 
  
@@ -262,16 +261,16 @@ ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
 
 <img src="/day2/Visualisation/_index.en_files/figure-html/unnamed-chunk-8-1.png" width="768" style="display: block; margin: auto;" />
 
-Note, that we have added text on the plot for the two lines and have edited the plot in terms of legend and its appearance.
+Primetite da smo dodali tekst na grafikon koji označava dve linije i da smo uredili grafikon tako da se legenda ne prikazuje.
 
-We could also annotate the plot by using:
+Takođe, mogli smo da dobijemo ovaj tekst na grafikonu i sledećom naredbom:
 ```
 annotate("text", x = 80000, y = 125 label = "regression line", color = "maroon3")
 ```
 
-To learn more about how to modify the appearance of the theme go to [ggplot’s theme page](https://ggplot2.tidyverse.org/reference/theme.html).
+Da biste saznali više o izmeni teme grafikona pogledajte sledeću internet stranicu [ggplot’s theme page](https://ggplot2.tidyverse.org/reference/theme.html).
 
-#### Change the colour of the points to reflect categories of another, third variable.
+#### Promenite boju tačaka tako da odražavaju treću promenljivu.
 
 
 ```r
@@ -296,11 +295,11 @@ ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
 <img src="/day2/Visualisation/_index.en_files/figure-html/unnamed-chunk-9-1.png" width="768" style="display: block; margin: auto;" />
 
 {{% notice note %}}
-Note that the legend is added automatically. You can remove it by setting the **legend.position** to `none` from within a `theme()` function.
+Imajte na umu da se legenda dodaje automatski. Možete je ukloniti tako što ćete postaviti atribut `none` na **legend.position** unutar funkcije `theme()`.
 {{% /notice %}}
 
 
-#### Adjust the X and Y axis limits and change the X axis texts and its ticks' location
+#### Podesite ograničenja X i Y osa i promenite tekst X ose i njegovu lokaciju
 
 
 ```r
@@ -339,23 +338,23 @@ Note that the legend is added automatically. You can remove it by setting the **
 
 <img src="/day2/Visualisation/_index.en_files/figure-html/unnamed-chunk-10-1.png" width="768" style="display: block; margin: auto;" />
   
-Note that the regression and smooth lines have changed their shapes 😳… all those warnings 😬 What’s going on?! 😲
+Primetite da regresiona linija i kriva su promenile svoje oblik 😳… Šta se desilo?! 😲
   
 {{% notice warning %}}
-When using xlim() and ylim(), the points outside the specified range are deleted and are not considered while drawing the line using `geom_smooth()`. This feature might come in handy when you wish to know how the line of best fit would change when some extreme values or outliers are removed.
+Kada koristite xlim() i ylim(), tačke izvan navedenog raspona se brišu i ne uzimaju se u obzir pri crtanju krive upotrebom `geom_smooth()`. Ova osobina vam može biti pri ruci kada želite da saznate da li bi se korelaciona linije promenila ako bi se uklonile ekstremne vrednosti iz podataka.
 {{% /notice %}}
   
-Thankfully, there is another way to change the limits of the axis without deleting the points by simply zooming in to the region of interest. This is done using `coord_cartesian()`. You can try to replace `xlim()` and `ylim()` commands in the previous code chunk with the code below to see what would happen.
+Srećom, postoji još jedan način da promenite granice na osama a da se ne brišu tačke izvan prikaza, to možete uraditi zumirajući region koji vam je zanimljiv. Ovo možete uraditi upotrebom funkcije `coord_cartesian()`. Probajte da zamenite komande `xlim()` and `ylim()` iz prethodnog koda sa kodom koji je prikazan dole da vidite šta bi se desilo.
 
 ```
 coord_cartesian(xlim = c(0, 90000), ylim = c(25, 100))  # zooming in specified limits of the x & y axis
 ```
 
-You can set the breaks on the x axis and label them by using `scale_x_continuous()`. Similarly, you can do it for the y axis? 
+Pauze možete postaviti na x osi i obeležiti ih upotrebom `scale_x_continuous()`. Slično, možete to uraditi i na y osi? 
 
-Try to play with changing the colour palette. For more options check [Sequential, diverging and qualitative colour scales from colorbrewer.org](https://ggplot2.tidyverse.org/reference/scale_brewer.html).
+Pokušajte da se igrate promenom palete boja. Za dodatne opcije proverite [Sequential, diverging and qualitative colour scales from colorbrewer.org](https://ggplot2.tidyverse.org/reference/scale_brewer.html).
 
-These are build-in themes which control all non-data display. You should use `theme_bw()` to have white background or `theme_dark()` for dark grey. For more build-in themes click [here](https://ggplot2.tidyverse.org/reference/ggtheme.html).
+Ovo su ugrađene teme koje kontrolišu sve prikaze ne-podataka. Treba da koristite `theme_bw()` da biste imali belu pozadinu ili `theme_dark()` za tamno sivu. Za više o temama pogledajte [ovde](https://ggplot2.tidyverse.org/reference/ggtheme.html).
 
 
 
@@ -386,7 +385,7 @@ ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
 
 <img src="/day2/Visualisation/_index.en_files/figure-html/unnamed-chunk-11-1.png" width="768" style="display: block; margin: auto;" />
 
-There is a `ggthemes` library of themes that willhelp you create stylish ggplot charts used by different journals like the Wall Street Journal or the Economist. See what other themes you can use by going to [this website]( https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/)
+Postoji biblioteka `ggthemes` koja će vam pomoći da napravite elegantne grafikone koje koriste mediji kao što su Wall Street Journal ili Economist. Pogledajte koje još teme možete koristiti na sledećoj  [veb stranici]( https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/)
 
 
 ```r
@@ -415,11 +414,11 @@ ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
 
 <img src="/day2/Visualisation/_index.en_files/figure-html/unnamed-chunk-12-1.png" width="768" style="display: block; margin: auto;" />
 
-You are ready to make publication-ready visualizations in R. 😎 You can go further and explore for yourself to see if you can produce BBC style ggplot charts like those used in the BBC's data journalism. Check out the [BBC Visual and Data Journalism cookbook for R graphics]( https://bbc.github.io/rcookbook/).
+Spremni ste da napravite vizualizacije u R-u spremne za publikovanje. 😎 Možete istraživati i dalje i pokušati da proizvede grafikone u stilu BBC-ja. Proverite kako BBC uređuje svoje tekstove zasnovane na podacima [BBC Visual and Data Journalism cookbook for R graphics]( https://bbc.github.io/rcookbook/).
 
-##### Lay out panels in a grid
+##### Položite panele na mrežu 
 
-Sometimes it might be hard to read one panel plot, like the one we have just created in which it is not very easy to see the points of each continent. To make it easier to follow and to understand the information you are trying to depict, it would be more effective to present different categories of the same information in a clear set of multi-panel plots. This is easy to do by applying powerful faceting functions of the `ggplot2`: `facet_wrap()` and `facet_grid()`.
+Ponekad je teško sve važno na prikazu jednog panela, poput ovog kojeg smo kreirali a u kojem nije jasno koja je koja tačka za svaki od kontinenata. Da biste lakše sagledali i razumeli informacije koje želite da prikažete, nekad je efikasnije ih predstaviti različite kategorije podeljene u više panela. Ovo je jednostavno da se uradi aplikacijom moćnim funkcijama `ggplot2`: `facet_wrap()` and `facet_grid()`.
   
 
 ```r
@@ -444,23 +443,23 @@ ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
 
 <img src="/day2/Visualisation/_index.en_files/figure-html/unnamed-chunk-13-1.png" width="768" style="display: block; margin: auto;" />
  
-The main difference between `facet_wrap()` and  `facet_grid()` is that the former can string together ggplots in different facets using a single variable, while the latter can do it for more than one.
+Glavna distinkcija funkcija `facet_wrap()` i  `facet_grid()` je da prva može da spoji ggplots u različite kategorije pojedinačne varijable, dok druga može to da uradi na više od jedne varijable.
 
 {{% notice warning %}}
-Try to explore the two functions for yourself and see where it will take you.
+Pokušajte da istražite dve funckije sami i vidite kuda će vas to odvesti.
 {{% /notice %}}
  
-#### 💪 There is a challenge: 
+#### 💪 Pokušajte sledeće: 
 
-- `dplyr`'s `group_by()` function enables you to group your data. It allows you to create a separate df that splits the original df by a variable.
+- `dplyr`-ova `group_by()` funkcija omogućava vam da grupišete svoje podatke. Dozvoljava vam da kreirate posebne df koje dele orginalnu df po varijabli.
 
-- `boxplot()` function produces boxplot(s) of the given (grouped) values.
+- `boxplot()` funkcija proizvodi boxplot grafike od datih (gropiranih) vrednosti.
 
-Knowing about `group_by()` and `boxplot()` function and using `gapminder` data, can you compute the median life expectancy for year 2007 by continent and visualise your result?
+Znajući funkcije `group_by()` i `boxplot()` i korišćenjem `gapminder` podataka, možete li izračunati srednju (medijanu) očekivanog životnog veka u 2007. godini po kontinentima i da vizuelizujete vaše podatke?
 
-##### 😃🙌 Solution: code
+##### 😃🙌 Rešenje: kod
 
-Let us look at the median life expectancy for each continent
+Pogledajmo srednji (medijanu) očekivanog životnog veka za svaki kontinent
 
 ```r
 gapminder %>%
@@ -479,16 +478,16 @@ gapminder %>%
 ## 5 Oceania      73.7
 ```
 
-**We are lucky that we live in Serbia, ie. Europe!!!** 😅
+**Sretni smo što živimo u Srbiji, tj. u Evropi!!!** 😅
 
-##### 😃🙌 Solution: graph 
+##### 😃🙌 Rešenje: grafikon
 
 <img src="/day2/Visualisation/_index.en_files/figure-html/unnamed-chunk-15-1.png" width="768" style="display: block; margin: auto;" />
-##### Case study: NO2 2017 😁
+##### Studija slučaja: NO2 2017 😁
 
-Let's try to compbine everything we have learnt so far and practise using well known to us [2017-NO2.csv](http://data.sepa.gov.rs/dataset/ca463c44-fbfa-4de9-9a75-790995bf2830/resource/74516688-5fb5-47b2-becc-6b6e31a24d80/download/2017-no2.csv) data. 
+Pokušajmmo sad da kombinujemo sve što smo do sada naučili i vežbali na nama dobro poznatim podacima [2017-NO2.csv](http://data.sepa.gov.rs/dataset/ca463c44-fbfa-4de9-9a75-790995bf2830/resource/74516688-5fb5-47b2-becc-6b6e31a24d80/download/2017-no2.csv) data. 
 
-Remember this?
+Zapamtite ovo?
 
 ```r
 library(tidyr)
@@ -533,23 +532,23 @@ new_no2 %>%
 
 <img src="/day2/Visualisation/_index.en_files/figure-html/unnamed-chunk-17-1.png" width="672" />
 
-## YOUR TURN 👇
+## ZADACI 👇
 
-Practise by doing the following set of exercises:
+Provežbajte sledeći set vežbi:
 
-1) Chose a data set from <https://data.gov.rs> that is interesting to you. Import the dataset into R and examine what kinds of variables are there. What plots would you recommend using to help people get to know the dataset?
+1) Odaberite vam zanimljive podatke sa portala otvorenih podataka <https://data.gov.rs> Uvezite set podataka u R i pregledajte koje sve varijable tu imate. Promislite kakve grafikone bi trebalo da koristete da biste te podatke prikazali vašoj publici?
 
-2) Go back to NO2 2017 case study:
+2) Vratite se na studiju slučaja  NO2 2017:
 
-  i)	What are the questions you can ask based on the available information within the dataset?
+  i)	Koja sva pitanja možete postaviti na dostupnim informacijama u ovom setu podataka?
 
-  ii)	What plots would you recommend to use to help in answering those questions?
+  ii)	Koje grafikone predlažete da se upotrebe kao odgovori na ova pitanja?
 
-  iii)	Create appropriate visualisations for i) & ii)
+  iii)	Kreirajte odgovarajuće vizuelizacije za i) i ii)
 
 
 
-##### useful links: 
+##### korisni linkovi: 
 
 [tidyverse, visualization, and manipulation basics](https://www.rstudio.com/resources/webinars/tidyverse-visualization-and-manipulation-basics/)
 
