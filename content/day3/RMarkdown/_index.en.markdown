@@ -6,25 +6,25 @@ output:
 weight: 1
 ---
 
-R Markdown can help generate:
+R Markdown vam može pomoći u kreiranju:
 
-- HTML documents
-- Notebooks in which you’ve run code chunks individually
-- PDFs that you can print out to follow along physically with the course
-- This entire R course website
+- HTML dokumenata
+- Beležnice (Notebooks) u kojima pojedinačno izvodite delove koda
+- PDFs datoteke koje možete isprintati da biste fizički pratili ovaj kurs
+- Ovih veb stranica iz kojih pratite ovaj R kurs
 
-It enables you to:
+On vam omogućava da:
 
-- save and execute code and display its output
-- create high quality reports that could include [LaTeX](https://www.latex-project.org/) equations
+- Snimite i izvršite kod i prikažete njegove rezultate
+- Kreirate visoko kvalitetne izveštaje koje mogu da uključe i [LaTeX](https://www.latex-project.org/) jednačine
 
-What is great about [R Markdown](https://rmarkdown.rstudio.com/) documents is that they are fully reproducible and support many static and dynamic output formats, to name a few: PDF, HTML, MS Word, Beamer...  You can incorporate narrative text and code of your data analysis to produce an elegantly formatted story telling journey.
+Ono što je posebno dobro kod [R Markdown](https://rmarkdown.rstudio.com/) dokumenata je da su oni u potpunosti ponovljivi i da podržavaju mnoge statičke i dinamičke formate izlaza, da nabrojimo samo neke: PDF, HTML, MS Word, Beamer… Možete ugraditi narativni tekst i kod svoje analize da  biste proizveli elegatno oblikovano uputstvo za vaše čitaoce.
 
-It is a variant of [Markdown](https://daringfireball.net/projects/markdown/) that has embedded **R code chunks** (denoted by three back ticks), to be used with [knitr](https://yihui.name/knitr/) to make it easy to create reproducible web-based reports. 
+Postoji varijanta [Markdown-a](https://daringfireball.net/projects/markdown/) koja embeduje **R kod delove** (označene sa tri apostrofa), koje možete koristiti sa [knitr-om](https://yihui.name/knitr/) da proizvedete ponovljive izveštaje koje će biti na internetu. 
 
-R Markdown is a plain text file that has the extension <span style="color:red">.Rmd</span>
+R Markdown je osnovni text fajl koji se završava sa ekstenzijom <span style="color:red">.Rmd</span>
 
-To use **R Markdown** you will need to install the package from [CRAN](https://cran.r-project.org/) and load it with:
+Da bi koristili **R Markdown** neophodno je da instalirate paket sa [CRAN](https://cran.r-project.org/) i da ga učitate na sledeći način:
 
 
 ```r
@@ -32,62 +32,59 @@ install.packages("rmakdown", repos = "http://cran.us.r-project.org")
 suppressPackageStartupMessages(library(rmarkdown))
 ```
 
-#### 👉 Go to the following GitHub repo to download the material: <https://github.com/TanjaKec/RMarkdown_Intro>
+#### 👉 Otidite na sledeći GitHub repozitorijum da skinete materijal: <https://github.com/TanjaKec/RMarkdown_Intro>
 
-### Starting with RMarkdown
+### Kako početi RMarkdown
 
-**<span style="color:red">Task 1</span>:**
-Open the file `RMarkdown_Intro.Rmd`
+**<span style="color:red">Zadatak 1</span>:**
+Otvorite sledeći fajl `RMarkdown_Intro.Rmd`
 
-- Change the title of the Markdown Document from `My First Markdown Document` to `RMarkdown Introduction`.
+- Promenite naslov Markdown dokumenta iz `My First Markdown Document` u `RMarkdown Introduction`.
 
--  Click the **"Knit"** button to see the compiled version of your sample code.
+- Kliknite dugme **"Knit"** da vidite vaš kod.
 
 
-##### Congratulations! You’ve just Knitted your first Rmd document!!!! 👍😃
+##### Čestitamo! Upravo ste knitovali svoj prvi Rmd dokument!!!! 👍😃
 
-#### Basic Text editing
+#### Osnovno editovanje teksta
 
-**<span style="color:red">Task 2</span>:**
-Let’s format this document further by
+**<span style="color:red">Zadatak 2</span>:**
+Formatirajmo dalje ovaj dokument tako što ćemo
 
-- Changing the author of the document to your own name
+- Promenite ime autora dokumenta i upišite svoje ime
 
-- Rewriting the first sentence of the document to say "This is my first R Markdown document."
+- Prepravite prvu rečenicu dokumenta i napišite “Ovo je moj prvi R Markdown dokument.”
 
-- Recompiling the document so you can see your changes
+- Prekoponujte dokument kako biste mogli da vidite svoje izmene
 
-#### Adding a link
+#### Dodavanje linka
 
-You can turn a word into a link by surrounding it in **hard brackets: [ ]** and then placing the link behind it in **parentheses: ( )**, like this:
+Pojedinu reč možete pretvoriti u link tako što ćete je umetnuti u **uglaste zagrade: [ ]** a zatim ćete sam link postaviti iza u **zagrade: ( )**, kako je to prikazano dole:
 
 `[RStudio](www.rstudio.com)`
 
-**<span style="color:red">Task 3</span>:**
-Make GitHub in the following paragraph link to https://github.com/DataTeka
+**<span style="color:red">Zadatak 3</span>:**
+Napravite GitHub link u sledećem paragrafu https://github.com/DataTeka
 
-#### Text formatting 
+#### Formatiranje teksta 
 
-To embed formatting instructions into your document using Markdown, you
-would surround text by:
+Da biste formatirali određeni tekst u vašem dokumentu sa Markdown-om, treba da ga postavite tako da bude okružen:
 
-- one asterisk to make it italic: *italic*
+- sa jednim asteriksom da bi bio kurziv: *italic*
 
-- two asterisks to make it bold: **bold** and
+- sa dva asteriksa da bi bio bold: **bold** and
 
-- backticks to make it monospaced: `monospaced`.
+- apostrofima da bi bio podvučen: `monospaced`.
 
-To make an ordered list you need to place each item on a new line after a
-number followed by a period followed by a space:
+Da biste napravili list nabrajanja potrebno je da svaku stavku u listi postavite u novu liniju i da ispred nje stavite broj, tačku posle njega i razmak (space):
 1. order list
 2. second item
 
-💡! Note that you need to place a blank line between the list and any paragraphs
-that come before it.
+💡! Zapazite da je neophodno da ostavite prazan red između liste i paragrafa koji joj prethodi.
 
-**<span style="color:red">Task 4</span>:**
+**<span style="color:red">Zadatak 4</span>:**
 
-- Make the following paragraph in your Rmd document look like this:
+- Napravite da sledeći paragraf u vašem Rmd dokumentu liči na sledeći:
 
 When analysing data,... The variables can be one of two broad types:
 
@@ -96,11 +93,11 @@ attributes;
 
 2) **Measured variable**: has the resulting outcome expressed in numerical terms.
 
-- Make the word Knit in the following paragraph italic.
+- Napravite da reč Knit u sldedeć paragrafu bude italic.
 
 
-#### Embedding the `R` code 
-To embed an R code chunk you would use three back ticks:
+#### Embedovanje `R` koda 
+Da biste emdedovali R kod u vašem dokumentu treba da koristite tri apostrofa:
 
 <p><code  class="r"> ```{r} </code>
 
@@ -108,13 +105,12 @@ To embed an R code chunk you would use three back ticks:
 
 <p><code  class="r"> ``` </code>
 
-**<span style="color:red">Task 5</span>**: Replace the `cars` data set with the `gapminder` data set. Don't forget to load `gapminder` package using `library(gapminder)`.
+**<span style="color:red">Zadatak 5</span>**: Zamenite set podataka `cars` sa `gapminder` setom podataka. Ne zaboravite da učitate `gapminder` paket upotrebom komande `library(gapminder)`.
 
 
-#### Prevent printing of the `R` code
+#### Zaštite `R` kod od njegovog štampanja
 
-You can also embed plots by setting `echo = FALSE` to the code chunk to
-prevent printing of the R code that generates the plot:
+Vaš kod možete embedovati postavljaći `echo = FALSE` da se on ne bi štampao kod koji treba da vam generiše grafik:
 
 <p><code  class="r"> ```{r, echo=FALSE} </code>
 
@@ -122,7 +118,7 @@ prevent printing of the R code that generates the plot:
 
 <p><code  class="r"> ``` </code>
 
-**<span style="color:red">Task 6</span>**: Replace the base boxplot of `mpg` vs. `cyl` by a `ggplot`'s boxplot to examine a relationship between `continent` and `lifeExp` (remember to use some of the `dplyr` functions too!).
+**<span style="color:red">Task 6</span>**: Zamenite osnovni grafikon koji uporećuje varijable `mpg` i `cyl` sa `ggplot`-ovim grafikon da istražite povezanost varijabli `continent` i `lifeExp` (ne zaboravite da koristite i neke druge `dplyr` funkcije!).
 
 
 
@@ -143,29 +139,29 @@ ggplot(gapminder, aes(x = continent, y = lifeExp)) +
         plot.title=element_text(hjust=0.5))    
 ```
 
-#### Adding **LaTex** equations
+#### Dodavanje **LaTex** jednačina
 
-Finally, if you wish to add mathematical equations to your Markdown document you can easily embed [LaTeX]( LaTeX ) math equations into your report.
+Konačno, ako želite da dodate matematičke jednačine u vaš Markdown dokument to možete uraditi embedovanjem [LaTeX]( LaTeX ) matematičkih jednačina u svoj izveštaj.
 
-To *display equation* **in its own line** it needs to be surrounded by the double dollar symbol
+Da biste *prikazali jednačinu* **odvojenu u svom redu** neophodno je da je okružite sa dvostrukim simbolom dolara
 
 `$$` `y = a + bx` `$$`, 
 
-or to *embed an equation* **in line within the text** you would use only one dollar symbol: `$y = a + bx$`.
+Ili ukoliko želite da *prikažete jednačinu* **u liniji zajedno sa tekstom** onda ćete jednačinu okružiti sa jednim dolar simbolom: `$y = a + bx$`.
 
-**<span style="color:red">Task 7</span>**: Display the equation in the *Including Mathematical Equations* paragraph into its own line.
-
-
-#### Congratulations! You have got the basics to start creating your own fabulous dynamic documents… !!!! 👍😃
+**<span style="color:red">Zadatak 7</span>**: Prikažite jednačinu u *Including Mathematical Equations* paragrafu u svojoj posebnoj liniji.
 
 
-You would definitely find the following useful:
+#### Čestitamo! Usvojili ste osnove za kreiranje elegantnih dinamičkih dokumenata… !!!! 👍😃
+
+
+Sledeće stranice naćićete vrlo korisne za vaše dalje učenje:
 
 - [RMarkdown cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
 
 - [The R Markdown Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
 
-- Book: [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+- Knjiga: [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
 
 - [Getting started with R Markdown](https://www.rstudio.com/resources/webinars/getting-started-with-r-markdown/)
 
