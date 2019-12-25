@@ -6,129 +6,129 @@ output:
 weight: 3
 ---
 
-## blogdown: Creating Websites with R Markdown
+## blogdown: Kreiranje veb stranica sa R Markdown-om
 
-"A well-designed and maintained website can be extremely helpful for other people to know you, and you do not need to wait for suitable chances at conferences or other occasions to introduce yourself in person to other people. On the other hand, a website is also highly useful for yourself to keep track of what you have done and thought. Sometimes you may go back to a certain old post of yours to relearn the tricks or methods you once mastered in the past but have forgotten." [Yihui Xie](https://yihui.name/en/)[blogdown: Creating Websites with R Markdown](https://bookdown.org/yihui/blogdown/)
+"Dobro dizajniran i održavan veb sajt može biti od velike koristi da se predstavite i da vas ljudi upoznaju, nema potrebe da čekate svoju šansu da na nekoj od konferencija ili na nekoj drugoj prilici se lično predstavite. S druge strane, internet prezentacije takođe su korisne da čuvate informacije o onome šta ste radili ili o čemu ste razmišljali. Nekad ćete se vratiti na izvesni stari vaše tekst da se podsetite trikova ili metoda koje ste već ranije savladali, ali i zaboravili." [Yihui Xie](https://yihui.name/en/)[blogdown: Creating Websites with R Markdown](https://bookdown.org/yihui/blogdown/)
 
  
 
-In this section you will learn how to create static website using [HUGO](https://gohugo.io) and [R Markdown](https://bookdown.org/yihui/rmarkdown/)
+U ovom odeljku naučićete kako da kreirate statičke veb stranice upotrebom paketa [HUGO](https://gohugo.io) i [R Markdown](https://bookdown.org/yihui/rmarkdown/)
 
 <img src="images/rmd_hugo_blogdown.png" width="600px" />
 
-#### What is blogdown?
+#### Šta je blogdown?
 
-From Yihui: <https://slides.yihui.name/2017-rmarkdown-UNL-Yihui-Xie.html#35>.
+Od Yihui-ja: <https://slides.yihui.name/2017-rmarkdown-UNL-Yihui-Xie.html#35>.
 
 - [R Markdown](https://rmarkdown.rstudio.com) <img src="https://www.rstudio.com/wp-content/uploads/2015/12/RStudio_Hex_rmarkdown.png" width="10%" align="right" />
-    - (relatively) simple syntax for writing documents
+    - (relativno) jednostavna sintaksa za pisanje dokumenata
     
-    - the simpler, the more portable (multiple output formats)
+    - što je jednostavniji, prenosiviji je (više izlaznih formata)
     
-    - not only convenient (maintenance), but also reproducible
+    - ne samo da je zgodan (za održavanje), već i ponovljiv (reproducible)
     
-    - most features of R Markdown _and_ [**bookdown**](https://bookdown.org) (technical writing)!!
+    - većina karakteristika R Markdown-a  _i_ [**bookdown-a**](https://bookdown.org) (podrazumeva tehničko pisanje)!!
 
 
 
 - [Hugo](https://gohugo.io) <img src="https://gohugo.io/img/hugo.png" width="10%" align="right" />
 
-    - free, open-source, and easy to install (a single binary)
+    - slobodan, otvorenog koda, i lak za instalaciju
     
-    - lightning fast (generates one page in one millisecond)
+    - munjevito brz (generiše stranicu u milisekundi)
     
-    - general-purpose (not only for blogs)
+    - opšte je namene (ne samo za blogove)
 
-##### Why not WordPress, Tumblr, Medium.com, Blogger.com, etc?
+##### Zašto ne WordPress, Tumblr, Medium.com, Blogger.com, itd?
 
-From Yihui: <https://slides.yihui.name/2017-rmarkdown-UNL-Yihui-Xie.html#36>.
+Od Yihui-ja: <https://slides.yihui.name/2017-rmarkdown-UNL-Yihui-Xie.html#36>.
 
-- No R Markdown support (even math support is often nonexistent or awkward)
+- Ne postoji R Markdown podrška (sama podrška za matematiku ili ne postoji ili nije baš od velike koristi)
 
-- Huge benefits of static websites compared to dynamic websites
-    - all static files, no PHP or databases, no login/password, work everywhere (even offline)
+- Ogromne su prednosti statičkih veb stranica u poređenju sa dinamičkim
+    - o	Svi fajlovi su statični, nema PHP-a ili baza podataka, nema logovanja/šifri, rad bilo gde (čak i bez internet veze, offline)
     
-    - typically fast to visit (no computation needed on the server side), and easy to speed up via CDN
+    - o	obično se vrlo brzo pristupa sajtu (nema potrebnih računjanja koje pokreće server), a jednostavan da se dodatno ubrza preko CDN-a.
 
 
-### Build your website
+### Napravite vašu veb stranicu
 
-We will do it step by step. Let us start by setting a GitHub repo for our website project.
+Krenućemo korak po korak. Počećemo sa postavljanjem GitHub repozitorijuma za naš veb sajt projekat.
 
-##### Prep with GitHub
+##### Priprema GitHub-a
 
-We are already familiar with GitHub basics, which you can find from [Happy Git with R](http://happygitwithr.com) to connect RStudio with your GitHub account.
+Već smo upoznati sa osnovama rada u GitHub-u, a možete to još jednom pogledati i proučiti na [Happy Git with R](http://happygitwithr.com) kako da povežete RStudio sa svojim GitHub nalogom.
 
 
 <img 
 src="http://happygitwithr.com/img/watch-me-diff-watch-me-rebase-smaller.png" align="middle" img width="60%"  
 />
 
-We are going to assume you are already familiar with and have done:
+Pretpostavljamo da ste već upoznati sa i da jeste:
 
-☑️ Capter 5: [Register a GitHub account ](http://happygitwithr.com/github-acct.html)
+☑️ Capter 5: [Registrovali GitHub nalog ](http://happygitwithr.com/github-acct.html)
 
-☑️ Chapter 6: [Install or upgrade R and RStudio ](http://happygitwithr.com/install-r-rstudio.html)
+☑️ Chapter 6: [Instalirali ili osvežili najnoviju verziju R-a i RStudija ](http://happygitwithr.com/install-r-rstudio.html)
 
-* Go to your GitHub account and create a new repository
+* Otidite na svoj GitHub nalog i kreirajte novi repozitorijum
 
 <img src="images/New_Repo.png" width="200px" style="display: block; margin: auto auto auto 0;" />
 
-* Give it a meaningful name 
+* Dajte mu odgovarajuće ime 
 <img src="images/Create_New_Repo.png" width="300px" style="display: block; margin: auto auto auto 0;" />
 
-* Copy repo's **HTTPS** address
+* Kopirajte **HTTPS** adresu repozitorijuma
 <img src="images/HTTPS_GitHub.png" width="350px" style="display: block; margin: auto auto auto 0;" />
 
-##### In RStudio
+##### U RStudiju
 
-* Open a new project in RStudio: **File** ➡️ **New Project...**
+* Otvorite novi projekat u RStudiju: **File** ➡️ **New Project...**
 <img src="images/RS_New_Project.png" width="250px" style="display: block; margin: auto auto auto 0;" />
 
-* Select **Version Control** ➡️ **Git**
+* Selektujte **Version Control** ➡️ **Git**
 <img src="images/Select_Version_Control.png" width="250px" style="display: block; margin: auto auto auto 0;" />
 
-* Paste the address of your Git repo  
+* Umetnite adresu vašeg Git repozitorijuma  
 <img src="images/set_up_git_connection.png" width="250px" style="display: block; margin: auto auto auto 0;" />
 
-#### Install the packages
+#### Instalirajte paket
 
-* Install <span style="color:red">**blogdown**</span>
+* Instalirajte <span style="color:red">**blogdown**</span>
 
 `install.packages("blogdown")`
 
 
-* Install <span style="color:red">**Hugo**</span> using blogdown
+* Instalirajte <span style="color:red">**Hugo**</span> upotrebom blogdown-a
 
 `blogdown::install_hugo()`
 
 
-💡! If you already have those packages installed, you can check to update your <span style="color:red">Hugo</span> package
+💡!Ukoliko ste već instalirali ove pakete, možete proveriti da li imate najnoviju verziju <span style="color:red">Hugo</span> paketa
 
 `blogdown::hugo_version() # check version`
 
 `blogdown::update_hugo() # force an update`
 
-💡! If you are having trouble installing the package try:
+💡! Ukoliko imate problema sa instalacijom probajte je uraditi na ovaj način:
 
 `install.packages("blogdown", repos = "http://cran.us.r-project.org")` 🤞
 
-#### Build a website
+#### Napravite vebsajt
 
-We'll adopt a *simple is beautiful* approach and start building a website using a <span style="color:red">default theme</span>.
+Usvojićemo pristup *jednostavno je lepo* i počećemo praviti vebsajt upotrebljavajući <span style="color:red">osnovnu temu</span>.
 
 `blogdown::new_site()`
 
-💡! To use a different theme (for example: *hugo-academic*):
+💡! Ukoliko vam se osnovna tema ne sviđa, probajte da instalirate neku drugu (na primer: *hugo-academic*):
 
 `blogdown::new_site(theme = "gcushen/hugo-academic", theme_example = TRUE)`
 
 
-To see the current **Hugo themes** go to <https://themes.gohugo.io/>.
+Da vidite koje su vam sve **Hugo teme** dostupne idite na <https://themes.gohugo.io/>.
 
-Let the knowledge and familiarity with `blogdown` and `Hugo` grow first.🧐 Once you get familiar with `blogdown` and `Hugo` you can always switch to a different theme. 💇 <https://bookdown.org/yihui/blogdown/other-themes.html>
+Prvo se upoznajte sa i familizirajte sa `blogdown-om` i `Hugom`.🧐 Jednom kada to uradite sa `blogdown` i `Hugo` lako ćete prelaziti sa teme na temu, lako ćete ih menjati. 💇 <https://bookdown.org/yihui/blogdown/other-themes.html>
 
-#### Structure of a HUGO site
+#### Struktura HUGO sajtova
 
 <img src="images/Site_Structure.png" width="200px" style="display: block; margin: auto;" />
 
@@ -136,37 +136,37 @@ Let the knowledge and familiarity with `blogdown` and `Hugo` grow first.🧐 Onc
 
 <https://gohugo.io/getting-started/directory-structure/>
 
-#### Serve site
+#### Pokrenite server sajta
 
-* In the console type:
+* U konzoli ukucajte:
 
 `blogdown::serve_site()` 
 
-or, from `Addins` menu select `servesite` 
+ili, u meniju `Addins` izaberite `servesite` 
 
 <img src="images/Serve_Site.png" width="200px" style="display: block; margin: auto;" />
 
-Don't try to view your site in your teeny RStudio viewer, instead click on <span style="color:red">Show in new window</span>.
+Nemojte gledate vaš sajt u malenom RStudio pregledaču, umesto toga kliknite na opciju <span style="color:red">Show in new window</span>.
 
 <img src="images/show_in_new_window.png" width="250px" style="display: block; margin: auto;" />
 
-#### Notation we will adopt
+#### Notacija koju ćemo usvojiti
 
-- **Trailing slash** will indicate a directory name, e.g. `content/` means we are referring to a directory called *content*, not to a file named *content*.
+- **Kosa crta (trailing slash)** na kraju imena direktorija omogućiće vam referencu na taj direktorijum tj. `content/` znači da se referišete na direktorijum koji se zove *content*, a ne na fajl imena *content*, na koji biste se referisali ukoliko ne biste stavili kosu crtu na kraju imena direktorijuma.
 
 <img src="images/trailing_slash.png" width="150px" style="display: block; margin: auto auto auto 0;" />
 
-- **Leading slash** will indicate the root directory of your *project website*, e.g. `/content/about.md` means we are refering to `about.md` file which is under the root directory of the website project.  
+- **Vodeća kosa crta (leading slash)** ukazaće vam na osnovni direktorijum u kojem se nalazi vaš *projekt vebsajt*, tj. `/content/about.md` podrazumeva da se referišete na fajl `about.md` koji se nalazi u osnovnom (root) direktorijumu vaše vebsajt projekta.  
 
 <img src="images/leading_slash.png" width="150px" style="display: block; margin: auto auto auto 0;" />
 
-### Building a website Step by Step
+### Izgradite stranicu korak po korak
 
-#### 👉 Go to the following GitHub repo to download the material: <https://github.com/TanjaKec/BlogdownWS>
+#### 👉 Otidite na sledeći link da biste preuzeli radni materijal: <https://github.com/TanjaKec/BlogdownWS>
 
-##### From here on we will follow the steps given in Xaringan presentation available from [ 👉 here](https://tanjakec.github.io/BlogdownWS/Blogdown_WS_Slides/blogdown_workshop.html)
+##### Odavde sledićemo korake koji su nam dati u Xaringan prezantaciji koja nam je dostupna  [ 👉 ovde](https://tanjakec.github.io/BlogdownWS/Blogdown_WS_Slides/blogdown_workshop.html)
 
-### Happy Blogging! 📢 
+### Sretno blogovanje! 📢 
 
 
 
