@@ -6,54 +6,54 @@ output:
 weight: 2
 ---
 
-## Shiny: Creating Web Apps
+## Shiny: Kreiranje web aplikacija
 
 <img src="images/Shiny.png" width="150px" />
 
-#### What is Shiny App?
+#### Šta je Shiny App?
 
-**Shiny** is a package from [RStudio](https://www.rstudio.com) that can be used **to build interactive web apps with R**. 
+**Shiny** je paket [RStudija](https://www.rstudio.com) koji se može koristiti **za kreiranje interaktivnih web aplikacije u R-u**. 
 
-You can host standalone apps on a webpage or embed them in [R Markdown](https://rmarkdown.rstudio.com) documents or build [dashboards](http://rstudio.github.io/shinydashboard/). You can also extend your Shiny apps with [CSS themes](http://rstudio.github.io/shinythemes/), [htmlwidgets](http://www.htmlwidgets.org), and [JavaScript actions](https://github.com/daattali/shinyjs/blob/master/README.md).
+Možete da ih postavite (hostujete) kao samostalne aplikacije na veb stranici ili da ih embedujete u [R Markdown](https://rmarkdown.rstudio.com) dokumente ili da izgradite komandne table, [dashboards](http://rstudio.github.io/shinydashboard/). Takođe, možete vaše stranice da dodatno razvijete upotrebljavajući [CSS themes](http://rstudio.github.io/shinythemes/), [htmlwidgets](http://www.htmlwidgets.org), i [JavaScript akcije](https://github.com/daattali/shinyjs/blob/master/README.md).
 
-Shiny combines the computational power of R with the interactivity of the modern web.
+Shiny kombinuje snagu R-a sa interaktivnošću modernog veb-a.
 
-Shiny apps are easy to write. No web development skills are required.
+Shiny aplikacije lako je pisati. Za njih nisu potrebna znanja veb pragramera.
 
-### Building a Shiny App Step by Step
+### Izgradnja Shiny aplikacija, korak po korak
 
-##### From here on we will follow the steps given in Xaringan <span style="color:orangered">presentation available from [ 👉 here](https://tanjakec.github.io/LearnShiny/How_2_Shine.html)</span>
+##### U nastavku sledićemo korake date u Xaringan prezentaciji koja je dostupna <span style="color:orangered"> [ 👉 ovde](https://tanjakec.github.io/LearnShiny/How_2_Shine.html)</span>
 
 {{% notice note %}}
-You can download the GitHub repo created for this tutorial which contains the [**xaringan**](https://github.com/yihui/xaringan) presentation slides and the app used in the presentation from: <https://github.com/TanjaKec/LearnShiny>
+Možete preuzeti GitHub repozitorijum kreiran za savladavanje ovog dela kursa koji sadrži i  [**xaringan**](https://github.com/yihui/xaringan) prezentaciju i aplikaciju koja se koristi u prezentaciji sa sledeće stranice: <https://github.com/TanjaKec/LearnShiny>
 {{% /notice %}}
 
-#### 💪 There is a challenge: 
+#### 💪 Evo nam izazova: 
 
-Do you remember our `dplyr` challenge using `group_by` function to compute the median life expectancy for year 2007 by continent for `gapminder` data that we had to visualise?
+Sećate li se našeg `dplyr` izazova u kojem smo koristili funkciju `group_by` da izračunamo srednji očekivani životni vek za 2007. godinu po kontinentima iz `gapminder` podataka i da smo trebali da ih vizuelizujemo?
 
-Can you create a Shiny app for this visualisation?
+Možete li da kreirate Shiny aplikaciju za ovu vizuelizaciju?
 
 <img src="images/GapminderShinyApp.png" width="750px" />
-Have a look at [this 👉😎](https://tatjana.shinyapps.io/Gapminder/)
+Pogledajte sledeću [aplikaciju 👉😎](https://tatjana.shinyapps.io/Gapminder/)
 
 
-**useful links:** 
+**Korisni linkovi:** 
 
 [Rstudio Shiny tutorial](https://shiny.rstudio.com/tutorial/)
 
-Look for inspiration at [rstudio shiny gallery](https://shiny.rstudio.com/gallery/)
+Za inspiraciju pogledajte [rstudio shiny gallery](https://shiny.rstudio.com/gallery/)
 
-Getting Started with Shiny by [**CODING CLUB**](https://ourcodingclub.github.io)
+Počnite sa Shiny-em sa infomacijama [**CODING CLUB**](https://ourcodingclub.github.io)
 <https://ourcodingclub.github.io/2017/03/07/shiny.html>
 
-Follow Dean's blog: <https://deanattali.com>
+Zapratite Dinov blog: <https://deanattali.com>
 
-An example: [Cancer Research UK Cambridge Institute](https://www.cruk.cam.ac.uk/core-facilities/bioinformatics-core/shiny-apps)
+Primer: [Cancer Research UK Cambridge Institute](https://www.cruk.cam.ac.uk/core-facilities/bioinformatics-core/shiny-apps)
 
-Go further: [Shiny Dashboard](https://rstudio.github.io/shinydashboard/)
+Za više: [Shiny Dashboard](https://rstudio.github.io/shinydashboard/)
 
-### Happy R Programming! 📢 
+### Sretno R programiranje! 📢 
 
 
 
